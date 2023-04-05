@@ -10,7 +10,8 @@ void main()
 	printf("Octal : %o\n\n", 0xad);
 
 	printf("HexaDecimal : %x\n", 173);
-	printf("");
+	printf("HexaDecimal : %x\n", 0255);
+	printf("HexaDecimal : %x\n", 0xad);
 
 	/*printf("%s %s\n", "Hello,",  "World");
 	printf("375 X 543 = %d\n", 375 * 543);
