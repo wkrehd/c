@@ -1,10 +1,21 @@
 #include<stdio.h>
 void main()
 {
-	printf("%s %s\n", "Hello,",  "World");
+	printf("Decimal : %d\n", 173);
+	printf("Decimal : %d\n", 0255);
+	printf("Decimal : %d\n\n", 0xAD);
+ 
+	printf("Octal : %o\n", 173);
+	printf("Octal : %o\n", 0255);
+	printf("Octal : %o\n\n", 0xad);
+
+	printf("HexaDecimal : %x\n", 173);
+	printf("");
+
+	/*printf("%s %s\n", "Hello,",  "World");
 	printf("375 X 543 = %d\n", 375 * 543);
 	printf("%.4f\n", 3.14159264);
-	printf("%c %s\n", 'C', "Language");
+	printf("%c %s\n", 'C', "Language");*/
 
 	/*printf("%d + %d = %d\n", 5, 10, 5+10);
 	printf("%d + %d = \n", 5, 10, 5 + 10);
