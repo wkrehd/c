@@ -2,6 +2,14 @@
 
 void main()
 {
+	/*int num1, num2;
+	char ch;
+	printf("정수 A값을 입력하시오 : ");
+	scanf_s("%d", &num1);
+	printf("정수 B값을 입력하시오 : ");
+	scanf_s("%d", &num2); 
+	printf("A + B : %d", num1 + num2);*/
+
 	/*int num1, num2, num3;
 	float Fnum;
 	printf("국어점수를 입력하시오 : ");
@@ -15,10 +23,10 @@ void main()
 	printf("영어점수 : %d\n", num3);
 	printf("합계점수 : %d\t", num1 + num2 + num3 );
 	printf("평균점수 : %.2f", (float)(num1 + num2 + num3)/3);*/
-	/*float Fnum;
+	float Fnum;
 	printf("소숫점수를 입력하시오 : ");
 	scanf_s("%f", &Fnum);
-	printf("소숫점수 : %.2f", Fnum);*/
+	printf("소숫점수 : %.2f", Fnum);
 
 	//int num;
 	//char ch;
