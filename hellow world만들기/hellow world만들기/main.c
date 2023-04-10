@@ -2,11 +2,48 @@
 
 void main()
 {
-	int a = 0, b = 0;
+	/*int num1, num2, num3;
+	float Fnum;
+	printf("국어점수를 입력하시오 : ");
+	scanf_s("%d", &num1);
+	printf("수학점수를 입력하시오 : ");
+	scanf_s("%d", &num2);
+	printf("영어점수를 입력하시오 : ");
+	scanf_s("%d", &num3);
+	printf("국어점수 : %d\n", num1);
+	printf("수학점수 : %d\n", num2);
+	printf("영어점수 : %d\n", num3);
+	printf("합계점수 : %d\t", num1 + num2 + num3 );
+	printf("평균점수 : %.2f", (float)(num1 + num2 + num3)/3);*/
+	/*float Fnum;
+	printf("소숫점수를 입력하시오 : ");
+	scanf_s("%f", &Fnum);
+	printf("소숫점수 : %.2f", Fnum);*/
+
+	//int num;
+	//char ch;
+	//printf("단일문자를 입력하시오 :");
+	//scanf_s("%c", &ch);
+	////printf("정수를 입력하시오 :");
+	////scanf_s("%d", &num );
+	//printf("%c", ch + 1);
+	/*int num1, num2;
+	float Fnum;
+	printf("실수 입력 :");
+	scanf_s("%f", &Fnum);
+	printf("정수 두개 입력 :");
+	scanf_s("%d %d", &num1, &num2);
+	printf("num1 = %d\nnum2 = %d\nFnum=%f\n", num1, num2, Fnum);*/
+	/*int num1, num2, sum;
+	printf("두 정수를 입력하시오 :");
+	scanf_s("%d%d", &num1, &num2);
+	sum = num1 + num2;
+	printf_s("%d + %d = %d", num1, num2, sum);*/
+	/*int a = 0, b = 0;
 	scanf_s("%d %d", &a, &b);
 	printf_s("%d + %d = %d\n", a, b, a+b);
 
-	getchar();
+	getchar();*/
 	/*int Num = 10;
 	float Fnum = 10.5;
 	double Dnum = 10.1;
