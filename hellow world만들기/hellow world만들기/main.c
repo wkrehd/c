@@ -1,14 +1,70 @@
 #include<stdio.h>
 
 void main()
-{
-	/*int num1, num2;
-	char ch;
-	printf("정수 A값을 입력하시오 : ");
-	scanf_s("%d", &num1);
-	printf("정수 B값을 입력하시오 : ");
-	scanf_s("%d", &num2); 
-	printf("A + B : %d", num1 + num2);*/
+{ 
+	int Num1 = 10, Num2 = 5;
+	
+	printf("(Num1 > Num2) && (Num1 ==10) = %d\n", Num1 > Num2 && Num1 ==10);
+	printf("(Num1 > Num2) && (Num1 !=10) = %d\n", Num1 > Num2 && Num1 != 10);
+
+	printf("(Num1 > Num2) || (Num1 !=10) = %d\n", Num1 > Num2 || Num1 |= 10);
+	printf("(Num1 < Num2) || (Num1 !=10) = %d\n", Num1 < Num2 || Num1 |= 10);
+	
+	printf("!(Num1 < Num2) = %d\n", !(Num1 < Num2));
+	printf("!Num1 = %d\n", !Num1);
+	/*float Fnum1 = 10.1, Fnum2 = 10.2;
+
+	printf("Fnum1 >= Fnum2 = %d\n", Fnum1 >= Fnum2);
+	printf("Fnum1 <= Fnum2 = %d\n", Fnum1 <= Fnum2);
+	printf("Fnum1 == Fnum2 = %d\n", Fnum1 == Fnum2);
+	printf("Fnum1 != Fnum2 = %d\n", Fnum1 != Fnum2);*/
+	/*int Num1 = 5, Num2 = 10, Num3 = 15;
+	char ch = 'a';
+
+	Num1++;
+	Num2 *= --Num3 - Num1--;
+	Num2 += Num1 * 2;
+	Num2 /= ++Num3;
+	Num1 += Num2--;
+	ch += Num2++;
+	printf("Num1 = %d Num2 = %d Num3 = %d ch = %c", Num1, Num2, Num3, ch);*/
+	//int Num1, Num2;
+	//printf("두 정수를 입력하시오 :");
+	//scanf_s("%d%d", &Num1, &Num2);
+
+	//Num2 = (Num1++) * Num2;
+	//printf("=====후치=====\n");
+	//printf("Num1 = %d\nNum2 = %d\n\n", Num1, Num2);
+	//Num2 = (++Num1) * Num2;
+	//printf("=====전치=====\n");
+	//printf("Num1 = %d\nNum2 = %d\n", Num1, Num2);
+	///*int Num1, Num2;*/
+	//printf("두 정수를 입력하시오 :");
+	//scanf_s("%d%d", &Num1, &Num2);
+
+	//Num1 *= Num2 - 3 * 2;
+	//printf("Num1 = %d\nNum2 = %d\n", Num1, Num2);
+	//printf("%d + %d = %d\n", Num1, Num2, Num1 + Num2);
+	//printf("%d - %d = %d\n", Num1, Num2, Num1 - Num2);
+	//printf("%d * %d = %d\n", Num1, Num2, Num1 * Num2);
+	//printf("%d / %d = %d\n", Num1, Num2, Num1 / Num2);
+	//printf("%d %% %d = %d\n", Num1, Num2, Num1 % Num2);
+
+
+	//int num1 , num2;
+	//
+	//
+	//printf("정수 A값을 입력하시오 : ");
+	//scanf_s("%d", &num1);
+	////printf("%d\n", num1 << 1);
+
+
+	//printf("정수 B값을 입력하시오 : ");
+	//scanf_s("%d", &num2);
+
+	//num1 = num2++;
+	//printf("A + B : %d", num1);
+
 
 	/*int num1, num2, num3;
 	float Fnum;
@@ -23,10 +79,10 @@ void main()
 	printf("영어점수 : %d\n", num3);
 	printf("합계점수 : %d\t", num1 + num2 + num3 );
 	printf("평균점수 : %.2f", (float)(num1 + num2 + num3)/3);*/
-	float Fnum;
+	/*float Fnum;
 	printf("소숫점수를 입력하시오 : ");
 	scanf_s("%f", &Fnum);
-	printf("소숫점수 : %.2f", Fnum);
+	printf("소숫점수 : %.2f", Fnum);*/
 
 	//int num;
 	//char ch;
