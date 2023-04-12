@@ -2,16 +2,66 @@
 
 void main()
 { 
-	int Num1 = 10, Num2 = 5;
+	int Num1, Num2, Num3;
+	float result;
+
+
+	printf("1.정수를 입력하시오 : ");
+	scanf_s("%d", &Num1);
+	(Num1 % 5 == 0) ? printf("%d는 5의배수입니다\n", Num1) : printf("%d는 5의배수가 아닙니다\n", Num1);
+	
+	printf("2.세 과목의 점수를 입력하시오\n");
+	printf("국어 점수 : ");
+	scanf_s("%d", &Num1);
+	printf("수학 점수 : ");
+	scanf_s("%d", &Num2);
+	printf("영어 점수 : ");
+	scanf_s("%d", &Num3);
+
+	result = (Num1 + Num2 + Num3) / 3.0f;
+	(result >= 60) ? printf("평균 %.2f합격\n", result) : printf("평균 %.2f불합격\n", result);
+
+	printf("3.두 정수를 입력하시오 : ");
+	scanf_s("%d %d", &Num1, &Num2);
+	(Num1 > Num2 == 1) ? printf("큰 수 : %d\n", Num1) : printf("큰 수 : %d\n", Num2);
+
+	printf("4.정수를 입력하시오 : ");
+	scanf_s("%d", &Num1);
+
+	result = (Num1 % 3 == 0) && (Num1 % 2 == 0);
+	result ? printf("%d는 짝수이며 3의배수 입니다.\n", Num1) : printf("조건 실패\n");
+
+	printf("5.정수를 입력하시오 :");
+	scanf_s("%d", &Num1);
+
+	result = (Num1 % 5 == 0) || (Num1 % 7 == 0);
+	result ? printf("%d는 5의배수 이거나 7의배수 입니다.\n",Num1 ) : printf("조건 실패\n");
+
+	/*int Num1 = 10, Num2 = 5;
+
+	(Num1 % 2 == 0) ? printf("%d는 짝수\n", Num1) : printf("%d는 홀수\n", Num1);
+	(Num2 % 2 == 0) ? printf("%d는 짝수\n", Num2) : printf("%d는 홀수\n", Num2);*/
+	/*int Num1 = 10, Num2 = 1;
+
+	printf("(Num1 > 5) && (num2) = %d\n", Num1 >5 && (Num2++)); 
+	printf("Num2= %d\n", Num2);
+	printf("(Num1 < 5) && (Num2) = %d\n", Num1 <5 && (Num2++));
+	printf("Num2= %d\n", Num2);
+	printf("(Num1 > 5) || (Num2) = %d\n", Num1 >5 || (Num2++));
+	printf("Num2 = %d\n", Num2);
+	printf("(Num1 < 5) || (Num2) = %d\n", Num1 <5 || (Num2++));
+	printf("Num2 = %d\n", Num2);*/
+	/*int Num1 = 10, Num2 = 5;
 	
 	printf("(Num1 > Num2) && (Num1 ==10) = %d\n", Num1 > Num2 && Num1 ==10);
 	printf("(Num1 > Num2) && (Num1 !=10) = %d\n", Num1 > Num2 && Num1 != 10);
 
-	printf("(Num1 > Num2) || (Num1 !=10) = %d\n", Num1 > Num2 || Num1 |= 10);
-	printf("(Num1 < Num2) || (Num1 !=10) = %d\n", Num1 < Num2 || Num1 |= 10);
+	printf("(Num1 > Num2) || (Num1 !=10) = %d\n", Num1 > Num2 || Num1 != 10);
+	printf("(Num1 < Num2) || (Num1 !=10) = %d\n", Num1 < Num2 || Num1 != 10);
 	
 	printf("!(Num1 < Num2) = %d\n", !(Num1 < Num2));
-	printf("!Num1 = %d\n", !Num1);
+	printf("!Num1 = %d\n", !Num1); */
+
 	/*float Fnum1 = 10.1, Fnum2 = 10.2;
 
 	printf("Fnum1 >= Fnum2 = %d\n", Fnum1 >= Fnum2);
@@ -73,8 +123,8 @@ void main()
 	printf("수학점수를 입력하시오 : ");
 	scanf_s("%d", &num2);
 	printf("영어점수를 입력하시오 : ");
-	scanf_s("%d", &num3);
-	printf("국어점수 : %d\n", num1);
+	scanf_s("%d", &num3);*/
+	/*printf("국어점수 : %d\n", num1);
 	printf("수학점수 : %d\n", num2);
 	printf("영어점수 : %d\n", num3);
 	printf("합계점수 : %d\t", num1 + num2 + num3 );
