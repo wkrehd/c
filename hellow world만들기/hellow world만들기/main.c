@@ -2,7 +2,14 @@
 
 void main()
 { 
-	int Num1, Num2, Num3;
+	char ch;
+
+	printf("프로그래밍은 쉬운가? y , n을 입력하시오\n");
+	scanf_s("%c", &ch);
+	ch = 'y';
+	(ch == 1) ? printf("니가 뭘 알아!\n", ch) : printf("잘 아네!\n", ch);
+	
+	/*int Num1, Num2, Num3;
 	float result;
 
 
@@ -35,7 +42,7 @@ void main()
 	scanf_s("%d", &Num1);
 
 	result = (Num1 % 5 == 0) || (Num1 % 7 == 0);
-	result ? printf("%d는 5의배수 이거나 7의배수 입니다.\n",Num1 ) : printf("조건 실패\n");
+	result ? printf("%d는 5의배수 이거나 7의배수 입니다.\n",Num1 ) : printf("조건 실패\n");*/
 
 	/*int Num1 = 10, Num2 = 5;
 
