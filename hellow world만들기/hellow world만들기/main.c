@@ -1,13 +1,118 @@
 #include<stdio.h>
 
 void main()
-{ 
-	char ch;
+{
+	int num;
+	printf("1.정수를 입력하시오 : \n");
+	scanf_s("%d", &num);
+	if (num % 3 == 0)
+	{
+		printf("%d는 3의배수 입니다.", num);
+	}
+	else
+	{
+		printf("%d는 3의배수가 아닙니다.", num);
+	}
 
-	printf("프로그래밍은 쉬운가? y , n을 입력하시오\n");
-	scanf_s("%c", &ch);
-	ch = 'y';
-	(ch == 1) ? printf("니가 뭘 알아!\n", ch) : printf("잘 아네!\n", ch);
+//{
+//	int num1, num2, max, min;
+//	printf("정수 두 개를 입력하시오 : ");
+//	scanf_s("%d%d", &num1,&num2);
+//
+//	if (num1 > num2)
+//	{
+//		max = num1;
+//		min = num2;
+//	}
+//	else
+//	{
+//		max = num2;
+//		min = num1;
+//	}
+//	printf("\n max = %d min = %d", max, min);
+//{ 
+//	int num = 10;
+//	if (num % 2 == 0)
+//	{
+//		printf("짝수 입니다.\n");
+//	}
+//	if (num % 2 != 0)
+//	{
+//		printf("홀수 입니다.\n");
+//	}
+//	if (num % 2 != 0);
+//	printf("홀수 입니다.\n");
+//	printf("%d\n", num);
+//
+//	int age;
+//	printf("나이를 입력하시오 :");
+//	scanf_s("%d", &age);
+//
+//	if (age < 20)
+//	{
+//		printf("미성년자 입니다.\n");
+//	}
+//	if (age >= 20);
+//	{
+//		printf("성인 입니다.\n");
+//	}
+//	int Num;
+//	printf("정수 입력");
+//	scanf_s("%d", &Num);
+//	
+//	if (Num % 2 == 0 &&  /*짝수 조건 확인*/
+//		Num % 3 == 0)	 /*3의 배수 조건 확인*/
+//	{
+//		printf("짝수이며 3의배수입니다.");
+//	}
+//	int num1 = 1, num2 = 0;
+//	if (num1)
+//	{
+//		printf("참이므로 출력");
+//	}
+//	if (num2)
+//	{
+//		printf("거짓이므로 출력 안함");
+//	}
+//	int Age;
+//	printf("나이를 입력하시오 : ");
+//	scanf_s("%d", &Age);
+//
+//	if (Age < 20)
+//	{
+//		printf("미성년자 입니다.\n");
+//	}
+//	else
+//	{
+//		printf("성인 입니다.\n");
+//	}
+	
+	/*printf("정수 입력 : ");
+	scanf_s("%d", &Num);
+
+	if (Num % 2 == 0)
+	{
+		printf("짝수 입니다.\n");
+		if (Num % 3 == 0)
+		{
+			printf("짝수이며 3의배수입니다");
+		}
+	}*/
+
+	/*int num1 = 10;
+	int num2 = 6;
+	printf("%d & %d = %d\n", num1, num2, num1&num2);
+	printf("%d | %d = %d\n", num1, num2, num1|num2);
+	printf("%d ^ %d = %d\n", num1, num2, num1^num2);
+	printf("~num2 = ~%d\n", ~num2);
+	printf("num2<<1 = %d\n", num2<<1);
+	printf("num2>>1 = %d\n", num2>>1);*/
+	//char ch;
+
+	//printf("프로그래밍은 쉬운가? y , n을 입력하시오\n");
+	//scanf_s("%c", &ch);
+	//ch = 'y';
+	//(ch == 1) ? printf("니가 뭘 알아!\n", ch) : printf("잘 아네!\n", ch);
 	
 	/*int Num1, Num2, Num3;
 	float result;
