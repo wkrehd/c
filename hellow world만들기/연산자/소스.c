@@ -1,7 +1,7 @@
 #include <stdio.h>
 void main()
 {
-	int num;
+	/*int num;
 	printf("1.정수를 입력하시오 : ");
 	scanf_s("%d", &num);
 	if (num % 3 == 0)
@@ -41,6 +41,14 @@ void main()
 	else
 	{
 		printf("Max = %d\n", num4);
+	}*/
+	int num5, num6, num7;
+	printf("5. 정수 세개를 입력하시오 : ");
+	scanf_s("%d%d%d", &num5, &num6, &num7);
+	int ret = (num5 + num6 + num7)/3 ;
+	if (ret <= num5)
+	{
+		printf("Max = %d\n", num5);
 	}
-
+	(ret <= num6) ? printf("Max = %d\n", num6) : printf("Max = %d\n", num7);
 }
