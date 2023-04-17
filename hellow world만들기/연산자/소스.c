@@ -198,15 +198,15 @@ void main()
 	}
 	printf("국어점수 : %d 수학점수 : %d 영어점수 : %d\n", num1, num2, num3);
 	printf("총합점수 : %d 평균점수 : %.2f 등급 : %c", sum, avg, ch);*/
-
-int time, price;
+int unsigned time;
+int price;
 printf("승마 이용시간을 입력하시오 : ");
 scanf_s("%d", &time);
 int def = (30 > time) ? 30 : time;
 int dev = (def - 30) / 10;
-dev += ((def - 30) % 10) ? 1 : 0;
+dev += ((def - 30) % 10) ? 1 : 0;/* dev 뒤에 +=이 붙는 이유?*/
 price = 3000 + dev * 500;
-printf("%d분 탑승요금 : %d원", time, price);
+printf("%d분 탑승요금 : %d원", time, price); /*time에 양수값만 입력하도록 하는방법은 없을가?*/
 //if (time <= 30)
 //{
 //	printf("%d분 탑승요금 : %d원", time, price);
