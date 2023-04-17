@@ -201,12 +201,12 @@ void main()
 int unsigned time;
 int price;
 printf("승마 이용시간을 입력하시오 : ");
-scanf_s("%d", &time);
+scanf_s("%u", &time);/* 양수값만 입력할수있도록 하는법은?*/
 int def = (30 > time) ? 30 : time;
 int dev = (def - 30) / 10;
 dev += ((def - 30) % 10) ? 1 : 0;/* dev 뒤에 +=이 붙는 이유?*/
 price = 3000 + dev * 500;
-printf("%d분 탑승요금 : %d원", time, price); /*time에 양수값만 입력하도록 하는방법은 없을가?*/
+printf("%d분 탑승요금 : %d원\n", time, price); /*time에 양수값만 입력하도록 하는방법은 없을가?*/
 //if (time <= 30)
 //{
 //	printf("%d분 탑승요금 : %d원", time, price);
@@ -215,5 +215,34 @@ printf("%d분 탑승요금 : %d원", time, price); /*time에 양수값만 입력하도록 하는방
 //{
 //	printf("%d분 탑승요금 : %d원", time, price);
 //}
+int num1,num2;
+printf("구매할 도시락 갯수를 입력하시오 : ");
+scanf_s("%d", &num1);
+num2 = 25000 + (num1-10) * 2400;
+if (num1 <=10)
+{
+	printf("도시락 %d개 가격 : %d원\n", num1, num1*2500);
+}
+else 
+{
+	printf("도시락 %d개 가격 : %d원\n", num1,num2 );
+}
+int num3,num4,num5;
 
+printf("구매할 디스켓 갯수를 입력하시오 : ");
+scanf_s("%d", &num3);
+num4 = (num3 * 5000) * 0.9; /*디스크 갯수가 10<num4<100 일때*/
+num5 = (num3 * 5000) * 0.88; /*디스크 갯수가 100개 초과일때*/
+if (num3 < 10)
+{
+	printf("디스크 %d개 가격 : %d원", num3, num3*5000 );
+}
+else if (10 <= num3 < 100)
+{
+	printf("디스크 %d개 가격 : %d원", num3, num4);
+}
+else
+{
+	printf("디스크 %d개 가격 : %d원", num3, num5);
+}
 }
