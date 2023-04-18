@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include<windows.h>system("cls"),system("pause")
 void main()
 {
 	/*int num;
@@ -198,15 +199,16 @@ void main()
 	}
 	printf("국어점수 : %d 수학점수 : %d 영어점수 : %d\n", num1, num2, num3);
 	printf("총합점수 : %d 평균점수 : %.2f 등급 : %c", sum, avg, ch);*/
-int unsigned time;
-int price;
-printf("승마 이용시간을 입력하시오 : ");
-scanf_s("%u", &time);/* 양수값만 입력할수있도록 하는법은?*/
-int def = (30 > time) ? 30 : time;
-int dev = (def - 30) / 10;
-dev += ((def - 30) % 10) ? 1 : 0;/* dev 뒤에 +=이 붙는 이유?*/
-price = 3000 + dev * 500;
-printf("%d분 탑승요금 : %d원\n", time, price); /*time에 양수값만 입력하도록 하는방법은 없을가?*/
+//unsigned int  time;
+//int price;
+//printf("승마 이용시간을 입력하시오 : ");
+//scanf_s("%u", &time);/* 양수값만 입력할수있도록 하는법은?*/
+//
+//int def = (30 > time) ? 30 : time;
+//int dev = (def - 30) / 10;
+//dev += ((def - 30) % 10) ? 1 : 0;/* dev 뒤에 +=이 붙는 이유?*/
+//price = 3000 + dev * 500;
+//printf("%d분 탑승요금 : %d원\n", time, price); /*time에 양수값만 입력하도록 하는방법은 없을가?*/
 //if (time <= 30)
 //{
 //	printf("%d분 탑승요금 : %d원", time, price);
@@ -215,34 +217,141 @@ printf("%d분 탑승요금 : %d원\n", time, price); /*time에 양수값만 입력하도록 하는
 //{
 //	printf("%d분 탑승요금 : %d원", time, price);
 //}
-int num1,num2;
-printf("구매할 도시락 갯수를 입력하시오 : ");
-scanf_s("%d", &num1);
-num2 = 25000 + (num1-10) * 2400;
-if (num1 <=10)
-{
-	printf("도시락 %d개 가격 : %d원\n", num1, num1*2500);
-}
-else 
-{
-	printf("도시락 %d개 가격 : %d원\n", num1,num2 );
-}
-int num3,num4,num5;
 
-printf("구매할 디스켓 갯수를 입력하시오 : ");
-scanf_s("%d", &num3);
-num4 = (num3 * 5000) * 0.9; /*디스크 갯수가 10<num4<100 일때*/
-num5 = (num3 * 5000) * 0.88; /*디스크 갯수가 100개 초과일때*/
-if (num3 < 10)
-{
-	printf("디스크 %d개 가격 : %d원", num3, num3*5000 );
+//int quantity, money = 0;
+//printf("구매할 도시락 갯수를 입력하시오 : ");
+//scanf_s("%d", &quantity);
+//if (0 < quantity - 10)
+//{
+//	money = (quantity - 10) * 2400;
+//	quantity = 10;
+//}
+//money += 2500 * quantity;
+//printf("도시락 %d개 가격 : %d원\n", quantity, money);
+
+//int quantity,money1/*,num5*/;
+//printf("구매할 디스켓 갯수를 입력하시오 : ");
+//scanf_s("%d", &quantity);
+//money1 = (quantity * 5000);
+//if (quantity > 100)/*디스크 갯수가 100개 초과일때*/
+//{
+//	money1 -= money1 * 0.12f;
+//}
+//else if (quantity > 10)/*디스크 갯수가 10<num4<100 일때*/
+//{
+//	money1 -= money1 * 0.1f;
+//}
+//printf("디스크 %d개 가격 : %d원", quantity, money1);
+
+//money1 = (quantity * 5000) * 0.9f; 
+//num5 = (quantity * 5000) * 0.88f; 
+//if (quantity < 10)
+//{
+//	printf("디스크 %d개 가격 : %d원", quantity, quantity * 5000);
+//}
+//else if (10 <= quantity && quantity < 100)
+//{
+//	printf("디스크 %d개 가격 : %d원", quantity, money1);
+//}
+//else
+//{
+//	printf("디스크 %d개 가격 : %d원", quantity, num5);
+//}
+//int num;
+//printf("정수 입력 : ");
+//scanf_s("%d", &num);
+//switch (num)
+//{
+//case 1 :
+//	printf("1입력\n");
+//	break;
+//case 2 :
+//	printf("2입력\n");
+//	break;
+//default :
+//	printf("1,2를 제외한 나머지 입력\n");
+//	break;
+//}
+//float fnum;
+//printf("실수 입력 : ");
+//scanf_s("%d", &fnum);
+//switch (fnum)
+//{
+//case 1 :
+//	printf("1.1입력\n");
+//	break;
+//case 2 :
+//	printf("2.2입력\n");
+//	break;
+//default :
+//	printf("1,2를 제외한 나머지 입력\n");
+//	break;
+//}
+//char ch;
+//printf("단일문자 입력 : ");
+//scanf_s("%c", &ch);
+//switch (ch)
+//{
+//case'a':
+//case'A':
+//	printf("A입력\n");
+//	break;
+////case'A':
+////	printf("A입력\n");
+////	break;
+//}
+//int date, select;
+//while (1)
+//{
+//	system("cls");
+//	printf("======Menu======\n");
+//	printf("1.데이터 입력\n");
+//	printf("2.데이터 출력\n");
+//	printf("3.종료\n");
+//	printf("================\n");
+//	scanf_s("%d", &select);
+//	switch (select)
+//	{
+//	case 1:
+//		printf("데이터 입력 : ");
+//		scanf_s("%d", &date);
+//		break;
+//	case 2:
+//		printf("데이터 = %d\n", date);
+//		system("pause");
+//		break;
+//	case 3:
+//		return;
+//	}
+//int date, select;
+//int flog = 0;
+//while(1)
+//{
+//	system("cls");
+//	printf("======Menu======\n");
+//	printf("1.데이터 입력\n");
+//	printf("2.데이터 출력\n");
+//	printf("3.종료\n");
+//	printf("================\n");
+//	scanf_s("%d", &select);
+//	switch (select)
+//	{
+//	case 1:
+//		printf("데이터 입력 : ");
+//		scanf_s("%d", &date);
+//		flog = 1;
+//		break;
+//	case 2:
+//		if (flog == 0)
+//			printf("데이터가 존재하지 않습니다.");
+//		else if (flog == 1)
+//			printf("데이터 = %d\n", date);
+//		system("pause");
+//		break;
+//	case 3:
+//		return;
+//	}
+//}
+
 }
-else if (10 <= num3 < 100)
-{
-	printf("디스크 %d개 가격 : %d원", num3, num4);
-}
-else
-{
-	printf("디스크 %d개 가격 : %d원", num3, num5);
-}
-}
+
