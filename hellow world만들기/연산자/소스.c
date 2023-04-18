@@ -217,7 +217,6 @@ void main()
 //{
 //	printf("%d분 탑승요금 : %d원", time, price);
 //}
-
 //int quantity, money = 0;
 //printf("구매할 도시락 갯수를 입력하시오 : ");
 //scanf_s("%d", &quantity);
@@ -323,6 +322,7 @@ void main()
 //	case 3:
 //		return;
 //	}
+//}
 //int date, select;
 //int flog = 0;
 //while(1)
@@ -352,6 +352,53 @@ void main()
 //		return;
 //	}
 //}
+int date, select, kor, math, eng, sum;
+float evg;
+sum = kor + math + eng;
+evg = sum / 3.0f;
+while (1)
+{
+	system("cls");
+	printf("====================\n");
+	printf("   학생성적관리\n");
+	printf("====================\n");
+	printf("   1. 학생 이름등록\n");
+	printf("   2. 3과목 점수등록\n");
+	printf("   3. 점수확인\n");
+	printf("   4. 종료\n");
+	printf("====================\n");
+	printf("입력 : ");
+	scanf_s("%d", &select);
+	switch (select)
+	{
+	case 1:
+		printf("이름 입력 : ");
+		scanf_s("%d", &date);
+		break;
+	case 2:
+		printf("세과목의 성적을 입력하시오\n");
+		printf("국어 : %d\n", kor);
+		scanf_s("%d", &kor);
+		printf("수학 : %d\n", math);
+		scanf_s("%d", &math);
+		printf("영어 : %d\n", eng);
+		scanf_s("%d", &eng);
+		break;
+	case 3:
+		printf("====================\n");
+		printf("%d님의 점수\n", date);
+		printf("국어 : %d\n", kor);
+		printf("수학 : %d\n", math);
+		printf("영어 : %d\n", eng);
+		printf("합계 점수 : %d\n", sum);
+		printf("평균 점수 : %.2f", evg);
+		printf("====================\n");
+		system("pause");
+		break;
+	case 4:
+		return;
 
+	}
+}
 }
 
