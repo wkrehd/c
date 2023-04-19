@@ -390,20 +390,24 @@ void main()
 			break;
 		case 3:
 
-			if (flag1 == 0)
+			if (flag1 == 0 && flag2 == 0)
 			{
-				printf("이름를 입력하세요");
+				printf("이름을 입력하세요\n점수를 입력하세요\n");
+				system("pause");
+			}
+		
+			else if (flag2!=0&& flag1 ==0)/*((kor==0 && math==0 && eng==0)) *///=은뒤에값을 넣는것  ==뒤의값이 앞의값과 같다
+			{
+				printf("이름을 입력하세요\n");
+				system("pause");
+			}
+			else if (flag1 != 0 && flag2 == 0)
+			{
+				printf("점수를 입력하세요\n");
 				system("pause");
 			}
 
-			if (flag2 == 0)/*((kor==0 && math==0 && eng==0)) *///=은뒤에값을 넣는것  ==뒤의값이 앞의값과 같다
-			{
-				printf("점수를 입력하세요");
-				system("pause");
-			}
-
-
-			if (flag1 !=0 && flag2 != 0)
+			else/*if (flag1 !=0 && flag2 != 0)*/
 			{
 				sum = kor + math + eng;
 				avg = sum / 3.0f;
@@ -420,7 +424,7 @@ void main()
 			}
 				break;
 		case 4:
-			return;
+			return;//예제 프로그램은 4를 누르면 즉시 종료되는대 나는 그렇지않음 
 		}
 	}
 }
