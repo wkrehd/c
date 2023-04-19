@@ -352,53 +352,76 @@ void main()
 //		return;
 //	}
 //}
-int date, select, kor, math, eng, sum;
-float evg;
-sum = kor + math + eng;
-evg = sum / 3.0f;
-while (1)
-{
-	system("cls");
-	printf("====================\n");
-	printf("   학생성적관리\n");
-	printf("====================\n");
-	printf("   1. 학생 이름등록\n");
-	printf("   2. 3과목 점수등록\n");
-	printf("   3. 점수확인\n");
-	printf("   4. 종료\n");
-	printf("====================\n");
-	printf("입력 : ");
-	scanf_s("%d", &select);
-	switch (select)
-	{
-	case 1:
-		printf("이름 입력 : ");
-		scanf_s("%d", &date);
-		break;
-	case 2:
-		printf("세과목의 성적을 입력하시오\n");
-		printf("국어 : %d\n", kor);
-		scanf_s("%d", &kor);
-		printf("수학 : %d\n", math);
-		scanf_s("%d", &math);
-		printf("영어 : %d\n", eng);
-		scanf_s("%d", &eng);
-		break;
-	case 3:
-		printf("====================\n");
-		printf("%d님의 점수\n", date);
-		printf("국어 : %d\n", kor);
-		printf("수학 : %d\n", math);
-		printf("영어 : %d\n", eng);
-		printf("합계 점수 : %d\n", sum);
-		printf("평균 점수 : %.2f", evg);
-		printf("====================\n");
-		system("pause");
-		break;
-	case 4:
-		return;
 
+	int name, select, kor, math, eng, sum;
+	float avg;
+	int flag1 = 0, flag2 = 0;
+	while (1)
+	{
+		system("cls");//콘솔화면 전체를 지우는것
+		printf("====================\n");
+		printf("   학생성적관리\n");
+		printf("====================\n");
+		printf("   1. 학생 이름등록\n");
+		printf("   2. 3과목 점수등록\n");
+		printf("   3. 점수확인\n");
+		printf("   4. 종료\n");
+		printf("====================\n");
+		printf("입력 : ");
+		scanf_s("%d", &select);
+
+		system("cls");
+		switch (select)
+		{
+		case 1:
+			printf("이름 입력 : ");
+			scanf_s("%d", &name);
+			flag1 = 1;
+			break;
+		case 2:
+			printf("세과목의 성적을 입력하시오\n");
+			printf("국어 : ");
+			scanf_s("%d", &kor);
+			printf("수학 : ");
+			scanf_s("%d", &math);
+			printf("영어 : ");
+			scanf_s("%d", &eng);
+			flag2 = 1;
+			break;
+		case 3:
+
+			if (flag1 == 0)
+			{
+				printf("이름를 입력하세요");
+				system("pause");
+			}
+
+			if (flag2 == 0)/*((kor==0 && math==0 && eng==0)) *///=은뒤에값을 넣는것  ==뒤의값이 앞의값과 같다
+			{
+				printf("점수를 입력하세요");
+				system("pause");
+			}
+
+
+			if (flag1 !=0 && flag2 != 0)
+			{
+				sum = kor + math + eng;
+				avg = sum / 3.0f;
+
+				printf("====================\n");
+				printf("%d님의 점수\n", name);
+				printf("국어 : %d\n", kor);
+				printf("수학 : %d\n", math);
+				printf("영어 : %d\n", eng);
+				printf("합계 점수 : %d\n", sum);
+				printf("평균 점수 : %.2f\n", avg);
+				printf("====================\n");
+				system("pause");//코드가 더이상 읽어지지 않도록 붙잡아 두는것
+			}
+				break;
+		case 4:
+			return;
+		}
 	}
-}
 }
 
