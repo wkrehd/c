@@ -61,15 +61,29 @@ void main()
 		printf("Hellow\n");
 		num1++;
 	}*/
-	int num1 = 0 ,num2=1 ,sum = 0;
-	while (true)
-	{
-		sum += num2;
-		printf("정수 입력 : ");
-		scanf_s("%d", &num1);
-		if (num2 = 0)
-			break;
-		
-	}
-	printf("모든 정수의 값은 %d이다", sum);
+	//int num1 = 1,sum = 0;
+	//
+	//while (true)//모든 정수의 값을 얻어왔음
+	//{
+	//	printf("정수 입력 : ");
+	//	scanf_s("%d", &num1);
+	//	sum += num1;
+	//	if (num1 == 0)
+	//		break;
+	//}
+	//while ()//얻은 모든정수의 값을 합치고 멈추는 조건을 만들어야함
+	//{
+	//	sum += num1; //num1의값을 더한다 sum에 더한다 이게 위의 정수들을 다가져오게 하는법은?(위에 조건을 넣으면됨)
+	//}
+	/*printf("모든 정수의 값은 %d이다", sum);*/
+
+	int num2;
+	float fnum;
+	printf("숫자를 입력하시오 : ");
+	scanf_s("%d", &num2);
+	
+		printf("%d", num2 % 10);
+		printf("%d", num2 / 10);
+		printf("%d", )
+	
 }
