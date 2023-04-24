@@ -73,40 +73,47 @@ void main()
 	}
 	printf("모든 정수의 값은 %d이다", sum);*/
 
-	int num2, num, check = 1;
-	//float fnum;
-	printf("숫자를 입력하시오 : ");
-	scanf_s("%d", &num2);
-	num = num2 - 1;
-	while (1 < num)
-	{
-		if (0 == num2 % num)//분자,분모
-		{
-			check = 0;
-			break;
-		}
+	//int num2, num, check = 1;
+	//printf("4.숫자를 입력하시오 : ");
+	//scanf_s("%d", &num2);
+	//num = num2 - 1;
+	//while (1 < num)
+	//{
+	//	if (0 == num2 % num)//분자,분모
+	//	{
+	//		check = 0;
+	//		break;
+	//	}
 
-		--num;
-	}
-	if (check)
-	{
-		printf("%d는 소수 입니다.", num2);
-	}
-	else
-	{
-		printf("%d는 소수가 아닙니다.", num2);
-	}
+	//	--num;
+	//}
+	//if (check)
+	//{
+	//	printf("%d는 소수 입니다.\n", num2);
+	//}
+	//else
+	//{
+	//	printf("%d는 소수가 아닙니다.\n", num2);
+	//}
 	
-	int num3, num4;
-	printf("숫자를 입력하시오 : ");
+	int num3;
+	printf("5.숫자를 입력하시오 : ");
 	scanf_s("%d", &num3);
 	while(num3)
 	{
-		num4 = num3 % 10;
-		//printf("%d", num3 % 10); // 나머지 값을 출력, 나머지 값:숫자(num3)의 가장 뒷자리 수.	
+		/*num4 = num3 % 10;*/
+		printf("%d", num3 % 10); // 나머지 값을 출력, 나머지 값:숫자(num3)의 가장 뒷자리 수.	
 		num3 /= 10;//가장 뒷자리 수를 제외한 수로 갱신
 	}
 
-	//printf("%d", num2 / 10);//뒤에 몫들이 나열됨 10의배수를 곱해서 앞으로 당긴다?
-	//printf("%d", );
+	int num5,num6,sum=0 ;
+	printf("\n6.숫자를 입력하시오 : ");
+	scanf_s("%d", &num5);
+	while (num5)
+	{
+		num6 = num5 % 10;//num5 % 10으로 각자릿수를 구하고 그것을 num6에 보관
+		sum += num6;
+		num5 /= 10;
+	}
+	printf("최종합계 : %d", sum);
 }

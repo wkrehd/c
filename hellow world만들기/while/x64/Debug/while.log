@@ -1,3 +1,3 @@
 ﻿  while.cpp
-\\A-00\a-00\프로그래밍 공유폴더\숙련반\2시반\김지운\c\hellow world만들기\while\while.cpp(7,1): warning C4326: 'main'의 반환 형식이 'int'이어야 하는데 'void'입니다.
-  while.vcxproj -> \\A-00\a-00\프로그래밍 공유폴더\숙련반\2시반\김지운\c\hellow world만들기\while\x64\Debug\while.exe
+C:\Users\S2-09\Desktop\c\c\hellow world만들기\while\while.cpp(7,1): warning C4326: 'main'의 반환 형식이 'int'이어야 하는데 'void'입니다.
+  while.vcxproj -> C:\Users\S2-09\Desktop\c\c\hellow world만들기\while\x64\Debug\while.exe
