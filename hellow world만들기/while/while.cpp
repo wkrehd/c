@@ -60,8 +60,8 @@ void main()
 	{
 		printf("Hellow\n");
 		num1++;
-	}*/
-	/*int num1 = 1,sum = 0;
+	}
+	int num1 = 1,sum = 0;
 	
 	while (true)
 	{
@@ -73,13 +73,40 @@ void main()
 	}
 	printf("모든 정수의 값은 %d이다", sum);*/
 
-	int num2;
-	float fnum;
+	int num2, num, check = 1;
+	//float fnum;
 	printf("숫자를 입력하시오 : ");
 	scanf_s("%d", &num2);
+	num = num2 - 1;
+	while (1 < num)
+	{
+		if (0 == num2 % num)//분자,분모
+		{
+			check = 0;
+			break;
+		}
+
+		--num;
+	}
+	if (check)
+	{
+		printf("%d는 소수 입니다.", num2);
+	}
+	else
+	{
+		printf("%d는 소수가 아닙니다.", num2);
+	}
 	
-		printf("%d", num2 % 10);
-		printf("%d", num2 / 10);
-		printf("%d", )
-	
+	int num3, num4;
+	printf("숫자를 입력하시오 : ");
+	scanf_s("%d", &num3);
+	while(num3)
+	{
+		num4 = num3 % 10;
+		//printf("%d", num3 % 10); // 나머지 값을 출력, 나머지 값:숫자(num3)의 가장 뒷자리 수.	
+		num3 /= 10;//가장 뒷자리 수를 제외한 수로 갱신
+	}
+
+	//printf("%d", num2 / 10);//뒤에 몫들이 나열됨 10의배수를 곱해서 앞으로 당긴다?
+	//printf("%d", );
 }
