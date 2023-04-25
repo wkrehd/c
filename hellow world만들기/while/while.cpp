@@ -106,13 +106,13 @@ void main()
 		num3 /= 10;//가장 뒷자리 수를 제외한 수로 갱신
 	}
 
-	int num5,num6,sum=0 ;
+	int num5/*,num6*/,sum=0 ;
 	printf("\n6.숫자를 입력하시오 : ");
 	scanf_s("%d", &num5);
 	while (num5)
 	{
-		num6 = num5 % 10;//num5 % 10으로 각자릿수를 구하고 그것을 num6에 보관
-		sum += num6;
+		//num6 = //num5 % 10으로 각자릿수를 구하고 그것을 num6에 보관
+		sum += num5 % 10;
 		num5 /= 10;
 	}
 	printf("최종합계 : %d", sum);
