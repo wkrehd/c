@@ -173,15 +173,15 @@ printf("(3의 배수는 제외하며 3과 5의 공배수는 제외하지 않는다)\n");*/
 	//	printf("i : %d\tSum : %d", i, sum3);
 
 
-			for (int i = 2; i <= 9; i++) 
-			{
-				printf("====%d단====\n", i); //0일때 단수가 나오게
+			//for (int i = 2; i <= 9; i++) 
+			//{
+			//	printf("====%d단====\n", i); //0일때 단수가 나오게
 
-				for (int j = 1; j <= 9; j++) //1일대 곱하기가 나오게
-				{
-					printf("%d x %d = %d\n", i, j, i * j);
-				}
-			}
+			//	for (int j = 1; j <= 9; j++) //1일대 곱하기가 나오게
+			//	{
+			//		printf("%d x %d = %d\n", i, j, i * j);
+			//	}
+			//}
 		
 	
 
@@ -198,4 +198,16 @@ printf("(3의 배수는 제외하며 3과 5의 공배수는 제외하지 않는다)\n");*/
 	//	}
 	//}
 	//printf("i : %d\tSum : %d", i, sum3);
+
+			for (int i = 0; i <= 9; i++)
+			{
+				for (int j = 2; j <= 9; j++)
+				{
+					if(i==0)
+						printf("====%d단====\t", j);
+					if (i != 0)
+						printf("%d x %d = %d\t", j,i,j*i);
+				}
+				printf("\n");
+			}
 }
