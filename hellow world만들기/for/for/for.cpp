@@ -85,62 +85,61 @@ void main()
 		printf("\n");
 	}*/
 
-	//printf("1번문제\n");
+	/*printf("1번문제\n");
 
-	//for (int i = 1; i <= 10; i++)
-	//{
-	//	if (i%2==0)
-	//		continue;
+	for (int i = 1; i <= 10; i++)
+	{
+		if (i%2==0)
+			continue;
 
-	//	printf("%d.Hello\n", i);
-	//}
-	//printf("2번문제\n");
+		printf("%d.Hello\n", i);
+	}
 
-	//for (char ch = 'A'; ch <= 'Z'; ch++)
-	//{
-	//	printf("%c", ch);
+	printf("2번문제\n");
 
-	//	if (ch == 'M')
-	//	{
-	//		printf("\n");
-	//		continue;
-	//	}
-	//	else if (ch == 'Z')
-	//		break;
-	//	printf(",");
-	//}
+	for (char ch = 'A'; ch <= 'Z'; ch++)
+	{
+		printf("%c", ch);
 
-	//printf("\n3번문제\n");
+		if(ch == 'M'|| ch=='Z')
+		{
+			printf("\n");
+
+			if(ch=='Z') break;
+			else continue;
+		}
+
+		printf(",");
+	}*/
+
+	//printf("3번문제\n");
 
 	//int sum = 0;
 
 	//for (int i = 1; i <= 10; i++)
 	//{
-	//	if (i %3 ==0 && i<9)
+	//	if (i % 3 ==0)
 	//	{
-	//		printf("%d+",i);//3.6가 출력됨
+	//		printf("%d",i);
 	//		sum += i;
-	//	}
-	//	else if (i == 9)
-	//	{
-	//		printf("%d=", i);
-	//		sum += i;
-	//	}
 	//	
+	//		if (i == 9)	printf("=");
+	//		else printf("+");
+	//	}
 	//}
 	//printf("%d", sum);
 
-	/*int sum1 = 0; 2번문제
+	/*int sum1 = 0; //2번문제
 
-	for (int i = 1; i <= 30; i++)
+	for (int i = 0, money = 1; i < 30; i++)
 	{
-		i *= 2;
-		sum += i;
+		sum1 += money;//어떨때 변수를 더하는게 좋다고 생각하는지?
+		money *= 2;
 	}
-	printf("30일동안 저축한 금액 : %d", sum);*/
+	printf("30일동안 저축한 금액 : %d", sum1);
 
-	//int sum2 =0;
-	//
+	int sum2 =0;
+	
 	//for (int i = 1; i <= 1000; i++)
 	//{
 	//	if (i % 15 == 0 || i % 3 != 0)
@@ -150,8 +149,15 @@ void main()
 	//	else if (i % 3 == 0)
 	//		continue;
 	//}
-	//printf("1 ~ 1000사이의 합 : %d\n", sum2);
-	//printf("(3의 배수는 제외하며 3과 5의 공배수는 제외하지 않는다)\n");
+	for (int i = 1; i <= 1000; i++)
+	{
+		if (i % 3 == 0 && i % 5 != 0)
+			continue;
+
+		sum2 += i;
+	}
+	printf("\n1 ~ 1000사이의 합 : %d\n", sum2);
+printf("(3의 배수는 제외하며 3과 5의 공배수는 제외하지 않는다)\n");*/
 
 	//int i=0,sum3 = 0;
 	//printf("3번문제. 10000 을 넘기 직전의 수\n");
@@ -167,16 +173,29 @@ void main()
 	//	printf("i : %d\tSum : %d", i, sum3);
 
 
-		for (int i = 2; i <= 9;i++)
-		{
-			printf("====%d단====\n", i);
-
-			for (int j = 1; j <= 9; j++)
+			for (int i = 2; i <= 9; i++) 
 			{
-				printf("%d x %d = %d\n", i, j, i * j);
+				printf("====%d단====\n", i); //0일때 단수가 나오게
+
+				for (int j = 1; j <= 9; j++) //1일대 곱하기가 나오게
+				{
+					printf("%d x %d = %d\n", i, j, i * j);
+				}
 			}
-		}
+		
+	
 
+	//int i = 0, sum3 = 0;
+	//printf("3번문제. 10000 을 넘기 직전의 수\n");
+	//for (i = 1; i < 10000; i++)
+	//{
+	//	if (i % 2 != 0)
+	//	{
+	//		if ((sum3 + i) >= 10000)
+	//			break;
 
-
+	//		sum3 += i;//홀수의 합
+	//	}
+	//}
+	//printf("i : %d\tSum : %d", i, sum3);
 }
