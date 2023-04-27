@@ -199,7 +199,7 @@ printf("(3의 배수는 제외하며 3과 5의 공배수는 제외하지 않는다)\n");*/
 	//}
 	//printf("i : %d\tSum : %d", i, sum3);
 
-			for (int i = 0; i <= 9; i++)
+			/*for (int i = 0; i <= 9; i++)
 			{
 				for (int j = 2; j <= 9; j++)
 				{
@@ -209,5 +209,17 @@ printf("(3의 배수는 제외하며 3과 5의 공배수는 제외하지 않는다)\n");*/
 						printf("%d x %d = %d\t", j,i,j*i);
 				}
 				printf("\n");
-			}
+			}*/
+
+int length;
+printf("높이 입력 : ");
+scanf_s("%d", &length);
+for (length = 1; length >0 ; length++)
+{
+	for (int i = 1; i=length  ; i++)
+	{
+			printf("★");		
+	}
+}
+	
 }
