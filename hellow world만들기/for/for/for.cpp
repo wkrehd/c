@@ -199,27 +199,57 @@ printf("(3의 배수는 제외하며 3과 5의 공배수는 제외하지 않는다)\n");*/
 	//}
 	//printf("i : %d\tSum : %d", i, sum3);
 
-			/*for (int i = 0; i <= 9; i++)
-			{
-				for (int j = 2; j <= 9; j++)
-				{
-					if(i==0)
-						printf("====%d단====\t", j);
-					if (i != 0)
-						printf("%d x %d = %d\t", j,i,j*i);
-				}
-				printf("\n");
-			}*/
+			//for (int i = 0; i <= 9; i++)
+			//{
+			//	for (int j = 2; j <= 9; j++)
+			//	{
+			//		if(i==0)
+			//			printf("====%d단====\t", j);
+			//		if (i != 0)//else 
+			//			printf("%d x %d = %d\t", j,i,j*i);
+			//	}
+			//	printf("\n");
+			//}
 
-int length;
-printf("높이 입력 : ");
+//int length;
+//printf("높이 입력 : ");
+//scanf_s("%d", &length);
+//for (int num= 1;  num<=length ; num++)
+//{
+//	for (int i = 1; i<=num  ; i++)//적당한값을 넣어보기
+//	{
+//			printf("★");
+//	}
+//	printf("\n");
+//}
+
+	// n = 1, l = 3
+	// i = 1
+	// n = 2
+	// i = 1 => i = 2
+	// n = 3
+	// i = 1, i = 2, i = 3
+	// n = 4//
+
+int length, width;
+printf("세로 입력 : ");
 scanf_s("%d", &length);
-for (length = 1; length >0 ; length++)
+printf("가로 입력 : ");
+scanf_s("%d", &width);
+for (int i = 1; i <= length; i++)
 {
-	for (int i = 1; i=length  ; i++)
+	for (int num = 1; num <= width; num++)
 	{
-			printf("★");		
+		printf("★");
 	}
+	printf("\n");
 }
-	
+
+
+
+
+
+
+
+
 }
