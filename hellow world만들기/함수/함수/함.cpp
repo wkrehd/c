@@ -2,15 +2,48 @@
 #define PLAYER1 1//플레이어 뒤에 숫자를 붙인 이유?
 #define PLAYER2 2
 #define DRAW 3
-int Vs(int P1, int P2)
-{
-	if (P1 > P2)
-		return PLAYER1;
-	else if (P1 < P2)
-		return PLAYER2;
+#define odd 1
+#define even 2
+
+int cf(int x, int y)
+{	
+	if (x > y)
+		return x; 
 	else
-		return DRAW;
+		return y;
 }
+int oddeven(int x) 
+{
+	if (x % 2 == 0)
+		return even;
+	else
+		return odd;
+}
+int abs(int x)
+{
+	if (x >= 0)
+		return x;
+	else
+		return -x;
+}
+
+int backnum(int x)
+{
+	while (x)
+		
+		return	x % 10;
+		x /= 10;
+		
+}
+//int Vs(int P1, int P2)
+//{
+//	if (P1 > P2)
+//		return PLAYER1;
+//	else if (P1 < P2)
+//		return PLAYER2;
+//	else
+//		return DRAW;
+//}
 //int Sum(int x, int y)
 //{
 //	int answer;
@@ -62,7 +95,7 @@ void main()
 	scanf_s("%d%d", &num1, &num2);
 	int answer = Sum(num1, num2);
 	printf("%d+%d = %d", num1, num2, answer);*/
-	
+
 	/*int num1, sum = 0;
 	printf("정수를 입력하시오 : ");
 	scanf_s("%d", &num1);
@@ -82,7 +115,7 @@ void main()
 	avg = Avg(num1, num2);
 	show_avg(num1, num2, avg);*/
 
-	int Player1, Player2;
+	/*int Player1, Player2;
 	printf("Player1의 전투력 : ");
 	scanf_s("%d", &Player1);
 	printf("Player2의 전투력 : ");
@@ -103,6 +136,32 @@ void main()
 	{
 		printf("~무승부~");
 		break;
+	}*/
+	int num1, num2;
+	printf("1. 두 수를 입력하시오 : ");
+	scanf_s("%d%d", &num1, &num2);
+	printf("%d와 %d중 더 큰 수는 %d입니다.\n", num1, num2, cf(num1, num2));
+
+	int num3;
+	printf("2. 정수 하나를 입력하시오 : ");
+	scanf_s("%d",&num3);
+	switch (oddeven(num3))
+	{
+	case odd:
+		printf("%d는 홀수 입니다.\n",num3);
+		break;
+	case even:
+			printf("%d는 짝수 입니다.\n",num3);
+			break;
 	}
-	}
+	
+	int num4;
+	printf("3. 정수 하나를 입력하시오 : ");
+	scanf_s("%d", &num4);
+	printf("%d의 절대값 : %d\n", num4, abs(num4));
+
+	int num5;
+	printf("4. 정수 하나를 입력하시오 : ");
+	scanf_s("%d", &num5);
+	printf("%d의 거꾸로 수 : %d\n", num5,backnum(num5));
 }
