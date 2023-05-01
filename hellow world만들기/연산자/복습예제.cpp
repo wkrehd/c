@@ -1,7 +1,7 @@
-//#include<stdio.h>
+#include<stdio.h>
 //
-//void main()
-//{
+void main()
+{
 //	/*int num1, num2;
 //	printf("두 정수를 입력하시오 : ");
 //	scanf_s("%d%d",&num1,&num2);
@@ -239,5 +239,29 @@
 //	}
 //
 //
+
+//int fee=0 ,i=0;
+//printf("말을 탄 시간을 입력하시오 : ");
+//scanf_s("%d",&i);
+//if (i > 30)
+//{
+//	i = (i - 30);
+//	
+// if (i > 10)
+//{
+//	i /= 10;
+//	fee = 3000 + (i * 500);
+//	printf("이용 금액은 %d 이다.\n", fee);
+//}
+//	
+//	else if (i < 10)
+//	{
+//		fee = 3000 + 500;
+//		printf("이용 금액은 %d 이다.\n", fee);
+//	}
+//}
+//else 
+//printf("이용 금액은 3000원 이다\n");
+
 
 }

@@ -199,24 +199,25 @@ void main()
 	}
 	printf("국어점수 : %d 수학점수 : %d 영어점수 : %d\n", num1, num2, num3);
 	printf("총합점수 : %d 평균점수 : %.2f 등급 : %c", sum, avg, ch);*/
-//unsigned int  time;
-//int price;
-//printf("승마 이용시간을 입력하시오 : ");
-//scanf_s("%u", &time);/* 양수값만 입력할수있도록 하는법은?*/
-//
-//int def = (30 > time) ? 30 : time;
-//int dev = (def - 30) / 10;
-//dev += ((def - 30) % 10) ? 1 : 0;/* dev 뒤에 +=이 붙는 이유?*/
-//price = 3000 + dev * 500;
-//printf("%d분 탑승요금 : %d원\n", time, price); /*time에 양수값만 입력하도록 하는방법은 없을가?*/
-//if (time <= 30)
-//{
-//	printf("%d분 탑승요금 : %d원", time, price);
-//}
-//else 
-//{
-//	printf("%d분 탑승요금 : %d원", time, price);
-//}
+unsigned int  time;
+int price;
+printf("승마 이용시간을 입력하시오 : ");
+scanf_s("%u", &time);/* 양수값만 입력할수있도록 하는법은?*/
+
+int def = (30 > time) ? 30 : time;
+int dev = (def - 30) / 10;
+dev += ((def - 30) % 10) ? 1 : 0;/* dev 뒤에 +=이 붙는 이유?*/
+price = 3000 + dev * 500;
+printf("%d분 탑승요금 : %d원\n", time, price); /*time에 양수값만 입력하도록 하는방법은 없을가?*/
+if (time <= 30)
+{
+	printf("%d분 탑승요금 : %d원", time, price);
+}
+else 
+{
+	printf("%d분 탑승요금 : %d원", time, price);
+
+}
 //int quantity, money = 0;
 //printf("구매할 도시락 갯수를 입력하시오 : ");
 //scanf_s("%d", &quantity);
@@ -353,72 +354,72 @@ void main()
 //	}
 //}
 
-	int name, select, kor, math, eng, sum;
-	float avg;
-	int flag1 = 0, flag2 = 0;
-	while (1)
-	{
-		system("cls");//콘솔화면 전체를 지우는것
-		printf("====================\n");
-		printf("   학생성적관리\n");
-		printf("====================\n");
-		printf("   1. 학생 이름등록\n");
-		printf("   2. 3과목 점수등록\n");
-		printf("   3. 점수확인\n");
-		printf("   4. 종료\n");
-		printf("====================\n");
-		printf("입력 : ");
-		scanf_s("%d", &select);
+	//int name, select, kor, math, eng, sum;
+	//float avg;
+	//int flag1 = 0, flag2 = 0;
+	//while (1)
+	//{
+	//	system("cls");//콘솔화면 전체를 지우는것
+	//	printf("====================\n");
+	//	printf("   학생성적관리\n");
+	//	printf("====================\n");
+	//	printf("   1. 학생 이름등록\n");
+	//	printf("   2. 3과목 점수등록\n");
+	//	printf("   3. 점수확인\n");
+	//	printf("   4. 종료\n");
+	//	printf("====================\n");
+	//	printf("입력 : ");
+	//	scanf_s("%d", &select);
 
-		system("cls");
-		switch (select)
-		{
-		case 1:
-			printf("이름 입력 : ");
-			scanf_s("%d", &name);
-			flag1 = 1;
-			break;
-		case 2:
-			printf("세과목의 성적을 입력하시오\n");
-			printf("국어 : ");
-			scanf_s("%d", &kor);
-			printf("수학 : ");
-			scanf_s("%d", &math);
-			printf("영어 : ");
-			scanf_s("%d", &eng);
-			flag2 = 1;
-			break;
-		case 3:
+	//	system("cls");
+	//	switch (select)
+	//	{
+	//	case 1:
+	//		printf("이름 입력 : ");
+	//		scanf_s("%d", &name);
+	//		flag1 = 1;
+	//		break;
+	//	case 2:
+	//		printf("세과목의 성적을 입력하시오\n");
+	//		printf("국어 : ");
+	//		scanf_s("%d", &kor);
+	//		printf("수학 : ");
+	//		scanf_s("%d", &math);
+	//		printf("영어 : ");
+	//		scanf_s("%d", &eng);
+	//		flag2 = 1;
+	//		break;
+	//	case 3:
 
-			if (flag1 ==0)/*((kor==0 && math==0 && eng==0)) *///=은뒤에값을 넣는것  ==뒤의값이 앞의값과 같다
-			{
-				printf("이름을 입력하세요\n");
-			}
-			if (flag2 == 0)
-			{
-				printf("점수를 입력하세요\n");
-			}
+	//		if (flag1 ==0)/*((kor==0 && math==0 && eng==0)) *///=은뒤에값을 넣는것  ==뒤의값이 앞의값과 같다
+	//		{
+	//			printf("이름을 입력하세요\n");
+	//		}
+	//		if (flag2 == 0)
+	//		{
+	//			printf("점수를 입력하세요\n");
+	//		}
 
-			if (flag1 !=0 && flag2 != 0)
-			{
-				sum = kor + math + eng;
-				avg = sum / 3.0f;
+	//		if (flag1 !=0 && flag2 != 0)
+	//		{
+	//			sum = kor + math + eng;
+	//			avg = sum / 3.0f;
 
-				printf("====================\n");
-				printf("%d님의 점수\n", name);
-				printf("국어 : %d\n", kor);
-				printf("수학 : %d\n", math);
-				printf("영어 : %d\n", eng);
-				printf("합계 점수 : %d\n", sum);
-				printf("평균 점수 : %.2f\n", avg);
-				printf("====================\n");
-				//system("pause");//코드가 더이상 읽어지지 않도록 붙잡아 두는것
-			}
-			system("pause");
-				break;
-		case 4:
-			return;
-		}
-	}
+	//			printf("====================\n");
+	//			printf("%d님의 점수\n", name);
+	//			printf("국어 : %d\n", kor);
+	//			printf("수학 : %d\n", math);
+	//			printf("영어 : %d\n", eng);
+	//			printf("합계 점수 : %d\n", sum);
+	//			printf("평균 점수 : %.2f\n", avg);
+	//			printf("====================\n");
+	//			//system("pause");//코드가 더이상 읽어지지 않도록 붙잡아 두는것
+	//		}
+	//		system("pause");
+	//			break;
+	//	case 4:
+	//		return;
+	//	}
+	//}
 }
 
