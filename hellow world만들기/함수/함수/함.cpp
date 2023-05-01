@@ -1,39 +1,51 @@
 #include<stdio.h>
-#define PLAYER1 1//플레이어 뒤에 숫자를 붙인 이유?
+#define PLAYER1 1
 #define PLAYER2 2
 #define DRAW 3
 #define odd 1
 #define even 2
 
-int cf(int x, int y)
+int Max(int num1, int num2)
 {	
-	if (x > y)
-		return x; 
-	else
-		return y;
+	if (num1 > num2)
+		return num1;
+
+		return num2;
 }
-int oddeven(int x) 
+int Oddeven(int num)
 {
-	if (x % 2 == 0)
+	if (num % 2 == 0)
 		return even;
-	else
+
 		return odd;
 }
-int abs(int x)
+int Abs(int num) //num4의 값을 복사를 한것
 {
-	if (x >= 0)
-		return x;
+	/*if (num >= 0)
+		return num;
 	else
-		return -x;
+		return -num;*/
+	if (num < 0)
+		num = -num;
+
+	return num;
 }
 
-int backnum(int x)
+int ReversNum(int num)
 {
-	while (x)
+	int reversnum=0;
+	while (num)
+	{
+		/*printf("%d", num % 10);*/
+		reversnum *= 10;
+		reversnum += num % 10;
+		num /= 10;
+	}
+
+	return reversnum;
+	/*while (x)
 		
-		return	x % 10;
-		x /= 10;
-		
+		x % 10 ,x /= 10;		*/
 }
 //int Vs(int P1, int P2)
 //{
@@ -43,6 +55,7 @@ int backnum(int x)
 //		return PLAYER2;
 //	else
 //		return DRAW;
+// 
 //}
 //int Sum(int x, int y)
 //{
@@ -140,12 +153,13 @@ void main()
 	int num1, num2;
 	printf("1. 두 수를 입력하시오 : ");
 	scanf_s("%d%d", &num1, &num2);
-	printf("%d와 %d중 더 큰 수는 %d입니다.\n", num1, num2, cf(num1, num2));
+	printf("%d와 %d중 더 큰 수는 %d입니다.\n", num1, num2, Max(num1, num2));
+
 
 	int num3;
 	printf("2. 정수 하나를 입력하시오 : ");
 	scanf_s("%d",&num3);
-	switch (oddeven(num3))
+	switch (Oddeven(num3))
 	{
 	case odd:
 		printf("%d는 홀수 입니다.\n",num3);
@@ -158,10 +172,10 @@ void main()
 	int num4;
 	printf("3. 정수 하나를 입력하시오 : ");
 	scanf_s("%d", &num4);
-	printf("%d의 절대값 : %d\n", num4, abs(num4));
+	printf("%d의 절대값 : %d\n", num4, Abs(num4));
 
 	int num5;
 	printf("4. 정수 하나를 입력하시오 : ");
 	scanf_s("%d", &num5);
-	printf("%d의 거꾸로 수 : %d\n", num5,backnum(num5));
+	printf("%d의 거꾸로 수 : %d\n", num5, ReversNum(num5));
 }
