@@ -263,5 +263,24 @@ void main()
 //else 
 //printf("이용 금액은 3000원 이다\n");
 
+//char name[16];
+//printf("이름 입력 : ");
+//scanf("%s", name);
+//
+//printf("내 이름은 %s 입니다.", name);
+
+//char str[256];
+//printf("문자열 입력 : ");
+//scanf("%s", &str);
+//printf("str주소 : %p\n", str);
+//printf("str 값 : %s\n", str);
+
+char name[256];
+int age;
+printf("이름을 입력하시오 : ");
+scanf("%s", &name);
+printf("나이를 입력하시오 : ");
+scanf("%d", &age);
+printf("이름은 %s 나이는 %d 입니다. \n", name,age);
 
 }
