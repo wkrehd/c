@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.2.32519.379
+VisualStudioVersion = 17.5.33530.505
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "배열", "\A-00\a-00\프로그래밍 공유폴더\숙련반\2시반\김지운\c\hellow world만들기\배열\배열\배열.vcxproj", "{21C0DEE8-9D3E-4407-82A0-0106FBCCCCAA}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "배열", "배열.vcxproj", "{21C0DEE8-9D3E-4407-82A0-0106FBCCCCAA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -26,6 +26,6 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {AF29C01C-8B88-42DF-9F37-AAA0E39183C9}
+		SolutionGuid = {EC6BDE03-8DBC-42CE-8064-E3A56365E7ED}
 	EndGlobalSection
 EndGlobal
