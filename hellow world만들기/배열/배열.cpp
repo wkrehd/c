@@ -64,19 +64,25 @@ void main()
 		{1, 1, 1},
 	};*/
 
-	int arr[5][5] = { 0 };// 배열에 전부 0으로 초기화 한다
-	arr[2][2] = 1;//3째줄 3번째 칸에 1을 넣는다
+	//int arr[5][5] = { 0 };// 배열에 전부 0으로 초기화 한다
+	//arr[2][2] = 1;//3째줄 3번째 칸에 1을 넣는다
+	////for (int y = 0; y < 5; y++)
+	////{
+	////	for (int x = 0; x < 5; x++)//한개의 y줄의 x값들을 출력한다
+	////		printf("%d", arr[y][x]);
+	////	printf("\n");
+	////}
+	//arr[2][-1] = 1;
 	//for (int y = 0; y < 5; y++)
 	//{
-	//	for (int x = 0; x < 5; x++)//한개의 y줄의 x값들을 출력한다
+	//	for (int x = 0; x < 5; x++)
 	//		printf("%d", arr[y][x]);
 	//	printf("\n");
 	//}
-	arr[2][-1] = 1;
-	for (int y = 0; y < 5; y++)
-	{
-		for (int x = 0; x < 5; x++)
-			printf("%d", arr[y][x]);
-		printf("\n");
-	}
+
+	char buf[40];
+	int age = 20;
+	char Name[10] = "최정호";
+	sprintf(buf, " % s님의 나이는 % d살 입니다.", Name, age);
+	printf("%s",buf);
 }
