@@ -18,8 +18,5 @@
     <ClCompile Include="캐릭터이동코드2.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="캐릭터이동코드1.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
   </ItemGroup>
 </Project>

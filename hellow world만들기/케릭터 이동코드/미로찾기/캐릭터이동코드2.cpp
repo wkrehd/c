@@ -46,14 +46,18 @@ int map[HEIGHT][WIDTH] = {
   { 1,	1,	1,	1,	1,	1,	1,	1,	1,	1 } };
 int character[2];
 int Entry_Potal[POTAL_MAX][2];
+//{0, 0]
+//{0, 0]
+//{0, 0]
+//{0, 0]
 int Exit_Potal[POTAL_MAX][2];
 int LastObjectIndex = NULL;
-void Init()
+void Init()//여기는 모르겠음
 	{
-	int Width = (WIDTH * 2) + 1;//모르겠음
+	int Width = (WIDTH * 2) + 1;
 	int Height = HEIGHT + 1;
 	char buf[256];
-	sprintf(buf,"mode con: lines=%d cols=%d", Height, Width);
+	sprintf(buf,"mode con: lines=%d cols=%d", Height, Width);//mode con?
 	system(buf);
 	for (int y = 0; y < HEIGHT; y++)
 	{
@@ -125,7 +129,7 @@ void Move()
 	ch = getch();
 	if (ch == -32)
 		ch = getch();
-	system("cls");
+	system("cls");//콘솔화면 전체를 지우는것
 	map[character[Y]][character[X]] = LastObjectIndex;
 	switch (ch)
 	{

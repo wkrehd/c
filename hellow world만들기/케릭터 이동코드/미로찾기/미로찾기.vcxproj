@@ -128,7 +128,6 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="캐릭터이동코드1.cpp" />
     <ClCompile Include="캐릭터이동코드2.cpp">
       <SDLCheck Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</SDLCheck>
     </ClCompile>
