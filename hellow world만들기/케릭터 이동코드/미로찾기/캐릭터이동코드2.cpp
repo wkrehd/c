@@ -46,16 +46,18 @@ int map[HEIGHT][WIDTH] = {
   { 1,	1,	1,	1,	1,	1,	1,	1,	1,	1 } };
 int character[2];
 int Entry_Potal[POTAL_MAX][2];
-//{0, 0]
-//{0, 0]
-//{0, 0]
-//{0, 0]
+//{
+//	{0, 0}, 0 = 10 - ENTRY_START(10)
+//	{0, 0},	1 = 11 - ENTRY_START(10)
+//	{0, 0},	2 = 12 - ENTRY_START(10)
+//	{0, 0}	3 = 13 - ENTRY_START(10)
+//}
 int Exit_Potal[POTAL_MAX][2];
 int LastObjectIndex = NULL;
 void Init()//여기는 모르겠음
 	{
-	int Width = (WIDTH * 2) + 1;
-	int Height = HEIGHT + 1;
+	int Width = (WIDTH * 4) + 1;
+	int Height = (HEIGHT * 2)+ 1;
 	char buf[256];
 	sprintf(buf,"mode con: lines=%d cols=%d", Height, Width);//mode con?
 	system(buf);

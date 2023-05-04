@@ -1,4 +1,9 @@
 #include<stdio.h>
+#include<Windows.h>
+#include<time.h>
+
+#define SEC 1000
+#define MAX_COUNT 3
 
 void main()
 {
@@ -80,9 +85,48 @@ void main()
 	//	printf("\n");
 	//}
 
-	char buf[40];
+	/*char buf[40];
 	int age = 20;
 	char Name[10] = "최정호";
 	sprintf(buf, " % s님의 나이는 % d살 입니다.", Name, age);
-	printf("%s",buf);
+	printf("%s",buf);*/
+
+	/*printf("전화 거는중 ☏");
+	for (int i = 0; i < 3; i++)
+	{
+		printf(".");
+	}*/
+
+	/*printf("전화 거는중☏");
+	int OldClock = clock();
+	int count = 1;
+	while (count <= 3)
+	{
+		if (clock() - OldClock >= SEC)
+		{
+			count++;
+			printf(".");
+			OldClock = clock();
+		}
+	}*/
+
+//printf("전화 거는중☏");
+//int OldClock = clock();
+//int count = 0; 
+//while (1)
+//{
+//	if (clock() - OldClock >= SEC)
+//	{
+//		count++;
+//		if (count > MAX_COUNT)
+//		{
+//			count = 0;
+//			system("cls");
+//			printf("전화 거는중☏");
+//		}
+//		else
+//			printf(".");
+//		OldClock = clock();
+//	}
+//}
 }
