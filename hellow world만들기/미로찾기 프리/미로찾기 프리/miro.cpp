@@ -59,42 +59,143 @@ int map[HEIGHT][WIDTH] = {
 	{1, 0, 1, 1, 1, 0, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 45, 1},
 	{1, 0, 0, 0, 0, 0, 1, 46, 1, 47, 0, 0, 0, 65, 0, 0, 26, 1, 27, 1},
 	{1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1} };
+int character[2];
 int Entry_Potal[POTAL_MAX][2];
 int Exit_Potal[POTAL_MAX][2];
 int Door_Potal[DOOR_MAX][1];
-int SWITCH_Potal[SWITCH_MAX][2];
+int Switch_Potal[SWITCH_MAX][2];
 int LastObjectIndex = NULL;
+//int eacape[2];
 
 void Init()
 {
-		int Width = (WIDTH * 3) + 2;
-		int Height = (HEIGHT * 3) + 3;
-		char buf[256];
-		sprintf(buf, "mode con: lines=%d cols=%d", Height, Width);//mode con?
-		system(buf);
+	int Width = (WIDTH * 3) + 2;
+	int Height = (HEIGHT * 3) + 3;
+	char buf[256];
+	sprintf(buf, "mode con: lines=%d cols=%d", Height, Width);//mode con?
+	system(buf);
+	for (int y = 0; y < HEIGHT; y++)
+	{
+		for (int x = 0; x < WIDTH; x++)
+		{
+			if (map[y][x] == CHARACTER)
+			{
+				character[X] = x;
+				character[Y] = y;
+			}
+			else if (map[y][x] >= ENTRY_START && map[y][x] < ENTRY_START + POTAL_MAX)
+			{
+				Entry_Potal[map[y][x] - ENTRY_START][X] = x;
+				Entry_Potal[map[y][x] - ENTRY_START][Y] = y;
+			}
+			else if (map[y][x] >= EXIT_START && map[y][x] < EXIT_START + POTAL_MAX)
+			{
+				Exit_Potal[map[y][x] - EXIT_START][X] = x;
+				Exit_Potal[map[y][x] - EXIT_START][Y] = y;
+			}
+			else if (map[y][x] >= DOOR && map[y][x] < DOOR + DOOR_MAX)
+			{
+				Door_Potal[map[y][x] - DOOR][X] = X;
+				Door_Potal[map[y][x] - DOOR][Y] = Y;
+			}
+			else if (map[y][x] >= SWITCH && map[y][x] < SWITCH + SWITCH_MAX)
+			{
+				Switch_Potal[map[y][x] - SWITCH][X] = X;
+				Switch_Potal[map[y][x] - SWITCH][Y] = Y;
+			}
+		}
+}
+
+void MapDraw()
+{
 		for (int y = 0; y < HEIGHT; y++)
 		{
 			for (int x = 0; x < WIDTH; x++)
 			{
-				if(map[y][x] == CHARACTER)
+				if (map[y][x] == WALL)
+					printf("¢Ì");
+				else if (map[y][x] == CHARACTER)
 				{
-					character[X] = x;
-					character[Y] = y;
+					RED
+						printf("¢¿");
+					ORIGINAL
 				}
 				else if (map[y][x] >= ENTRY_START && map[y][x] < ENTRY_START + POTAL_MAX)
 				{
-					Entry_Potal[map[y][x] - ENTRY_START][X] = x;
-					Entry_Potal[map[y][x] - ENTRY_START][Y] = y;
+					BLUE
+						printf("¡Ý");
+					ORIGINAL
 				}
 				else if (map[y][x] >= EXIT_START && map[y][x] < EXIT_START + POTAL_MAX)
 				{
-					Exit_Potal[map[y][x] - EXIT_START][X] = x;
-					Exit_Potal[map[y][x] - EXIT_START][Y] = y;
+					YELLOW
+						printf("¡Ü");
+					ORIGINAL
 				}
 				else if (map[y][x] >= DOOR && map[y][x] < DOOR + DOOR_MAX)
 				{
-					Door_Potal[map[y][x] - 
+					GOLD
+						printf("¢Æ");
+					ORIGINAL
 				}
+				else if (map[y][x] >= SWITCH && map[y][x] < SWITCH + SWITCH_MAX)
+				{
+					PUPPLE
+						printf("¢Á");
+					ORIGINAL
+				}
+				else if (map[y][x] == NULL)
+					printf("  ");
 			}
+			printf("\n");
 		}
+}
+void MoveCheck()
+{
+	int index = map[character[Y]][character[X]];
+	if (index >= ENTRY_START && index < ENTRY_START + POTAL_MAX)
+	{
+		character[X] = Exit_Potal[index - ENTRY_START][X];
+		character[Y] = Exit_Potal[index - ENTRY_START][Y];
+	}
+}
+void Move()
+{
+	char ch;
+	ch = getch();
+	if (ch == -32)
+		ch = getch();
+	system("cls");
+	map[character[Y]][character[X]] = LastObjectIndex;
+	switch (ch)
+	{
+	case LEFT:
+		if (map[character[Y]][character[X] - 1] != WALL)
+			character[X]--;
+		break;
+	case RIGHT:
+		if (map[character[Y]][character[X] + 1] != WALL)
+			character[X]++;
+		break;
+	case UP:
+		if (map[character[Y] - 1][character[X]] != WALL)
+			character[Y]--;
+		break;
+	case DOWN:
+		if (map[character[Y] + 1][character[X]] != WALL)
+			character[Y]++;
+		break;
+	}
+	MoveCheck();
+	LastObjectIndex = map[character[Y]][character[X]];
+	map[character[Y]][character[X]] = CHARACTER;
+}
+void main()
+{
+	Init();
+	while (1)
+	{
+		MapDraw();
+		Move();
+	}
 }

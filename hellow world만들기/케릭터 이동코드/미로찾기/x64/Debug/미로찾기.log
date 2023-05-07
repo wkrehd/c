@@ -1,7 +1,7 @@
-﻿C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(514,5): warning MSB8028: 중간 디렉터리(x64\Debug\)에 다른 프로젝트(미로찾기.vcxproj)에서 공유하는 파일이 포함되어 있습니다.  이로 인해 잘못된 정리 및 다시 빌드 동작이 수행될 수 있습니다.
+﻿C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(517,5): warning MSB8028: 중간 디렉터리(x64\Debug\)에 다른 프로젝트(미로찾기.vcxproj)에서 공유하는 파일이 포함되어 있습니다.  이로 인해 잘못된 정리 및 다시 빌드 동작이 수행될 수 있습니다.
   캐릭터이동코드2.cpp
-\\A-00\a-00\프로그래밍 공유폴더\숙련반\2시반\김지운\c\hellow world만들기\케릭터 이동코드\미로찾기\캐릭터이동코드2.cpp(62,2): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-\\A-00\a-00\프로그래밍 공유폴더\숙련반\2시반\김지운\c\hellow world만들기\케릭터 이동코드\미로찾기\캐릭터이동코드2.cpp(131,7): warning C4996: 'getch': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _getch. See online help for details.
-\\A-00\a-00\프로그래밍 공유폴더\숙련반\2시반\김지운\c\hellow world만들기\케릭터 이동코드\미로찾기\캐릭터이동코드2.cpp(133,8): warning C4996: 'getch': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _getch. See online help for details.
-\\A-00\a-00\프로그래밍 공유폴더\숙련반\2시반\김지운\c\hellow world만들기\케릭터 이동코드\미로찾기\캐릭터이동코드2.cpp(160,1): warning C4326: 'main'의 반환 형식이 'int'이어야 하는데 'void'입니다.
-  미로찾기.vcxproj -> \\A-00\a-00\프로그래밍 공유폴더\숙련반\2시반\김지운\c\hellow world만들기\케릭터 이동코드\미로찾기\x64\Debug\케릭터 이.exe
+C:\Users\김지운\Desktop\프로그래밍.1\hellow world만들기\케릭터 이동코드\미로찾기\캐릭터이동코드2.cpp(62,2): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\김지운\Desktop\프로그래밍.1\hellow world만들기\케릭터 이동코드\미로찾기\캐릭터이동코드2.cpp(131,7): warning C4996: 'getch': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _getch. See online help for details.
+C:\Users\김지운\Desktop\프로그래밍.1\hellow world만들기\케릭터 이동코드\미로찾기\캐릭터이동코드2.cpp(133,8): warning C4996: 'getch': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _getch. See online help for details.
+C:\Users\김지운\Desktop\프로그래밍.1\hellow world만들기\케릭터 이동코드\미로찾기\캐릭터이동코드2.cpp(160,1): warning C4326: 'main'의 반환 형식이 'int'이어야 하는데 'void'입니다.
+  미로찾기.vcxproj -> C:\Users\김지운\Desktop\프로그래밍.1\hellow world만들기\케릭터 이동코드\미로찾기\x64\Debug\케릭터 이.exe
