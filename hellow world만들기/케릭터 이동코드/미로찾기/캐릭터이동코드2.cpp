@@ -47,9 +47,9 @@ int map[HEIGHT][WIDTH] = {
 int character[2];
 int Entry_Potal[POTAL_MAX][2];
 //{
-//	{0, 0}, 0 = 10 - ENTRY_START(10)
-//	{0, 0},	1 = 11 - ENTRY_START(10)
-//	{0, 0},	2 = 12 - ENTRY_START(10)
+//	{2, 2}, 0 = 10 - ENTRY_START(10)
+//	{2, 7},	1 = 11 - ENTRY_START(10)
+//	{2, 4},	2 = 12 - ENTRY_START(10)
 //	{0, 0}	3 = 13 - ENTRY_START(10)
 //}
 int Exit_Potal[POTAL_MAX][2];
@@ -72,8 +72,9 @@ void Init()//여기는 모르겠음
 			}
 			else if (map[y][x] >= ENTRY_START && map[y][x] < ENTRY_START + POTAL_MAX)
 			{
-				Entry_Potal[map[y][x] - ENTRY_START][X] = x;
-				Entry_Potal[map[y][x] - ENTRY_START][Y] = y;
+				int entryIndex = map[y][x] - ENTRY_START;
+				Entry_Potal[entryIndex][X] = x;
+				Entry_Potal[entryIndex][Y] = y;
 			}
 			else if (map[y][x] >= EXIT_START && map[y][x] < EXIT_START + POTAL_MAX)
 			{

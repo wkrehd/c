@@ -24,14 +24,14 @@
 #define Y 0
 #define X 1
 #define CHARACTER 2
-#define POTAL_MAX 18//포탈 갯수
+#define POTAL_MAX 18
 #define ENTRY_START 10
 #define EXIT_START 30
 #define DOOR 50
 #define DOOR_MAX 6 
 #define SWITCH 60
 #define SWITCH_MAX 6
-#define ESCAPE 2
+#define ESCAPE 70
 #define LEFT 75
 #define RIGHT 77
 #define UP 72
@@ -40,7 +40,7 @@
 #define HEIGHT 20
 int map[HEIGHT][WIDTH] = {
 	{1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
-	{1, 2, 1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 50, 0, 0, 0, 51, 11, 1, 0},
+	{1, 2, 1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 50, 0, 0, 0, 0, 51, 11, 1},
 	{1, 0, 1, 12, 1, 0, 0, 0, 1, 0, 1, 1, 1, 0, 0, 0, 0, 1, 1, 1},
 	{1, 0, 1, 1, 1, 1, 1, 1, 1, 30, 1, 0, 0, 0, 31, 32, 0, 0, 0, 1},
 	{1, 0, 0, 13, 1, 14, 0, 0, 33, 0, 1, 0, 0, 0, 34, 35, 0, 0, 0, 1},
@@ -62,17 +62,17 @@ int map[HEIGHT][WIDTH] = {
 int character[2];
 int Entry_Potal[POTAL_MAX][2];
 int Exit_Potal[POTAL_MAX][2];
-int Door_Potal[DOOR_MAX][1];
+int Door_Potal[DOOR_MAX][2];
 int Switch_Potal[SWITCH_MAX][2];
 int LastObjectIndex = NULL;
-//int eacape[2];
+int eacape[2];
 
 void Init()
 {
 	int Width = (WIDTH * 3) + 2;
 	int Height = (HEIGHT * 3) + 3;
 	char buf[256];
-	sprintf(buf, "mode con: lines=%d cols=%d", Height, Width);//mode con?
+	sprintf(buf, "mode con: lines=%d cols=%d", Height, Width);
 	system(buf);
 	for (int y = 0; y < HEIGHT; y++)
 	{
@@ -94,16 +94,28 @@ void Init()
 				Exit_Potal[map[y][x] - EXIT_START][Y] = y;
 			}
 			else if (map[y][x] >= DOOR && map[y][x] < DOOR + DOOR_MAX)
+				//{0}
+				//{0}
+				//{0}
+				//{0}
+				//{0}
+				//{0}
 			{
-				Door_Potal[map[y][x] - DOOR][X] = X;
-				Door_Potal[map[y][x] - DOOR][Y] = Y;
+				Door_Potal[map[y][x] - DOOR][X] = x;
+				Door_Potal[map[y][x] - DOOR][Y] = y;
 			}
 			else if (map[y][x] >= SWITCH && map[y][x] < SWITCH + SWITCH_MAX)
 			{
-				Switch_Potal[map[y][x] - SWITCH][X] = X;
-				Switch_Potal[map[y][x] - SWITCH][Y] = Y;
+				Switch_Potal[map[y][x] - SWITCH][X] = x;
+				Switch_Potal[map[y][x] - SWITCH][Y] = y;
+			}
+			else if (map[y][x] == ESCAPE)
+			{
+				eacape[X] = x;
+				eacape[Y] = y;
 			}
 		}
+	}
 }
 
 void MapDraw()
@@ -117,7 +129,7 @@ void MapDraw()
 				else if (map[y][x] == CHARACTER)
 				{
 					RED
-						printf("♧");
+						printf("♥");
 					ORIGINAL
 				}
 				else if (map[y][x] >= ENTRY_START && map[y][x] < ENTRY_START + POTAL_MAX)
@@ -144,11 +156,20 @@ void MapDraw()
 						printf("⊙");
 					ORIGINAL
 				}
+				else if (map[y][x] == ESCAPE)
+				{
+					RED
+					printf(">>");
+					ORIGINAL
+				}
 				else if (map[y][x] == NULL)
 					printf("  ");
 			}
 			printf("\n");
 		}
+
+		BLUE printf("입구 : ◎\t"); YELLOW printf("출구 : ●\n");
+		GOLD printf("문 : ▒\t\t"); PLUM printf("스위치 : ⊙");
 }
 void MoveCheck()
 {
@@ -157,6 +178,12 @@ void MoveCheck()
 	{
 		character[X] = Exit_Potal[index - ENTRY_START][X];
 		character[Y] = Exit_Potal[index - ENTRY_START][Y];
+	}
+	else if (index >= SWITCH && index < SWITCH + SWITCH_MAX)
+	{
+		int x = Door_Potal[index - SWITCH][X];
+		int y = Door_Potal[index - SWITCH][Y];
+		map[y][x] = NULL;
 	}
 }
 void Move()
@@ -170,20 +197,35 @@ void Move()
 	switch (ch)
 	{
 	case LEFT:
-		if (map[character[Y]][character[X] - 1] != WALL)
+	{
+		int tile = map[character[Y]][character[X] - 1];
+		if (WALL != tile && DOOR != tile)
 			character[X]--;
+	}
 		break;
+
 	case RIGHT:
-		if (map[character[Y]][character[X] + 1] != WALL)
+	{
+		int tile = map[character[Y]][character[X] + 1];
+		if (WALL != tile && DOOR != tile)
 			character[X]++;
+	}
 		break;
 	case UP:
-		if (map[character[Y] - 1][character[X]] != WALL)
+	{
+		int tile = map[character[Y] -1][character[X]];
+		if (WALL != tile && DOOR != tile)
 			character[Y]--;
+	}
+		//if (map[character[Y] - 1][character[X]] != WALL && DOOR)
+			//character[Y]--;
 		break;
 	case DOWN:
-		if (map[character[Y] + 1][character[X]] != WALL)
+	{
+		int tile = map[character[Y] + 1][character[X]];
+		if (WALL != tile && DOOR != tile)
 			character[Y]++;
+	}
 		break;
 	}
 	MoveCheck();
@@ -198,4 +240,5 @@ void main()
 		MapDraw();
 		Move();
 	}
+	
 }

@@ -1,10 +1,1 @@
-﻿  miro.cpp
-C:\Users\김지운\Desktop\프로그래밍.1\hellow world만들기\미로찾기 프리\미로찾기 프리\miro.cpp(109,6): error C2601: 'MapDraw': 지역 함수 정의가 잘못되었습니다.
-C:\Users\김지운\Desktop\프로그래밍.1\hellow world만들기\미로찾기 프리\미로찾기 프리\miro.cpp(71): message : 이 줄에 짝이 되지 않는 '{'가 들어 있습니다.
-C:\Users\김지운\Desktop\프로그래밍.1\hellow world만들기\미로찾기 프리\미로찾기 프리\miro.cpp(153,6): error C2601: 'MoveCheck': 지역 함수 정의가 잘못되었습니다.
-C:\Users\김지운\Desktop\프로그래밍.1\hellow world만들기\미로찾기 프리\미로찾기 프리\miro.cpp(71): message : 이 줄에 짝이 되지 않는 '{'가 들어 있습니다.
-C:\Users\김지운\Desktop\프로그래밍.1\hellow world만들기\미로찾기 프리\미로찾기 프리\miro.cpp(162,6): error C2601: 'Move': 지역 함수 정의가 잘못되었습니다.
-C:\Users\김지운\Desktop\프로그래밍.1\hellow world만들기\미로찾기 프리\미로찾기 프리\miro.cpp(71): message : 이 줄에 짝이 되지 않는 '{'가 들어 있습니다.
-C:\Users\김지운\Desktop\프로그래밍.1\hellow world만들기\미로찾기 프리\미로찾기 프리\miro.cpp(193,6): error C2601: 'main': 지역 함수 정의가 잘못되었습니다.
-C:\Users\김지운\Desktop\프로그래밍.1\hellow world만들기\미로찾기 프리\미로찾기 프리\miro.cpp(71): message : 이 줄에 짝이 되지 않는 '{'가 들어 있습니다.
-C:\Users\김지운\Desktop\프로그래밍.1\hellow world만들기\미로찾기 프리\미로찾기 프리\miro.cpp(71): fatal  error C1075: '{': 일치하는 토큰을 찾을 수 없습니다.
+﻿
