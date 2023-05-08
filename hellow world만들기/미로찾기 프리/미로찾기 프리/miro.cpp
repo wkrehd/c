@@ -170,8 +170,9 @@ void MapDraw()
 
 		BLUE printf("입구 : ◎\t"); YELLOW printf("출구 : ●\n");
 		GOLD printf("문 : ▒\t\t"); PLUM printf("스위치 : ⊙");
+		ORIGINAL
 }
-void MoveCheck()
+int MoveCheck()
 {
 	int index = map[character[Y]][character[X]];
 	if (index >= ENTRY_START && index < ENTRY_START + POTAL_MAX)
@@ -190,9 +191,20 @@ void MoveCheck()
 		int x = Door_Potal[index - SWITCH][X];
 		int y = Door_Potal[index - SWITCH][Y];
 		map[y][x] = NULL;
+
+		x = Switch_Potal[index - SWITCH][X];
+		y = Switch_Potal[index - SWITCH][Y];
+		map[y][x] = NULL;
 	}
+
+	if ()//탈출 성공 조건
+	{
+		return 1;
+	}
+
+	return 0;
 }
-void Move()
+int Move()
 {
 	char ch;
 	ch = getch();
@@ -234,9 +246,12 @@ void Move()
 	}
 		break;
 	}
-	MoveCheck();
+	
+	int isExit = MoveCheck();
 	LastObjectIndex = map[character[Y]][character[X]];
 	map[character[Y]][character[X]] = CHARACTER;
+
+	return isExit;
 }
 void main()
 {
@@ -244,7 +259,7 @@ void main()
 	while (1)
 	{
 		MapDraw();
-		Move();
+		if (Move())break;
 	}
 	
 }
