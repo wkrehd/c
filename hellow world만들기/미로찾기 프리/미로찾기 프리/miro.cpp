@@ -197,7 +197,7 @@ int MoveCheck()
 		map[y][x] = NULL;
 	}
 
-	if ()//탈출 성공 조건
+	if (index == ESCAPE)//탈출 성공 조건
 	{
 		return 1;
 	}
@@ -247,7 +247,7 @@ int Move()
 		break;
 	}
 	
-	int isExit = MoveCheck();
+	int isExit = MoveCheck(1);
 	LastObjectIndex = map[character[Y]][character[X]];
 	map[character[Y]][character[X]] = CHARACTER;
 
@@ -259,7 +259,7 @@ void main()
 	while (1)
 	{
 		MapDraw();
-		if (Move())break;
+		if (Move(0))break;
 	}
 	
 }
