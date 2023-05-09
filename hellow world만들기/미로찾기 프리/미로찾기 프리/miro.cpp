@@ -69,8 +69,8 @@ int eacape[2];
 
 void Init()
 {
-	int Width = (WIDTH * 3) + 2;
-	int Height = (HEIGHT * 3) + 3;
+	int Width = (WIDTH * 2) + 2;
+	int Height = (HEIGHT) + 3;
 	char buf[256];
 	sprintf(buf, "mode con: lines=%d cols=%d", Height, Width);
 	system(buf);
@@ -217,7 +217,7 @@ int Move()
 	case LEFT:
 	{
 		int tile = map[character[Y]][character[X] - 1];
-		if (WALL != tile && DOOR != tile)
+		if (WALL != tile &&	!(tile >= DOOR && tile < DOOR + DOOR_MAX))//케릭터가 x-1이동했을때 벽이아니고 50<=tile<57 이 아니면 이동이 되야함
 			character[X]--;
 	}
 		break;
@@ -225,14 +225,14 @@ int Move()
 	case RIGHT:
 	{
 		int tile = map[character[Y]][character[X] + 1];
-		if (WALL != tile && DOOR != tile)
+		if (WALL != tile && !(tile >= DOOR && tile < DOOR + DOOR_MAX))
 			character[X]++;
 	}
 		break;
 	case UP:
 	{
 		int tile = map[character[Y] -1][character[X]];
-		if (WALL != tile && DOOR != tile)
+		if (WALL != tile && !(tile >= DOOR && tile < DOOR + DOOR_MAX))
 			character[Y]--;
 	}
 		//if (map[character[Y] - 1][character[X]] != WALL && DOOR)
@@ -241,7 +241,7 @@ int Move()
 	case DOWN:
 	{
 		int tile = map[character[Y] + 1][character[X]];
-		if (WALL != tile && DOOR != tile)
+		if (WALL != tile && !(tile >= DOOR && tile < DOOR + DOOR_MAX))
 			character[Y]++;
 	}
 		break;
@@ -261,5 +261,4 @@ void main()
 		MapDraw();
 		if (Move())break;
 	}
-	
 }
