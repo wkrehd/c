@@ -247,7 +247,7 @@ int Move()
 		break;
 	}
 	
-	int isExit = MoveCheck(1);
+	int isExit = MoveCheck();
 	LastObjectIndex = map[character[Y]][character[X]];
 	map[character[Y]][character[X]] = CHARACTER;
 
@@ -259,7 +259,7 @@ void main()
 	while (1)
 	{
 		MapDraw();
-		if (Move(0))break;
+		if (Move())break;
 	}
 	
 }
