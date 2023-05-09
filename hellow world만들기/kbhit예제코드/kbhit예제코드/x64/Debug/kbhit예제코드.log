@@ -1,0 +1,5 @@
+﻿  kbhit예제코드.cpp
+C:\Users\S2-09\Desktop\c\c\hellow world만들기\kbhit예제코드\kbhit예제코드\kbhit예제코드.cpp(52,6): warning C4996: 'kbhit': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _kbhit. See online help for details.
+C:\Users\S2-09\Desktop\c\c\hellow world만들기\kbhit예제코드\kbhit예제코드\kbhit예제코드.cpp(54,13): warning C4996: 'getch': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _getch. See online help for details.
+C:\Users\S2-09\Desktop\c\c\hellow world만들기\kbhit예제코드\kbhit예제코드\kbhit예제코드.cpp(72,1): warning C4326: 'main'의 반환 형식이 'int'이어야 하는데 'void'입니다.
+  kbhit예제코드.vcxproj -> C:\Users\S2-09\Desktop\c\c\hellow world만들기\kbhit예제코드\x64\Debug\kbhit예제코드.exe

@@ -1,0 +1,6 @@
+﻿  별이동.cpp
+C:\Users\S2-09\Desktop\c\c\hellow world만들기\별이동문제\별이동문제\별이동.cpp(48,6): warning C4996: 'kbhit': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _kbhit. See online help for details.
+C:\Users\S2-09\Desktop\c\c\hellow world만들기\별이동문제\별이동문제\별이동.cpp(50,13): warning C4996: 'getch': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _getch. See online help for details.
+C:\Users\S2-09\Desktop\c\c\hellow world만들기\별이동문제\별이동문제\별이동.cpp(67,1): warning C4326: 'main'의 반환 형식이 'int'이어야 하는데 'void'입니다.
+MSVCRTD.lib(exe_winmain.obj) : error LNK2019: WinMain"int __cdecl invoke_main(void)" (?invoke_main@@YAHXZ) 함수에서 참조되는 확인할 수 없는 외부 기호
+C:\Users\S2-09\Desktop\c\c\hellow world만들기\별이동문제\x64\Debug\별이동문제.exe : fatal error LNK1120: 1개의 확인할 수 없는 외부 참조입니다.

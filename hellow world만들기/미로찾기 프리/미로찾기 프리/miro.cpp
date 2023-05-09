@@ -261,4 +261,6 @@ void main()
 		MapDraw();
 		if (Move())break;
 	}
+	RED printf("Thank You");
+	ORIGINAL
 }
