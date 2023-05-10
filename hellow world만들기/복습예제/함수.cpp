@@ -11,6 +11,33 @@ int VS(int x, int y)
 	
 
 }
+int Oddeven(int x)
+{
+	if (x % 2 == 0)
+		return 1;
+	return 0;
+}
+int Absolute(int x)
+{
+	if (x >= 0)
+		return x;
+	return -x;
+}
+int Reverse(int num)
+{
+	int reverse = 0;
+	while (num)
+	{
+		/*num %= 10;
+		reverse = num;
+		reverse *= 10;
+		num /= 10;*/
+		reverse *= 10;
+		reverse += num % 10;
+		num /= 10;
+	}
+	return reverse;
+}
 //int Sum(int x, int y)
 //{
 //	int Answer;
@@ -83,9 +110,23 @@ void main()
 	scanf_s("%d%d", &Num1,&Num2);
 	avg = Avg(Num1, Num2);
 	Show_avg(Num1, Num2, avg);*/
-	int num1, num2;
+	/*int num1, num2;
 	printf("두 수를 입력 하시오 : ");
 	scanf_s("%d%d", &num1,&num2);
-	printf("더 큰수는 %d이다", VS(num1,num2));
+	printf("더 큰수는 %d이다\n", VS(num1,num2));*/
 
+	/*int num3;
+	printf("정수를 입력하시오 : ");
+	scanf_s("%d", &num3);
+	printf("%d는 %d이고 1이면 짝수 0이면 홀수다", num3, Oddeven(num3));*/
+
+	/*int num4;
+	printf("정수를 입력하시오 : ");
+	scanf_s("%d", &num4);
+	printf("%d의 절대값은 %d이다", num4 , Absolute(num4));*/
+
+	int num5;
+	printf("정수를 입력하시오 : ");
+	scanf_s("%d", &num5);
+	printf("%d의 거꾸로 수 : %d",num5,Reverse(num5));
 }
