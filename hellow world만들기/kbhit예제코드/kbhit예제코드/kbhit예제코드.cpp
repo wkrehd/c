@@ -27,19 +27,19 @@ void Draw(int Map [HEIGHT][WIDTH])
 	}
 }
 
-int Update(int Map[HEIGHT][WIDTH], int Stop_y, int num)
+int Update(int Map[HEIGHT][WIDTH], int Stop_y, int num)//움직이는것을 만드는 함수식 /이함수는 매개변수를 이용해서 어떠한 값을 반환하기위해 사용되는것
+//함수를 먼저 만들어야 main을 만들수 있다 반환변수는 항상 1개?
 {
-	for (int x = 0; x < WIDTH;x++)
+	for (int x = 0; x < WIDTH;x++)//x가 0일때  x가10보다 작으면 x++
 	{
-		if (Map[0][x]== MOVE_STAR)
+		if (Map[0][x]== MOVE_STAR)//처음x값은 WIDTH=10 ?
 		{
-			for (int y =0; y<= Stop_y;y++)
+			for (int y =0; y<= Stop_y;y++)//y가 0일때 y가 <= Stop_y 면 y++
 			{
-				
-				Map[y][x] = NULL;//x가 0,9일때 방향을바꾼다=부호를 바꾼다
-				if (x == 0)//num -1 || 1
+				Map[y][x] = NULL;//Map[y][x]를 null로 초기화한다
+				if (x == 0)
 					num = -1;
-				else if( x == WIDTH-1)
+				else if( x == WIDTH-1)//WIDTH-1이 다음x값이 된다
 					num = 1;
 
 				Map[y][x - num] = MOVE_STAR;
@@ -47,7 +47,7 @@ int Update(int Map[HEIGHT][WIDTH], int Stop_y, int num)
 			break;
 		}
 	}
-	return  num; 
+	return  num; //왜 num을 반환하는거지?  움직이는것에 직접적인 영향이 num 이라서?
 }
 
 int Stop(int Map[HEIGHT][WIDTH], int y)

@@ -1,5 +1,3 @@
-﻿  복습예제.cpp
-\\A-00\a-00\프로그래밍 공유폴더\숙련반\2시반\김지운\c\hellow world만들기\연산자\복습예제.cpp(4,1): warning C4326: 'main'의 반환 형식이 'int'이어야 하는데 'void'입니다.
-\\A-00\a-00\프로그래밍 공유폴더\숙련반\2시반\김지운\c\hellow world만들기\연산자\복습예제.cpp(281,1): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-\\A-00\a-00\프로그래밍 공유폴더\숙련반\2시반\김지운\c\hellow world만들기\연산자\복습예제.cpp(283,1): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-  복습예제.vcxproj -> \\A-00\a-00\프로그래밍 공유폴더\숙련반\2시반\김지운\c\hellow world만들기\복습예제\x64\Debug\복습예제.exe
+﻿  함수.cpp
+C:\Users\S2-09\Desktop\c\c\hellow world만들기\복습예제\함수.cpp(55,1): warning C4326: 'main'의 반환 형식이 'int'이어야 하는데 'void'입니다.
+  복습예제.vcxproj -> C:\Users\S2-09\Desktop\c\c\hellow world만들기\복습예제\x64\Debug\복습예제.exe

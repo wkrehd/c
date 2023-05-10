@@ -275,12 +275,15 @@ void main()
 //printf("str주소 : %p\n", str);
 //printf("str 값 : %s\n", str);
 
-char name[256];
-int age;
-printf("이름을 입력하시오 : ");
-scanf("%s", &name);
-printf("나이를 입력하시오 : ");
-scanf("%d", &age);
-printf("이름은 %s 나이는 %d 입니다. \n", name,age);
+//char name[256];
+//int age;
+//printf("이름을 입력하시오 : ");
+//scanf("%s", &name);
+//printf("나이를 입력하시오 : ");
+//scanf("%d", &age);
+//printf("이름은 %s 나이는 %d 입니다. \n", name,age);
+
+
 
 }
+
