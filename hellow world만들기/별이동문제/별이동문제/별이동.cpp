@@ -7,7 +7,7 @@
 #define MOVE_STAR 1
 #define NULL 0
 #define SPEED 300 
-//printf("별을 보시겠습니까??"); switch인가?
+//printf("별을 보시겠습니까??"); kbhit,getch를 사용할수있음
 void Draw(int Map[HEIGHT][WIDTH])
 {
 	system("cls");
@@ -32,11 +32,12 @@ void  Update(int Map[HEIGHT][WIDTH], int Stop_y)//갱신하는것
 		{
 			for (int y = 0; y <= Stop_y; y++)
 			{
-				Map[y][x] = NULL;
-				if (x == 0)//x가 0이면 x+1은 MOVE_STAR이다
-					Map[y][WIDTH + 1] = MOVE_STAR;
-				else if (x == 9)//x가 9면 x-1은 MOVE_STAR이다
-					Map[y][x - 1] = MOVE_STAR;
+				Map[y][x] = NULL;//x가 0,9일때 방향을바꾼다
+				if (x == 0)
+					Map([y][WIDTH +1] = MOVE_STAR
+				
+
+				Map([y][x + 1] = MOVE_STAR;
 			}
 			break;
 		}
@@ -67,8 +68,8 @@ void main()
 {
 	int OldClock = clock();
 	int Stop_Y = HEIGHT - 1;
-	int Map[HEIGHT][WIDTH] = { NULL };
-	for (int y = 0; y < HEIGHT; y++)//?
+	int Map[HEIGHT][WIDTH] = { NULL };//맵의 모든부분을 null로 초기화를 했음
+	for (int y = 0; y < HEIGHT; y++)//스타트 지점을 그려주는 계산식
 	{
 		Map[y][WIDTH - 1] = MOVE_STAR;
 	}

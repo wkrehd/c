@@ -27,7 +27,7 @@ void Draw(int Map [HEIGHT][WIDTH])
 	}
 }
 
-void Update(int Map[HEIGHT][WIDTH], int Stop_y)
+int Update(int Map[HEIGHT][WIDTH], int Stop_y, int num)
 {
 	for (int x = 0; x < WIDTH;x++)
 	{
@@ -35,16 +35,19 @@ void Update(int Map[HEIGHT][WIDTH], int Stop_y)
 		{
 			for (int y =0; y<= Stop_y;y++)
 			{
-				Map[y][x] = NULL;
-				if (x == 0)
-					Map[y][WIDTH - 1] = MOVE_STAR;
-				else
-					Map[y][x - 1] = MOVE_STAR;
+				
+				Map[y][x] = NULL;//x가 0,9일때 방향을바꾼다=부호를 바꾼다
+				if (x == 0)//num -1 || 1
+					num = -1;
+				else if( x == WIDTH-1)
+					num = 1;
+
+				Map[y][x - num] = MOVE_STAR;
 			}
 			break;
 		}
 	}
-	
+	return  num; 
 }
 
 int Stop(int Map[HEIGHT][WIDTH], int y)
@@ -70,8 +73,15 @@ int Stop(int Map[HEIGHT][WIDTH], int y)
 
 void main()
 {
+	printf("별을 보시겠습니까??\n");
+		if(kbhit())
+			char ch = getch();
+		system("pause");
+
+
 	int OldClock = clock();
 	int Stop_Y = HEIGHT - 1;
+	int num = 0;
 	int Map[HEIGHT][WIDTH] = { NULL };
 	for (int y = 0 ; y < HEIGHT; y++)
 	{
@@ -79,10 +89,10 @@ void main()
 	}
 	while (1)
 	{
-		Stop_Y = Stop(Map, Stop_Y);
+		Stop_Y = Stop(Map, Stop_Y);//왜 이렇게 쓰였는가?
 		if (clock() - OldClock >= SPEED)
 		{
-			Update(Map, Stop_Y);
+			num = Update(Map, Stop_Y, num);//
 			Draw(Map);
 			OldClock = clock();
 
