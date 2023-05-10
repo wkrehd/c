@@ -6,8 +6,8 @@
 #define HEIGHT 10
 #define MOVE_STAR 1
 #define NULL 0
-#define SPEED 300
-
+#define SPEED 300 
+//printf("별을 보시겠습니까??"); switch인가?
 void Draw(int Map[HEIGHT][WIDTH])
 {
 	system("cls");
@@ -24,7 +24,7 @@ void Draw(int Map[HEIGHT][WIDTH])
 	}
 }
 
-void  Update(int Map[HEIGHT][WIDTH], int Stop_y)
+void  Update(int Map[HEIGHT][WIDTH], int Stop_y)//갱신하는것
 {
 	for (int x = 0; x < WIDTH; x++)
 	{
@@ -33,9 +33,9 @@ void  Update(int Map[HEIGHT][WIDTH], int Stop_y)
 			for (int y = 0; y <= Stop_y; y++)
 			{
 				Map[y][x] = NULL;
-				if (x == 0)
-					Map[y][WIDTH - 1] = MOVE_STAR;
-				else
+				if (x == 0)//x가 0이면 x+1은 MOVE_STAR이다
+					Map[y][WIDTH + 1] = MOVE_STAR;
+				else if (x == 9)//x가 9면 x-1은 MOVE_STAR이다
 					Map[y][x - 1] = MOVE_STAR;
 			}
 			break;
@@ -68,7 +68,7 @@ void main()
 	int OldClock = clock();
 	int Stop_Y = HEIGHT - 1;
 	int Map[HEIGHT][WIDTH] = { NULL };
-	for (int y = 0; y < HEIGHT; y++)
+	for (int y = 0; y < HEIGHT; y++)//?
 	{
 		Map[y][WIDTH - 1] = MOVE_STAR;
 	}
