@@ -1,19 +1,28 @@
 #include<stdio.h>
 //Height, width 는  Height*2+1이다
-int Diamake(int Height)
+void Diamake(int num)
 {
-	int num = 0;
+	int num ;
 	int height = num * 2 + 1;
-	//x가 증가하면서 (x값+1에 별 ,나머지 "  ")이 반복되도록
-	for (num =0; num < height*2+1; num++)
+	int width = num * 2 + 1;
+	
+	for (int num =0; num <= height; num++)//height의 크기를 설정하는것
 	{
-		printf("  ");
+		for (int num =0; num<= width; num++)//width의 크기를 설정하는것
+		{
+			if (num !=num+1)//별이 처음엔 1개 다음엔2개씩 마지막엔 1개
+				printf("  ");//
+			printf("★");
+		}
+		printf("\n");
 	}
+	
 
 }
 void main()
 {
-	int num;
+	int num ;
 	printf("세로 입력 : ");
 	scanf_s("%d", &num);
+	Diamake(num);
 }
