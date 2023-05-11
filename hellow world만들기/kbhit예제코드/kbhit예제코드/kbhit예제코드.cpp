@@ -30,7 +30,7 @@ void Draw(int Map [HEIGHT][WIDTH])
 int Update(int Map[HEIGHT][WIDTH], int Stop_y, int num)//움직이는것을 만드는 함수식 /이함수는 매개변수를 이용해서 어떠한 값을 반환하기위해 사용되는것
 
 {
-	for (int x = 0; x < WIDTH;x++)//x가 0일때  x가10보다 작으면 x++
+	for (int x = 0; x < WIDTH;x++)//x가 0일때  x가10보다 작으면 x++ 1.x=1일때
 	{
 		if (Map[0][x]== MOVE_STAR)//처음x값은 WIDTH=10 ?
 		{
