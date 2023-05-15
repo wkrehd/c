@@ -85,7 +85,7 @@ void main()
 		printf("\n");
 	}*/
 
-	/*printf("1번문제\n");
+	printf("1번문제\n");
 
 	for (int i = 1; i <= 10; i++)
 	{
@@ -110,7 +110,7 @@ void main()
 		}
 
 		printf(",");
-	}*/
+	}
 
 	//printf("3번문제\n");
 
