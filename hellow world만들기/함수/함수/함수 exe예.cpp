@@ -134,14 +134,26 @@ void main()
 	//	}
 	//}
 	//printf("%d", sum);//합계를 출력한다
-
+	printf("2번문제\n");
 	int sum = 0;
+	int x = 1;
 
 	for (int i = 1; i<30;i++ )//29번 반복한다
 	{
-		int x = 0;
-		
-		sum += i;
+		x *= 2;
+		sum += x;
 	}
-	printf("30일동안 저축한 금액 : %d", sum);
+	printf("30일동안 저축한 금액 : %d\n", sum+1);
+	
+	printf("3번문제\n");
+	int sum1=0;
+
+	for (int i = 1; i < 1001; i++)//i=1이고  i<1001 일때 i++
+	{
+		if (i % 3 == 0 && i % 5!=0)//3의배수 이면서 5의배수가 아닌것은 제외
+			continue;
+		sum1 += i;//sum1=i를 더한값을 대입한다
+	}
+	printf("1 ~ 1000사이의 합 : %d\n", sum1);
+	printf("3의 배수는 제외하며 3과 5의 공배수는 제외하지 않는다\n");
 }
