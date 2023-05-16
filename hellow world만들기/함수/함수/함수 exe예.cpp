@@ -92,7 +92,9 @@
 //	printf("\n");
 //	printf("총 박수 : %d회", Count(num1));
 //}
-int Money()//30일동안 저축한 금액 
+ 
+//30일동안 저축한 금액 
+int Money()
 {
 	printf("2번문제\n");
 	int sum = 0;
@@ -105,6 +107,7 @@ int Money()//30일동안 저축한 금액
 	printf("30일동안 저축한 금액 : %d\n", sum + 1);
 	return sum + 1;
 }
+//1~1000사이합중 3의배수는 빼고 5의배수는 더한값을 구하는 함수 
 int _3times()
 {
 	printf("3번문제\n");
@@ -121,6 +124,7 @@ int _3times()
 	printf("3의 배수는 제외하며 3과 5의 공배수는 제외하지 않는다\n");
 	return sum1;
 }
+//10000전의 홀수값을 합한값과 직전의 홀수값 구하는 함수
 void Oddsum9999()
 {
 	printf("4번문제\n");
@@ -141,15 +145,20 @@ void Oddsum9999()
 	}
 	printf("i : %d\t sum : %d\n", i, sum2);
 }
-void main()
+//10전까지 홀수 만큼 HELLOW출력 함수
+void Oddhellow()
 {
-	/*printf("1번문제\n");
+	printf("1번문제\n");
 	for (int i = 1; i <= 10; i++)
 	{
-		if (i % 2 ==0)
+		if (i % 2 == 0)
 			continue;
 		printf("%d.Hello\n", i);
-	}*/
+	}
+}
+//A~Z까지 출력 함수
+void CharA_Z()
+{
 	printf("2번문제\n");
 	for (char ch = 'A'; ch <= 'Z'; ch++)//ch'A'일때 실행ch가'Z'보다 작거나 같으면ch++
 	{
@@ -161,13 +170,92 @@ void main()
 
 
 		}
-	
-			if (ch == 'Z')//ch가'z'이면 break;반복문을 끝낸다 안끝나내?
-				break;
-		/*else if (ch == 'Z')
-			break;*/
+		if (ch == 'Z')//ch가'z'이면 break;반복문을 끝낸다 안끝나내? if안에 들어가서 조건에 맞지않았었음
+			break;
 		printf(",");
 	}
+}
+//구구단 함수
+void TimesTable()
+{
+	for (int i = 0; i < 10; i++)
+	{
+		for (int j = 2; j < 10; j++)
+		{
+			if (i == 0)
+			{
+				printf("====%d단====\t", j);
+			}
+			else
+			printf("%d * %d = %d\t", j,i,j*i);
+		}
+		printf("\n");
+	}
+}
+//삼각형 만들기 함수
+void MakeTriangle(int hight)
+{
+	for (int i = 0; i < hight; i++)
+	{
+		for (int j = 0; j < hight; j++)//i만큼 ▩출력한다=i만큼 반복한다 그밖에 ("  ")
+		{
+			if (i >= j)
+			{
+				printf("▩");
+			}
+			else
+				printf("  ");
+		}
+		printf("\n");
+	}
+}
+//사각형 만드는 함수
+void MakeSquare(int hight,int width)
+{
+	for (int i = 1; i <= hight; i++)//높이만큼 i++한다
+	{
+		for (int j = 1; j <= width; j++)//너비만큼 j++한다  
+		{
+			if (i == 1 || i == hight)//i ==1 || i== hight일때 printf("▩")를 width만큼 반복한다
+			{
+				printf("▩");
+				continue;
+			}
+			else if (j == 1 || j == width)//j==1 || j==width 때만 printf("▩")
+			{
+				printf("▩");
+				continue;
+			}
+			else//나머지는("  ")
+				printf("  ");
+		}
+		printf("\n");
+	}
+}
+void main()
+{
+	/*printf("1번문제\n");
+	for (int i = 1; i <= 10; i++)
+	{
+		if (i % 2 ==0)
+			continue;
+		printf("%d.Hello\n", i);
+	}*/
+	//printf("2번문제\n");
+	//for (char ch = 'A'; ch <= 'Z'; ch++)//ch'A'일때 실행ch가'Z'보다 작거나 같으면ch++
+	//{
+	//	printf("%c", ch);//ch를 출력한다
+	//	if (ch == 'M')//ch가 'M'일때 \n 한다
+	//	{
+	//		printf("\n");
+	//		continue;
+
+
+	//	}
+	//    if (ch == 'Z')//ch가'z'이면 break;반복문을 끝낸다 안끝나내? if안에 들어가서 조건에 맞지않았었음
+	//		break;
+	//	printf(",");
+	//}
 	//printf("\n3번문제\n");
 	//int sum = 0;
 	//for (int i = 1; i <= 10; i++)
@@ -226,6 +314,17 @@ void main()
 	//printf("i : %d\t sum : %d\n", num,sum2);
 	/*Money();
 	_3times();
-	Oddsum9999();*/
+	Oddsum9999();
+	Oddhellow();
+	CharA_Z();
+	TimesTable();*/
+	int hight;
+	int width;
+	/*printf("높이 입력 : ");
+	scanf_s("%d", &hight);
+	MakeTriangle(hight);*/
+	printf("가로 세로 입력 : ");
+	scanf_s("%d %d", &hight ,&width);
+	MakeSquare(hight, width);
 }
 
