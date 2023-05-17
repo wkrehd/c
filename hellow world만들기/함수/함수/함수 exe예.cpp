@@ -1,4 +1,5 @@
 #include<stdio.h>
+#include<conio.h>
 
 ////높이를 이용해서 다이아그림을 만드는 함수 
 //void Diamake(int num)
@@ -193,8 +194,11 @@ void TimesTable()
 	}
 }
 //삼각형 만들기 함수
-void MakeTriangle(int hight)
+void MakeTriangle()
 {
+	int hight;
+	printf("높이 입력 : ");
+	scanf_s("%d", &hight);
 	for (int i = 0; i < hight; i++)
 	{
 		for (int j = 0; j < hight; j++)//i만큼 ▩출력한다=i만큼 반복한다 그밖에 ("  ")
@@ -210,8 +214,12 @@ void MakeTriangle(int hight)
 	}
 }
 //사각형 만드는 함수
-void MakeSquare(int hight,int width)
+void MakeSquare()
 {
+	int hight;
+	int width;
+	printf("가로 세로 입력 : ");
+	scanf_s("%d %d", &hight, &width);
 	for (int i = 1; i <= hight; i++)//높이만큼 i++한다
 	{
 		for (int j = 1; j <= width; j++)//너비만큼 j++한다  
@@ -231,6 +239,39 @@ void MakeSquare(int hight,int width)
 		}
 		printf("\n");
 	}
+}
+//피라미드 만드는 함수
+void Pyramid()
+{
+	int hight;
+	int width;
+	printf("세로 입력 : ");
+	scanf_s("%d", &hight);
+	width = hight * 2 - 1;
+	for (int i = hight; i > 0; i--)
+	{
+		for (int j = 1; j < width; j++)
+		{
+			//printf("  ");
+			if (j == i)//
+			{
+				printf("▩");
+			}
+			else
+				printf("  ");
+
+			//if (i<j)//
+			//{
+			//	
+			//}
+			/*else if(i>=j)
+				printf("▩");*/
+		}
+		//printf("▩");
+
+		printf("\n");
+	}
+	_getch();
 }
 void main()
 {
@@ -317,14 +358,9 @@ void main()
 	Oddsum9999();
 	Oddhellow();
 	CharA_Z();
-	TimesTable();*/
-	int hight;
-	int width;
-	/*printf("높이 입력 : ");
-	scanf_s("%d", &hight);
-	MakeTriangle(hight);*/
-	printf("가로 세로 입력 : ");
-	scanf_s("%d %d", &hight ,&width);
-	MakeSquare(hight, width);
+	TimesTable();
+	MakeTriangle();
+	MakeSquare();*/
+	Pyramid();
 }
 
