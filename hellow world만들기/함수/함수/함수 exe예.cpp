@@ -301,29 +301,79 @@ void ReversePyramid()
 		printf("\n");
 	}
 }
-//테두리와 삼각형 만들기 함수1
-void BorderPyramid()
+//테두리와 삼각형 만들기 함수 1
+void BorderPyramid_1()
 {
 	int hight;
 	int width;
+	int k;
 	printf("세로 입력 :");
 	scanf_s("%d", &hight);
-	width = hight * 2 + 1;
-	for (int i = 0; i < hight; i++)
+	width = hight * 2 ;
+	for (int i = 0; i <= hight+1; i++)
 	{
-		for (int j = 0; j < width; j++)
+		for (int j = 0; j <= width; j++)
 		{
-			if (i>0 && j == hight + 1 - i)
-				printf("▩");
-			/*if (i == 0 )
-				printf("▩");
-			else if (i>0 && j==hight-i)
+			k = hight;
+			if (i == 0 || j==0 || j==width || i==hight+1 )//테두리 먼저
 			{
 				printf("▩");
 			}
-			else if(i>0 && j==width-(hight-i))
-				printf("▩");*/
+			else if (i>0 && j==k+1-i || j==k-1+i || i == hight)
+			{
+				printf("♧");
+			}
 			else
+				printf("  ");
+		}
+		printf("\n");
+	}
+}
+//테두리와 삼각형 만들기 함수 2
+void BorderPyramid_2()
+{
+	int hight;
+	int width;
+	int k;
+	printf("세로 입력 :");
+	scanf_s("%d", &hight);
+	width = hight * 2+1;
+	for (int i = 0; i < hight + 3; i++)
+	{
+		k = hight;
+		for (int j = 0; j < width; j++)
+		{
+			if (i>1 && i<k+2 && j>k+1-i && j<width-k-2+i)//빈곳의 범위를 조건으로 정하기
+			{
+				printf("  ");
+			}
+			else
+				printf("†");//테두리
+		}
+		printf("\n");
+	}
+}
+//테두리와 삼각형 만들기 함수 3
+void BorderPyramid_3()
+{
+	int hight;
+	int width;
+	int k;
+	printf("세로 입력 :");
+	scanf_s("%d", &hight);
+	width = hight * 2 + 1;
+	for (int i = 0; i < hight + 3; i++)
+	{
+		k = hight;
+		for (int j = 0; j < width; j++)
+		{
+			if(i>1 && i<k + 2 && j>k+1-i && j< width - k - 2 + i)//별을 그려야할 범위
+			{
+				printf("★");
+			}
+			else if(i==0 || j==0 || j==width-1 || i==hight+2)//테두리
+				printf("▩");
+			else 
 				printf("  ");
 		}
 		printf("\n");
@@ -420,6 +470,8 @@ void main()
 	/*Pyramid();*/
 	/*ReversePyramid();*/
 	//Diamake();//
-	BorderPyramid();
+	BorderPyramid_1();
+	BorderPyramid_2();
+	BorderPyramid_3();
 }
 
