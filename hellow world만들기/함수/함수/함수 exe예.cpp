@@ -1,42 +1,48 @@
 #include<stdio.h>
 #include<conio.h>
 
-////높이를 이용해서 다이아그림을 만드는 함수 
-//void Diamake(int num)
-//{
-//	/*int num = 0;*/ //int num = 0;바로쓰기위해  int num;
-//	int height = num * 2 + 1;//Height, width 는  Height*2+1이다
-//	int width = num * 2 + 1;
-//	
-//	for (int i = 0; i < height; i++)//height의 크기를 설정하는것
-//	{
-//		for (int j = 1; num + j <= width + i; j++)//width의 크기를 설정하는것
-//		{
-//			//int x = 0;//x의 좌표
-//			//if(x =num+j)//x자리에 별을 출력할려고함(x
-//			//	printf("★");	
-//			//if(x != num + j)//x자리 외에 printf("  ")을 출력할려고함
-//				printf("  ");
-//		}
-//		printf("★");
-//		/*{
-//			if (num + i > 0)
-//				printf("★");
-//			else
-//				printf("  ");
-//		}
-//		for (int i = 1; num - 1 >= 1; i--)
-//		{
-//			if (num - 1 > 0)
-//				printf("★");
-//			else
-//				printf("  ");
-//		}*/
-//		printf("\n");
-//	}
-//	
-//
-//}
+////다이아그림을 만드는 함수 
+void Diamake()
+{
+	int hight;
+	int width;
+	int k=0;
+	printf("세로 입력 : ");
+	scanf_s("%d", &hight);
+	k = hight;
+	hight = hight*2 + 1;
+	width = hight;
+	for (int i = 0; i < hight; i++)//i=0이고 i<hight*2+1때 i++
+	{
+		for (int j = 0; j < width; j++)//j==0이고 j<width때 j++
+		{
+			if (i>0 && j == k - i)
+			{
+				printf("▩");
+			}
+			else if(i>0 && j == k+i)
+				printf("▩");
+			else if(i==0 && j==k)
+				printf("▩");
+			else
+				printf("  ");
+			if (i==k+1)
+			{
+
+			}
+			else if(i==hight && j==k)
+				printf("▩");
+			else
+				printf("  ");
+			/*else if(i==0 && j==k+1)
+				printf("▩");
+			else if(i==hight && j==k+1)
+				printf("▩");*/
+			
+		}
+		printf("\n");
+	}
+}
 //void main()
 //{
 //	int num ;
@@ -273,6 +279,56 @@ void Pyramid()
 	}
 	_getch();
 }
+//역피라미드 만드는 함수
+void ReversePyramid()
+{
+	int hight;
+	int width;
+	/*int k;*/
+	printf("세로 입력 : ");
+	scanf_s("%d", &hight);
+	width = hight * 2 - 1;
+	for (int i = 0; i < hight; i++)
+	{
+		for (int j = 0; j < width; j++)
+		{
+			/*k = hight;*/
+			if (i > j || j >= width - i)//
+				printf("  ");
+			else
+				printf("▩");
+		}
+		printf("\n");
+	}
+}
+//테두리와 삼각형 만들기 함수1
+void BorderPyramid()
+{
+	int hight;
+	int width;
+	printf("세로 입력 :");
+	scanf_s("%d", &hight);
+	width = hight * 2 + 1;
+	for (int i = 0; i < hight; i++)
+	{
+		for (int j = 0; j < width; j++)
+		{
+			if (i>0 && j == hight + 1 - i)
+				printf("▩");
+			/*if (i == 0 )
+				printf("▩");
+			else if (i>0 && j==hight-i)
+			{
+				printf("▩");
+			}
+			else if(i>0 && j==width-(hight-i))
+				printf("▩");*/
+			else
+				printf("  ");
+		}
+		printf("\n");
+	}
+}
 void main()
 {
 	/*printf("1번문제\n");
@@ -361,6 +417,9 @@ void main()
 	TimesTable();
 	MakeTriangle();
 	MakeSquare();*/
-	Pyramid();
+	/*Pyramid();*/
+	/*ReversePyramid();*/
+	//Diamake();//
+	BorderPyramid();
 }
 
