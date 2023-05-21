@@ -2,45 +2,40 @@
 #include<conio.h>
 
 ////다이아그림을 만드는 함수 
-void Diamake()
+void Diamake_1()
 {
 	int hight;
 	int width;
-	int k=0;
+	int k;
 	printf("세로 입력 : ");
 	scanf_s("%d", &hight);
 	k = hight;
-	hight = hight*2 + 1;
-	width = hight;
-	for (int i = 0; i < hight; i++)//i=0이고 i<hight*2+1때 i++
+	width = k*2+1;
+	hight = hight * 2 + 3;
+	
+	
+	for (int i = 0; i < hight; i++)
 	{
-		for (int j = 0; j < width; j++)//j==0이고 j<width때 j++
+		for (int j = 0; j < width; j++)
 		{
-			if (i>0 && j == k - i)
-			{
-				printf("▩");
-			}
-			else if(i>0 && j == k+i)
-				printf("▩");
-			else if(i==0 && j==k)
-				printf("▩");
-			else
-				printf("  ");
-			if (i==k+1)
-			{
 
+			if (i == 0 || i == hight - 1 || j == 0 || j == width - 1)//테두리
+				printf("★");
+			else if (i > 0 && j == k + 1 - i || j == k - 1 + i /*|| i == hight*/)
+			{
+				printf("★");
 			}
-			else if(i==hight && j==k)
-				printf("▩");
+			else if (i > k + 1 && /*j== hight-1 ||*/ j==i-k-1 || j==width-(i-k))
+			{
+				printf("★");
+			}
 			else
 				printf("  ");
-			/*else if(i==0 && j==k+1)
-				printf("▩");
-			else if(i==hight && j==k+1)
-				printf("▩");*/
-			
 		}
 		printf("\n");
+		
+		
+	
 	}
 }
 //void main()
@@ -469,9 +464,9 @@ void main()
 	MakeSquare();*/
 	/*Pyramid();*/
 	/*ReversePyramid();*/
-	//Diamake();//
-	BorderPyramid_1();
+	Diamake_1();
+	/*BorderPyramid_1();
 	BorderPyramid_2();
-	BorderPyramid_3();
+	BorderPyramid_3();*/
 }
 
