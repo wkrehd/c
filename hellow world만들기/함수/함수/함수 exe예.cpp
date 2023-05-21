@@ -1,7 +1,7 @@
 #include<stdio.h>
 #include<conio.h>
 
-////다이아그림을 만드는 함수 
+////다이아그림을 만드는 함수_1
 void Diamake_1()
 {
 	int hight;
@@ -36,6 +36,32 @@ void Diamake_1()
 		
 		
 	
+	}
+}
+////다이아그림을 만드는 함수_2
+void Diamake_2()
+{
+	int hight;
+	int width;
+	int k;
+	printf("세로 입력 : ");
+	scanf_s("%d", &hight);
+	k = hight;
+	width = k * 2 + 1;
+	hight = hight * 2 + 3;
+
+	for (int i=0; i<hight; i++)
+	{
+		for (int j = 0; j < width; j++)
+		{
+			if (i > 1 && i < hight - 2 && j>k+1-i && j < width -k-2+i)
+			{
+				printf("  ");
+			}
+			else
+				printf("★");
+		}
+		printf("\n");
 	}
 }
 //void main()
@@ -464,9 +490,10 @@ void main()
 	MakeSquare();*/
 	/*Pyramid();*/
 	/*ReversePyramid();*/
-	Diamake_1();
+	/*Diamake_1();*/
 	/*BorderPyramid_1();
 	BorderPyramid_2();
 	BorderPyramid_3();*/
+	Diamake_2();
 }
 
