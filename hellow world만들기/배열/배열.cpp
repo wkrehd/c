@@ -2,9 +2,59 @@
 #include<Windows.h>
 #include<time.h>
 
+#define SIZE 10
 #define SEC 1000
 #define MAX_COUNT 3
 
+
+void Arr_1()
+{
+	int Arr[5];
+	Arr[0] = 10;
+	Arr[1] = 20;
+	Arr[2] = 33;
+	Arr[3] = 40;
+	Arr[4] = 50;
+
+	printf("%d %d %d %d %d\n", Arr[0], Arr[1], Arr[2], Arr[3], Arr[4]);
+}
+void Arr_2()
+{
+	int Arr[5];
+	for (int i = 0; i < 5; i++)
+		Arr[i] = i + 1;
+	
+	for (int i = 0; i < 5; i++)
+		printf("%d\n", Arr[i]);
+}
+void Arr_3()
+{
+	int Arr[5];
+	for (int i = 0; i < 5; i++)
+	{
+		printf("%d번째 원소 값 : ", i+1);
+		scanf("%d", &Arr[i]);
+	}
+	for (int i = 0; i < 5; i++)
+		printf("%d\n", Arr[i]);
+}
+void Str_1()
+{
+	char str[5];
+	for (int i = 0; i < 5; i++)
+	{
+		printf("%d번째 원소 값 : ", i+1);
+		scanf("%c", &str[i]);
+		scanf("%*c");// \n을 무시하는 명령어
+	}
+	for (int i = 0; i < 5; i++)
+		printf("%c ", str[i]);
+}
+
+void Name();
+{
+	char 
+}
 void main()
 {
 	/*int Arr[5];
@@ -130,4 +180,33 @@ void main()
 //	}
 //}
 
+//int Arr[5];
+//Arr[0] = 10;
+//Arr[1] = 20;
+//Arr[2] = 33;
+//Arr[3] = 40;
+//Arr[4] = 50;
+//
+//printf("%d %d %d %d %d", Arr[0],Arr[1],Arr[2],Arr[3],Arr[4]);
+
+//int Arr[5];
+//for (int i = 0; i < 5; i++)
+//	Arr[i] = i + 1;
+//
+//for (int i = 0; i < 5; i++)
+//	printf("%d", Arr[i]);
+
+//int Arr[5];
+//for (int i = 0; i < 5; i++)
+//{
+//	printf("%d번째 원소 값 : ", i+1);
+//	scanf("%d", &Arr[i]);
+//}
+//for (int i = 0; i < 5; i++)
+//	printf("%d\n", Arr[i]);
+//Arr_1();
+//Arr_2();
+//Arr_3();
+Str_1();
+Name();
 }

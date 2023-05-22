@@ -1,6 +1,31 @@
 #include<stdio.h>
 #include<conio.h>
 
+void Diamake()
+{
+	int hight, width;
+	int i = 0;
+	printf("세로 입력 : ");
+	scanf_s("%d", &hight);
+	width = hight * 2 + 1;
+	for (int y = 0; width > y; y++)
+	{
+		for (int x = 0; width > x; x++)
+		{
+			if (x == hight - i || x == hight + i)
+			{
+				printf("★");
+			}
+			else
+				printf("  ");
+
+		}
+			if (y < hight) i++;
+			else i--;
+		printf("\n");
+	}
+}
+
 ////다이아그림을 만드는 함수_1
 void Diamake_1()
 {
@@ -54,12 +79,49 @@ void Diamake_2()
 	{
 		for (int j = 0; j < width; j++)
 		{
-			if (i > 1 && i < hight - 2 && j>k+1-i && j < width -k-2+i)
+			if (i > 1 && i<k+2/* && i < hight - 2*/ && j>k+1-i && j < width -k-2+i)//위의 삼각형 범위
+			{
+				printf("  ");
+			}
+			else if (i>k+1 && i < hight - 2 && j>i-k-1 && j<width-(i-k))//밑의 삼각형 범위
 			{
 				printf("  ");
 			}
 			else
 				printf("★");
+		}
+		printf("\n");
+	}
+}
+
+////다이아그림을 만드는 함수_3
+void  Diamake_3()
+{
+	int hight;
+	int width;
+	int k;
+	printf("세로 입력 : ");
+	scanf_s("%d", &hight);
+	k = hight;
+	width = k * 2 + 1;
+	hight = hight * 2 + 3;
+
+	for (int i = 0; i < hight; i++)
+	{
+		for (int j = 0; j < width; j++)
+		{
+			if (i == 0 || i == hight-1 || j == 0 || j == width-1)
+				printf("★");
+			else if (i<k+2 && i> 1 && j>k+1-i && j<width-k+i-2)
+			{
+				printf("★");
+			}
+			else if (i>k+1 && i < hight - 2 && j>i-k-1 && j<width-(i-k))
+			{
+				printf("★");
+			}
+			else
+				printf("  ");
 		}
 		printf("\n");
 	}
@@ -490,10 +552,12 @@ void main()
 	MakeSquare();*/
 	/*Pyramid();*/
 	/*ReversePyramid();*/
-	/*Diamake_1();*/
-	/*BorderPyramid_1();
-	BorderPyramid_2();
-	BorderPyramid_3();*/
-	Diamake_2();
+	//Diamake_1();
+	///*BorderPyramid_1();
+	//BorderPyramid_2();
+	//BorderPyramid_3();*/
+	//Diamake_2();
+	//Diamake_3();
+	Diamake();
 }
 

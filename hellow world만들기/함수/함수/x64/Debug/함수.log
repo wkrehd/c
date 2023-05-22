@@ -1,3 +1,3 @@
 ﻿  함수 exe예.cpp
-C:\Users\김지운\Desktop\프로그래밍.1\hellow world만들기\함수\함수\함수 exe예.cpp(404,1): warning C4326: 'main'의 반환 형식이 'int'이어야 하는데 'void'입니다.
-  함수.vcxproj -> C:\Users\김지운\Desktop\프로그래밍.1\hellow world만들기\함수\x64\Debug\함수.exe
+\\A-00\a-00\프로그래밍 공유폴더\숙련반\2시반\김지운\c\hellow world만들기\함수\함수\함수 exe예.cpp(466,1): warning C4326: 'main'의 반환 형식이 'int'이어야 하는데 'void'입니다.
+  함수.vcxproj -> \\A-00\a-00\프로그래밍 공유폴더\숙련반\2시반\김지운\c\hellow world만들기\함수\x64\Debug\함수.exe
