@@ -45,7 +45,7 @@ int map[HEIGHT][WIDTH] = {
   { 1,	0,	0,	0,	0,	0,	0,	0,	0,	1 },
   { 1,	1,	1,	1,	1,	1,	1,	1,	1,	1 } };
 int character[2];
-int Entry_Potal[POTAL_MAX][2];
+int Entry_Potal[POTAL_MAX][2];//포탈 배열의 값이 위치값
 //{
 //	{2, 2}, 0 = 10 - ENTRY_START(10)
 //	{2, 7},	1 = 11 - ENTRY_START(10)
@@ -118,10 +118,10 @@ void MapDraw()
 }
 void MoveCheck()
 {
-	int index = map[character[Y]][character[X]];
+	int index = map[character[Y]][character[X]];//케릭터 위치값
 	if (index >= ENTRY_START && index < ENTRY_START + POTAL_MAX)
 	{
-		character[X] = Exit_Potal[index - ENTRY_START][X];
+		character[X] = Exit_Potal[index - ENTRY_START][X];//뭐지 
 		character[Y] = Exit_Potal[index - ENTRY_START][Y];
 	}
 }

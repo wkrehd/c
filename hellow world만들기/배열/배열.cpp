@@ -51,10 +51,42 @@ void Str_1()
 		printf("%c ", str[i]);
 }
 
-void Name();
+void Name()
 {
-	char 
+	char Name[SIZE];
+	scanf("%s", &Name);
+
+	for (int i = 0; i < SIZE; i++)
+	{
+		printf("%c",Name[i]);
+	}
+	printf("\n\n%s\n", Name);
 }
+void Arr_Max_Sum_Avg()
+{
+	float avg = 0;
+	int max = -2147483648 , sum = 0;
+	int Arr[10];
+
+	for (int i = 0; i < 10; i++)
+	{
+		printf("%d번째 정수 입력 : ", i + 1);
+		scanf("%d", &Arr[i]);
+		sum += Arr[i];//Arr[i]의 모든값이 여기서 더해지는게 아닌가?
+		if (Arr[i] > max)//최대값이 왜 마지막값으로만 출력되는지 모르겠음
+			max = Arr[i];
+		else if (max > Arr[i])
+		{
+			max = max;
+		}
+	
+	}
+	avg = sum / 10;
+	printf("최대값 = %d\t총합 = %d\t평균 = %.3f", max,sum,avg);
+	
+	
+}
+
 void main()
 {
 	/*int Arr[5];
@@ -98,12 +130,12 @@ void main()
 	//	{
 	//		Max = Arr[i];
 	//	}
-	//	//else if (Arr[i] < Max)
-	//	//{
-	//	//	Max = Arr[i];//i의값이 음수일때 0일때는 문제 없는대 i값이 1부터는 0이크다면 max=Arr[0]이 되야함
-	//	//	Sum += Arr[i];
-	//	//	Avg = Sum / 10;
-	//	//}
+	//	else if (Arr[i] < Max)
+	//	{
+	//		Max = Arr[i];//i의값이 음수일때 0일때는 문제 없는대 i값이 1부터는 0이크다면 max=Arr[0]이 되야함
+	//		Sum += Arr[i];
+	//		Avg = Sum / 10;
+	//	}
 	//}
 	//Avg = Sum / 10;
 
@@ -207,6 +239,7 @@ void main()
 //Arr_1();
 //Arr_2();
 //Arr_3();
-Str_1();
-Name();
+//Str_1();
+//Name();
+Arr_Max_Sum_Avg();
 }
