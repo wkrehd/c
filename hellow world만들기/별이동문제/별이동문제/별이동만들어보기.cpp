@@ -94,7 +94,7 @@ void main()
 
 			Draw(Map);
 			OldClock = clock();
-
+			printf("∫∞ ∏ÿ√ﬂ±‚ = d");
 		}
 	}
 }

@@ -1,1 +1,7 @@
-﻿  별이동문제.vcxproj -> \\A-00\a-00\프로그래밍 공유폴더\숙련반\2시반\김지운\c\hellow world만들기\별이동문제\x64\Debug\별이동문제.exe
+﻿  별이동만들어보기.cpp
+\\A-00\a-00\프로그래밍 공유폴더\숙련반\2시반\김지운\c\hellow world만들기\별이동문제\별이동문제\별이동만들어보기.cpp(55,6): warning C4996: 'kbhit': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _kbhit. See online help for details.
+\\A-00\a-00\프로그래밍 공유폴더\숙련반\2시반\김지운\c\hellow world만들기\별이동문제\별이동문제\별이동만들어보기.cpp(57,13): warning C4996: 'getch': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _getch. See online help for details.
+\\A-00\a-00\프로그래밍 공유폴더\숙련반\2시반\김지운\c\hellow world만들기\별이동문제\별이동문제\별이동만들어보기.cpp(74,1): warning C4326: 'main'의 반환 형식이 'int'이어야 하는데 'void'입니다.
+\\A-00\a-00\프로그래밍 공유폴더\숙련반\2시반\김지운\c\hellow world만들기\별이동문제\별이동문제\별이동만들어보기.cpp(76,6): warning C4996: 'kbhit': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _kbhit. See online help for details.
+\\A-00\a-00\프로그래밍 공유폴더\숙련반\2시반\김지운\c\hellow world만들기\별이동문제\별이동문제\별이동만들어보기.cpp(77,13): warning C4996: 'getch': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _getch. See online help for details.
+  별이동문제.vcxproj -> \\A-00\a-00\프로그래밍 공유폴더\숙련반\2시반\김지운\c\hellow world만들기\별이동문제\x64\Debug\별이동문제.exe

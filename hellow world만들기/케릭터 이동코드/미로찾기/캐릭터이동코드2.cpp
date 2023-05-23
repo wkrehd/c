@@ -118,11 +118,11 @@ void MapDraw()
 }
 void MoveCheck()
 {
-	int index = map[character[Y]][character[X]];//케릭터 위치값
+	int index = map[character[Y]][character[X]];//케릭터 위치 변수값
 	if (index >= ENTRY_START && index < ENTRY_START + POTAL_MAX)
 	{
-		character[X] = Exit_Potal[index - ENTRY_START][X];//뭐지 
-		character[Y] = Exit_Potal[index - ENTRY_START][Y];
+		character[X] = Exit_Potal[index - ENTRY_START][X];//케릭터가 포탈에 들어왔을때를 계산? 왜 빼기를 하는가? 
+		character[Y] = Exit_Potal[index - ENTRY_START][Y];//결과가 Exit_Potal[0~4]의 변수값을 구한는건가?
 	}
 }
 

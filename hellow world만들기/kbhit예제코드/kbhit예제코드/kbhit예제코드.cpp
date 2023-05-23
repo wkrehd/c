@@ -7,11 +7,11 @@
 #define MOVE_STAR 1
 #define STOP_STAR 2
 #define NULL 0
-#define SPEED 100
+#define SPEED 100//0.1초
 
 void Draw(int Map [HEIGHT][WIDTH])
 {
-	system("cls");
+	system("cls");//콘솔화면 전체를 지우는것
 	for (int y = 0; y < HEIGHT; y++)
 	{
 		for (int x =0; x< WIDTH;x++)
@@ -27,19 +27,19 @@ void Draw(int Map [HEIGHT][WIDTH])
 	}
 }
 
-int Update(int Map[HEIGHT][WIDTH], int Stop_y, int num)//움직이는것을 만드는 함수식 /이함수는 매개변수를 이용해서 어떠한 값을 반환하기위해 사용되는것
+int Update(int Map[HEIGHT][WIDTH], int Stop_y, int num)
 
 {
-	for (int x = 0; x < WIDTH;x++)//x가 0일때  x가10보다 작으면 x++ 1.x=1일때
+	for (int x = 0; x < WIDTH; x++)
 	{
-		if (Map[0][x]== MOVE_STAR)//처음x값은 WIDTH=10 ?
+		if (Map[0][x] == MOVE_STAR)
 		{
-			for (int y =0; y<= Stop_y;y++)//y가 0일때 y가 <= Stop_y 면 y++
+			for (int y = 0; y <= Stop_y; y++)
 			{
-				Map[y][x] = NULL;//Map[y][x]를 null로 초기화한다
+				Map[y][x] = NULL;
 				if (x == 0)
 					num = -1;
-				else if( x == WIDTH-1)//WIDTH-1이 다음x값이 된다
+				else if (x == WIDTH - 1)
 					num = 1;
 
 				Map[y][x - num] = MOVE_STAR;
@@ -47,10 +47,10 @@ int Update(int Map[HEIGHT][WIDTH], int Stop_y, int num)//움직이는것을 만드는 함�
 			break;
 		}
 	}
-	return  num; //왜 num을 반환하는거지?  움직이는것에 직접적인 영향이 num 이라서?
+	return  num;
 }
 
-int Stop(int Map[HEIGHT][WIDTH], int y)
+int Stop(int Map[HEIGHT][WIDTH], int y)//height-1 = stop_y= int y
 {
 	if (kbhit())
 	{
@@ -80,7 +80,7 @@ void main()
 
 
 	int OldClock = clock();
-	int Stop_Y = HEIGHT - 1;
+	int Stop_Y = HEIGHT - 1;//밑에서 부터 시작하도록 했으니깐
 	int num = 0;
 	int Map[HEIGHT][WIDTH] = { NULL };
 	for (int y = 0 ; y < HEIGHT; y++)

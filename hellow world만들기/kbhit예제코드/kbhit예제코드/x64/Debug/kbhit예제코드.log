@@ -1,7 +1,6 @@
 ﻿  kbhit예제코드.cpp
-\\A-00\a-00\프로그래밍 공유폴더\숙련반\2시반\김지운\c\hellow world만들기\kbhit예제코드\kbhit예제코드\kbhit예제코드.cpp(55,6): warning C4996: 'kbhit': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _kbhit. See online help for details.
-\\A-00\a-00\프로그래밍 공유폴더\숙련반\2시반\김지운\c\hellow world만들기\kbhit예제코드\kbhit예제코드\kbhit예제코드.cpp(57,13): warning C4996: 'getch': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _getch. See online help for details.
-\\A-00\a-00\프로그래밍 공유폴더\숙련반\2시반\김지운\c\hellow world만들기\kbhit예제코드\kbhit예제코드\kbhit예제코드.cpp(75,1): warning C4326: 'main'의 반환 형식이 'int'이어야 하는데 'void'입니다.
-\\A-00\a-00\프로그래밍 공유폴더\숙련반\2시반\김지운\c\hellow world만들기\kbhit예제코드\kbhit예제코드\kbhit예제코드.cpp(77,6): warning C4996: 'kbhit': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _kbhit. See online help for details.
-\\A-00\a-00\프로그래밍 공유폴더\숙련반\2시반\김지운\c\hellow world만들기\kbhit예제코드\kbhit예제코드\kbhit예제코드.cpp(78,14): warning C4996: 'getch': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _getch. See online help for details.
-  kbhit예제코드.vcxproj -> \\A-00\a-00\프로그래밍 공유폴더\숙련반\2시반\김지운\c\hellow world만들기\kbhit예제코드\x64\Debug\kbhit예제코드.exe
+\\A-00\a-00\프로그래밍 공유폴더\숙련반\2시반\김지운\c\hellow world만들기\kbhit예제코드\kbhit예제코드\kbhit예제코드.cpp(52,5): error C2601: 'Stop': 지역 함수 정의가 잘못되었습니다.
+\\A-00\a-00\프로그래밍 공유폴더\숙련반\2시반\김지운\c\hellow world만들기\kbhit예제코드\kbhit예제코드\kbhit예제코드.cpp(32): message : 이 줄에 짝이 되지 않는 '{'가 들어 있습니다.
+\\A-00\a-00\프로그래밍 공유폴더\숙련반\2시반\김지운\c\hellow world만들기\kbhit예제코드\kbhit예제코드\kbhit예제코드.cpp(73,6): error C2601: 'main': 지역 함수 정의가 잘못되었습니다.
+\\A-00\a-00\프로그래밍 공유폴더\숙련반\2시반\김지운\c\hellow world만들기\kbhit예제코드\kbhit예제코드\kbhit예제코드.cpp(32): message : 이 줄에 짝이 되지 않는 '{'가 들어 있습니다.
+\\A-00\a-00\프로그래밍 공유폴더\숙련반\2시반\김지운\c\hellow world만들기\kbhit예제코드\kbhit예제코드\kbhit예제코드.cpp(32): fatal error C1075: '{': 일치하는 토큰을 찾을 수 없습니다.
