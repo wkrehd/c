@@ -29,7 +29,7 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="별이동만들어보기.cpp">
+    <ClCompile Include="별이동만들기2.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>

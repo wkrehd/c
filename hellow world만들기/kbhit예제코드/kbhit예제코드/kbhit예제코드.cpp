@@ -83,7 +83,7 @@ void main()
 	int Stop_Y = HEIGHT - 1;//밑에서 부터 시작하도록 했으니깐
 	int num = 0;
 	int Map[HEIGHT][WIDTH] = { NULL };
-	for (int y = 0 ; y < HEIGHT; y++)
+	for (int y = 0 ; y < HEIGHT; y++)//스타트 지점을 그려주는 계산식
 	{
 		Map[y][WIDTH - 1] = MOVE_STAR;
 	}

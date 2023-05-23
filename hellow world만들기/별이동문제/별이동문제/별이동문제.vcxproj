@@ -139,7 +139,7 @@
     <ClInclude Include="별이동문제.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="별이동만들어보기.cpp">
+    <ClCompile Include="별이동만들기2.cpp">
       <SDLCheck Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</SDLCheck>
     </ClCompile>
   </ItemGroup>
