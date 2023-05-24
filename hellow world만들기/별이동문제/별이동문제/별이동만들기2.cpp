@@ -88,7 +88,7 @@ void main()
 	while (1)
 	{
 		Stop_y = Stop(Map, Stop_y);
-		if (clock()- OldClock >=SPEED)//?
+		if (clock()- OldClock >=SPEED)//
 		{
 			num = Update(Map, Stop_y, num);
 			Draw(Map);
