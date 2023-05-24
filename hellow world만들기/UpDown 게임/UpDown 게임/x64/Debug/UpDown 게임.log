@@ -1,0 +1,7 @@
+﻿  UpDown.cpp
+C:\Users\S2-09\Desktop\c\c\hellow world만들기\UpDown 게임\UpDown 게임\UpDown.cpp(20,3): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\S2-09\Desktop\c\c\hellow world만들기\UpDown 게임\UpDown 게임\UpDown.cpp(39,6): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\S2-09\Desktop\c\c\hellow world만들기\UpDown 게임\UpDown 게임\UpDown.cpp(73,1): warning C4326: 'main'의 반환 형식이 'int'이어야 하는데 'void'입니다.
+C:\Users\S2-09\Desktop\c\c\hellow world만들기\UpDown 게임\UpDown 게임\UpDown.cpp(74,12): warning C4244: '인수': 'time_t'에서 'unsigned int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\S2-09\Desktop\c\c\hellow world만들기\UpDown 게임\UpDown 게임\UpDown.cpp(26): warning C4789: 버퍼 'UpDown'(크기: 4바이트)이(가) 오버런됩니다. 4바이트가 오프셋 4부터 쓰입니다.
+  UpDown 게임.vcxproj -> C:\Users\S2-09\Desktop\c\c\hellow world만들기\UpDown 게임\x64\Debug\UpDown 게임.exe
