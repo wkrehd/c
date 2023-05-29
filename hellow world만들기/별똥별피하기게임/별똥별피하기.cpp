@@ -13,7 +13,8 @@
 #define WIDTH 10
 #define HEIGHT 20
 #define CHARACTER 2
-#define STAR 10
+#define STAR 10//직전위치를 저장해줄곳
+#define STAR_MAX 18
 int map[HEIGHT][WIDTH] = {
 	{1,0,0,0,0,0,0,0,0,1},
 	{1,0,0,0,0,0,0,0,0,1},
@@ -61,6 +62,7 @@ void LevelSetting()
 
 void Init()
 {
+	int level = 50;
 	int Width = (WIDTH * 2) + 2;
 	int Height = (HEIGHT)+3;
 	char buf[256];
@@ -77,6 +79,19 @@ void Init()
 			}
 		}
 	}
+//맵전체를 읽어서 아래에서 부터 별의 위치를 알게된 후에 별을 발견하면 아래로 떨어뜨린다 
+
+		for (int x = 0; x < WIDTH; x++)//0,x위치에 별을 랜덤으로 그릴려고함
+		{
+			if (map[0][x] == 0)
+			{
+				int Num = rand() % level;
+				if (Num >= 0 && Num < 25)
+					printf("☆");
+			}
+		}
+		
+	
 }
 int MoveCheck();
 {
