@@ -11,7 +11,7 @@
 #define LEFT 75
 #define RIGHT 77
 #define WIDTH 10
-#define HEIGHT 20
+#define HEIGHT 18
 #define CHARACTER 2
 #define STAR 10
 #define STAR_MAX 18
@@ -40,6 +40,7 @@ int LastObjectIndex = NULL;
 int star[STAR_MAX][8] = { 0 };
 int min = 1;
 int max = 8;
+//맵 그리기
 void MapDraw()
 {
 	for (int y = 0; y < HEIGHT; y++)
@@ -58,7 +59,7 @@ void MapDraw()
 		printf("\n");
 	}
 }
-//난이도 조절 떨어지는 속도, 생성되는 속도
+//난이도화면, 난이도 조절 : 떨어지는 속도, 생성되는 속도
 void LevelSetting()
 {
 
@@ -71,7 +72,6 @@ int RandRange(int min, int max)//max=8 min=1
 //생성
 void Init()
 {
-	int level = 50;
 	int Width = (WIDTH * 2) + 2;
 	int Height = (HEIGHT)+3;
 	char buf[256];
@@ -93,25 +93,32 @@ void Init()
 	{
 		
 	}
-
+	for (int y = 0; y < HEIGHT; y++)
+	{
 		for (int x = 0; x < WIDTH; x++)//0,x위치에 별을 랜덤으로 그릴려고함
 		{
 			if (map[0][x] == 0)
 			{
-				int Num = rand() % level;//level이 RandRange함수를 씀으로써 필요없어 보이는대 int Num = RandRange();을 쓰면 안되나?
-				map[0][Num] = 10;//이 위치값을 저장해야됨
+				int k = 0;
+				int Num = RandRange(min, max);//x좌표
+				map[0][Num] = 10;//이 위치값을 y==0일때부터 height까지 배열로 저장해야됨
+				k = map[0][Num];
+				star[y][k];//첫번째 배열로 저장
 			}
 		}
+	}
 
 		
 		
 	
 }
+//
 int MoveCheck()
 {
 	int index = map[character[Y]][character[X]];
 	return 0;
 }
+//캐릭터가 좌우로 움직이고 벽이면 못움직이도록 만들기
 int Move()
 {
 	char ch;
@@ -150,7 +157,7 @@ void GameStart()
 		MapDraw();//맵을 그려야함
 	}
 }
-
+//메뉴화면
 void Title()
 {
 	int select;
