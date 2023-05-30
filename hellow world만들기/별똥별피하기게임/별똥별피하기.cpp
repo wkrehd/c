@@ -13,8 +13,9 @@
 #define WIDTH 10
 #define HEIGHT 20
 #define CHARACTER 2
-#define STAR 10//직전위치를 저장해줄곳
+#define STAR 10
 #define STAR_MAX 18
+
 int map[HEIGHT][WIDTH] = {
 	{1,0,0,0,0,0,0,0,0,1},
 	{1,0,0,0,0,0,0,0,0,1},
@@ -36,7 +37,9 @@ int map[HEIGHT][WIDTH] = {
 	{1,0,0,0,0,2,0,0,0,1} };
 int character[2];
 int LastObjectIndex = NULL;
-
+int star[STAR_MAX][8] = { 0 };
+int min = 1;
+int max = 8;
 void MapDraw()
 {
 	for (int y = 0; y < HEIGHT; y++)
@@ -55,11 +58,17 @@ void MapDraw()
 		printf("\n");
 	}
 }
+//난이도 조절 떨어지는 속도, 생성되는 속도
 void LevelSetting()
 {
 
 }
-
+//x좌표를 구하는 함수
+int RandRange(int min, int max)//max=8 min=1 
+{
+	return rand() % (max - min + 1) + min;
+}
+//생성
 void Init()
 {
 	int level = 50;
@@ -79,21 +88,26 @@ void Init()
 			}
 		}
 	}
-//맵전체를 읽어서 아래에서 부터 별의 위치를 알게된 후에 별을 발견하면 아래로 떨어뜨린다 
+//맵전체를 읽어서 아래에서 부터 x열의 별의 위치를 알게된 후에 별을 발견하면 아래로 떨어뜨린다 
+	for (int y = 18; y > 0; y--)
+	{
+		
+	}
 
 		for (int x = 0; x < WIDTH; x++)//0,x위치에 별을 랜덤으로 그릴려고함
 		{
 			if (map[0][x] == 0)
 			{
-				int Num = rand() % level;
-				if (Num >= 0 && Num < 25)
-					printf("☆");
+				int Num = rand() % level;//level이 RandRange함수를 씀으로써 필요없어 보이는대 int Num = RandRange();을 쓰면 안되나?
+				map[0][Num] = 10;//이 위치값을 저장해야됨
 			}
 		}
+
+		
 		
 	
 }
-int MoveCheck();
+int MoveCheck()
 {
 	int index = map[character[Y]][character[X]];
 	return 0;
@@ -124,11 +138,6 @@ int Move()
 	}
 	break;
 	}
-	int isExit = MoveCheck();
-	LastObjectIndex = map[character[Y]][character[X]];
-	map[character[Y]][character[X]] = CHARACTER;
-
-	return isExit;
 }
 
 void GameStart()
@@ -136,8 +145,9 @@ void GameStart()
 	Init();
 	while (1)
 	{
-		MapDraw();
-		if (Move())break;
+		if (Move())break;//항상 좌표가 먼저계산되고 
+
+		MapDraw();//맵을 그려야함
 	}
 }
 
