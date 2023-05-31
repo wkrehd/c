@@ -15,6 +15,7 @@
 #define CHARACTER 2
 #define STAR 10
 #define STAR_MAX 18
+#define SEC 2000 //2초
 
 int map[HEIGHT][WIDTH] = {
 	{1,0,0,0,0,0,0,0,0,1},
@@ -59,17 +60,33 @@ void MapDraw()
 		printf("\n");
 	}
 }
-//난이도화면, 난이도 조절 : 떨어지는 속도, 생성되는 속도
+//별의 개수가 많아지는 함수
+int ManyStar()
+{
+	int Num = RandRange(min, max);//이 확률을 올려야됨
+	Num = rand();//확률을 올린것을 실행시켜야함
+		return Num;
+}
+
+//난이도화면, 난이도 조절 : 떨어지는 속도, 별의 개수가 많아지는 조건
 void LevelSetting()
 {
-
+	int OldClock = 0;
+	OldClock = clock();
+	while (1)
+	{
+		if (clock() - OldClock >= SEC)//떨어지는 속도 조건
+		{
+			Init();
+		}
+	}
 }
 //x좌표를 구하는 함수
 int RandRange(int min, int max)//max=8 min=1 
 {
 	return rand() % (max - min + 1) + min;
 }
-//생성
+//맵의 좌표를 만드는 함수
 void Init()
 {
 	int Width = (WIDTH * 2) + 2;
@@ -88,26 +105,33 @@ void Init()
 			}
 		}
 	}
-//맵전체를 읽어서 아래에서 부터 x열의 별의 위치를 알게된 후에 별을 발견하면 아래로 떨어뜨린다 
-	for (int y = 18; y > 0; y--)
-	{
-		
-	}
-	for (int y = 0; y < HEIGHT; y++)
-	{
+	
 		for (int x = 0; x < WIDTH; x++)//0,x위치에 별을 랜덤으로 그릴려고함
 		{
 			if (map[0][x] == 0)
 			{
-				int k = 0;
 				int Num = RandRange(min, max);//x좌표
-				map[0][Num] = 10;//이 위치값을 y==0일때부터 height까지 배열로 저장해야됨
-				k = map[0][Num];
-				star[y][k];//첫번째 배열로 저장
+				map[0][Num] = 10;//맵에 랜덤으로 들어간 10의 값들이 저장됨
+				
+				/*int k = map[y][x]; // 10이 들어간 값들의 맵을 k에 저장함
+				map[y][x] = 0;// 맵을 초기화함
+
+				if (HEIGHT > y + 1) 
+					map[y + 1][x] = k;// k(10이들어간 맵의 배열)을 초기화한 맵의y+1값에 대입한다
+				else score++;*/
 			}
 		}
-	}
+	
+	//10이 들어간 맵을 k로 대입하고 맵을 초기화 시킨뒤에 y+1값에 = k 를 대입한다
+	for (int y = 0; y < HEIGHT; y++)
+	{
+		int k = map[y][x];
+		map[y][x] = 0;
+		if (HEIGHT > y + 1)
+			map[y + 1][x] = k;
+		else score++;
 
+	}
 		
 		
 	
