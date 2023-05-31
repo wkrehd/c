@@ -16,6 +16,7 @@
 #define STAR 10
 #define STAR_MAX 18
 #define SEC 2000 //2초
+#define SIZE 3
 
 int map[HEIGHT][WIDTH] = {
 	{1,0,0,0,0,0,0,0,0,1},
@@ -60,18 +61,26 @@ void MapDraw()
 		printf("\n");
 	}
 }
-//별의 개수가 많아지는 함수
+//0을 10으로 바꾸는 함수
 int ManyStar()
 {
-	int Num = RandRange(min, max);//이 확률을 올려야됨
-	Num = rand();//확률을 올린것을 실행시켜야함
-		return Num;
+	int num = 30;
+	int i = rand() % 100;
+	if (i >= 0 && i < num)//x좌표의 값이 0 이면 랜덤으로 10으로 바꾼다
+	{
+		RandRange(min, max) == 10;
+	}
+	else 
+		RandRange(min, max) == 0;
+	//int Num = RandRange(min, max);//이 확률을 올려야됨
+	//Num = rand();//확률을 올린것을 실행시켜야함
+	//	return Num;
 }
 
 //난이도화면, 난이도 조절 : 떨어지는 속도, 별의 개수가 많아지는 조건
 void LevelSetting()
 {
-	int OldClock = 0;
+	int OldClock = 0;//왜 초기화 하는가?
 	OldClock = clock();
 	while (1)
 	{
@@ -81,6 +90,25 @@ void LevelSetting()
 		}
 	}
 }
+//범위 설정 타이틀
+void ScopeSetting()
+{
+	int select;
+	char Level[SIZE];
+	for (int i = 0; i < SIZE; i++)
+		Level[i];
+	system("cls");
+	printf("====%s====\n",Level);
+	printf("=======난이도 조절=======\n");
+	printf("1.Easy\n");
+	printf("2.Normal\n");
+	printf("3.Hard\n");
+	printf("4.Hell\n");
+	printf("5.Return\n");
+	printf("입력 : \n");
+	scanf("");
+}
+
 //x좌표를 구하는 함수
 int RandRange(int min, int max)//max=8 min=1 
 {
