@@ -42,6 +42,7 @@ int LastObjectIndex = NULL;
 int star[STAR_MAX][8] = { 0 };
 int min = 1;
 int max = 8;
+int count = 0;
 //맵 그리기
 void MapDraw()
 {
@@ -122,17 +123,16 @@ void Init()
 	char buf[256];
 	sprintf(buf, "mode con: lines=%d cols=%d", Height, Width);
 	system(buf);
-	for (int y = 0; y < HEIGHT; y++)
-	{
+	
+	//캐릭터의 위치 생성 캐릭터의 y값은 항상 HEIGHT에있으니깐
 		for (int x = 0; x < WIDTH; x++)
 		{
-			if (map[y][x] == CHARACTER)
+			if (map[HEIGHT][x] == CHARACTER)
 			{
 				character[X] = x;
-				character[Y] = y;
+				/*character[Y] = HEIGHT;*/
 			}
 		}
-	}
 	
 		for (int x = 0; x < WIDTH; x++)//0,x위치에 별을 랜덤으로 그릴려고함
 		{
@@ -150,19 +150,36 @@ void Init()
 			}
 		}
 	
+//맵의 별의 좌표를 y+1을 하기위한 과정
 	//10이 들어간 맵을 k로 대입하고 맵을 초기화 시킨뒤에 y+1값에 = k 를 대입한다
 	for (int y = 0; y < HEIGHT; y++)
 	{
-		int k = map[y][x];
-		map[y][x] = 0;
-		if (HEIGHT > y + 1)
-			map[y + 1][x] = k;
-		else score++;
-
+		for (int x = 0; x < WIDTH; x++)
+		{
+			int k = map[y][x];
+			map[y][x] = 0;
+			if (HEIGHT > y + 1)
+				map[y + 1][x] = k;
+			else Score(count);//Score는 별의개수만큼(x좌표의 수만큼) 증가시켜야됨
+			
+		}
 	}
 		
 		
 	
+}
+//x좌표의 수를 계산하는 방법은? y=height 일때 x가 10인 갯수를 확인
+int Score(int count)
+{ 
+	for (int y = HEIGHT, int x = 0; x < WIDTH; x++)
+	{
+		if (x == 10)
+		{
+			count++;
+			/*printf("Score = :%d", i);*/
+		}
+	}
+	return count;
 }
 //
 int MoveCheck()
