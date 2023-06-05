@@ -43,9 +43,18 @@ int star[STAR_MAX][8] = { 0 };
 int min = 1;
 int max = 8;
 int count = 0;
+
+
+//x좌표를 구하는 함수
+int RandRange(int min, int max)//max=8 min=1 
+{
+	return rand() % (max - min + 1) + min;
+}
+
 //맵 그리기
 void MapDraw()
 {
+	system("cls");
 	for (int y = 0; y < HEIGHT; y++)
 	{
 		for (int x = 0; x < WIDTH; x++)
@@ -62,35 +71,34 @@ void MapDraw()
 		printf("\n");
 	}
 }
-//0을 10으로 바꾸는 함수
+
 int ManyStar()
 {
 	int num = 30;
 	int i = rand() % 100;
-	if (i >= 0 && i < num)//x좌표의 값이 0 이면 랜덤으로 10으로 바꾼다
+	if (i >= 0 && i < num)// num% 확률로 별을 생성.
 	{
-		RandRange(min, max) == 10;
+		return 1;//RandRange(1, 7);
 	}
-	else 
-		RandRange(min, max) == 0;
-	//int Num = RandRange(min, max);//이 확률을 올려야됨
-	//Num = rand();//확률을 올린것을 실행시켜야함
-	//	return Num;
+	return 0; 
 }
 
 //난이도화면, 난이도 조절 : 떨어지는 속도, 별의 개수가 많아지는 조건
-void LevelSetting()
-{
-	int OldClock = 0;//왜 초기화 하는가?
-	OldClock = clock();
-	while (1)
-	{
-		if (clock() - OldClock >= SEC)//떨어지는 속도 조건
-		{
-			Init();
-		}
-	}
-}
+//void LevelSetting()
+//{
+//	Init();
+//
+//	int OldClock = 0;//왜 초기화 하는가?
+//	OldClock = clock();
+//	while (1)
+//	{
+//		if (clock() - OldClock >= SEC)//떨어지는 속도 조건
+//		{
+//			
+//		}
+//	}
+//}
+
 //범위 설정 타이틀
 void ScopeSetting()
 {
@@ -109,12 +117,40 @@ void ScopeSetting()
 	printf("입력 : \n");
 	scanf("");
 }
-
-//x좌표를 구하는 함수
-int RandRange(int min, int max)//max=8 min=1 
+//별을 떨어뜨리는 함수
+void Drop_Star()
 {
-	return rand() % (max - min + 1) + min;
+	for (int y = HEIGHT - 1; y >= 0; y--)
+	{
+		for (int x = 1; x < WIDTH - 1; x++)
+		{
+			int k = map[y][x];
+			if (k == 10)
+			{
+				map[y][x] = 0;
+				if (HEIGHT > y + 1)
+					map[y + 1][x] = k;
+				else count++;//Score();//Score는 별의개수만큼(x좌표의 수만큼) 증가시켜야됨
+			}
+		}
+	}
 }
+//별을 생성하는 함수
+void Make_Star()
+{
+	int x = RandRange(1, 8);//x좌표 1 ~ 8 사이 랜덤한 위치에 생성.
+	map[0][x] = 10;//맵에 랜덤으로 들어간 10의 값들이 저장됨
+
+	//for (int x = 0; x < WIDTH; x++)//0,x위치에 별을 랜덤으로 그릴려고함
+	//{
+	//	if (map[0][x] == 0)
+	//	{
+	//		//int Num = RandRange(min, max);//x좌표
+	//		map[0][x] = 10;//맵에 랜덤으로 들어간 10의 값들이 저장됨
+	//	}
+	//}
+}
+
 //맵의 좌표를 만드는 함수
 void Init()
 {
@@ -125,62 +161,74 @@ void Init()
 	system(buf);
 	
 	//캐릭터의 위치 생성 캐릭터의 y값은 항상 HEIGHT에있으니깐
-		for (int x = 0; x < WIDTH; x++)
+	for (int x = 0; x < WIDTH; x++)
+	{
+		if (map[HEIGHT - 1][x] == CHARACTER)
 		{
-			if (map[HEIGHT][x] == CHARACTER)
-			{
-				character[X] = x;
-				/*character[Y] = HEIGHT;*/
-			}
+			character[X] = x;
+			character[Y] = HEIGHT - 1;
+			break;
 		}
+	}
 	
-		for (int x = 0; x < WIDTH; x++)//0,x위치에 별을 랜덤으로 그릴려고함
-		{
-			if (map[0][x] == 0)
-			{
-				int Num = RandRange(min, max);//x좌표
-				map[0][Num] = 10;//맵에 랜덤으로 들어간 10의 값들이 저장됨
-				
-				/*int k = map[y][x]; // 10이 들어간 값들의 맵을 k에 저장함
-				map[y][x] = 0;// 맵을 초기화함
+	//별을 생성하는함수 
+		//for (int x = 0; x < WIDTH; x++)//0,x위치에 별을 랜덤으로 그릴려고함
+		//{
+		//	if (map[0][x] == 0)
+		//	{
+		//		int Num = RandRange(min, max);//x좌표
+		//		map[0][Num] = 10;//맵에 랜덤으로 들어간 10의 값들이 저장됨
+		//		
+		//		/*int k = map[y][x]; // 10이 들어간 값들의 맵을 k에 저장함
+		//		map[y][x] = 0;// 맵을 초기화함
 
-				if (HEIGHT > y + 1) 
-					map[y + 1][x] = k;// k(10이들어간 맵의 배열)을 초기화한 맵의y+1값에 대입한다
-				else score++;*/
-			}
-		}
-	
+		//		if (HEIGHT > y + 1) 
+		//			map[y + 1][x] = k;// k(10이들어간 맵의 배열)을 초기화한 맵의y+1값에 대입한다
+		//		else score++;*/
+		//	}
+		//}
+	//별을 떨어뜨리는 함수
 //맵의 별의 좌표를 y+1을 하기위한 과정
 	//10이 들어간 맵을 k로 대입하고 맵을 초기화 시킨뒤에 y+1값에 = k 를 대입한다
-	for (int y = 0; y < HEIGHT; y++)
-	{
-		for (int x = 0; x < WIDTH; x++)
-		{
-			int k = map[y][x];
-			map[y][x] = 0;
-			if (HEIGHT > y + 1)
-				map[y + 1][x] = k;
-			else Score(count);//Score는 별의개수만큼(x좌표의 수만큼) 증가시켜야됨
-			
-		}
-	}
+	//for (int y = 0; y < HEIGHT; y++)
+	//{
+	//	for (int x = 0; x < WIDTH; x++)
+	//	{
+	//		int k = map[y][x];
+	//		map[y][x] = 0;
+	//		if (HEIGHT > y + 1)
+	//			map[y + 1][x] = k;
+	//		else if (k == 10) count++;//Score();//Score는 별의개수만큼(x좌표의 수만큼) 증가시켜야됨
+	//		
+	//	}
+	//}
 		
 		
 	
 }
-//x좌표의 수를 계산하는 방법은? y=height 일때 x가 10인 갯수를 확인
-int Score(int count)
-{ 
-	for (int y = HEIGHT, int x = 0; x < WIDTH; x++)
-	{
-		if (x == 10)
-		{
-			count++;
-			/*printf("Score = :%d", i);*/
-		}
-	}
-	return count;
-}
+////x좌표의 수를 계산하는 방법은? y=height 일때 x가 10인 갯수를 확인해야함
+////y가 height+1이 되는 순간에 x==10인것을 체크해서 그 수만큼 count++을 해야함
+//int Score()
+//{ 
+//		for (int x = 0; x < WIDTH; x++)
+//		{
+//			if (map[HEIGHT - 1][x] == 10)
+//			{
+//				map[HEIGHT - 1][x] = 0;
+//				count++;
+//			}
+//		}
+//	return count;
+//	//for (int y = HEIGHT, int x = 0; x < WIDTH; x++)
+//	//{
+//	//	if (x == 10)
+//	//	{
+//	//		count++;
+//	//		/*printf("Score = :%d", i);*/
+//	//	}
+//	//}
+//	//return count;
+//}
 //
 int MoveCheck()
 {
@@ -190,40 +238,66 @@ int MoveCheck()
 //캐릭터가 좌우로 움직이고 벽이면 못움직이도록 만들기
 int Move()
 {
-	char ch;
-	ch = getch();
-	if (ch == -32)
+	if (_kbhit())
+	{
+		char ch;
 		ch = getch();
-	system("cls");
-	map[character[Y]][character[X]] = LastObjectIndex;
-	switch (ch)
-	{
-	case LEFT:
-	{
-		int tile = map[character[Y]][character[X] - 1];
-		if (WALL != tile)
-			character[X]--;
-	}
-	break;
+		if (ch == -32)
+			ch = getch();
 
-	case RIGHT:
-	{
-		int tile = map[character[Y]][character[X] + 1];
-		if (WALL != tile)
-			character[X]++;
+		system("cls");
+		map[character[Y]][character[X]] = 0;
+		switch (ch)
+		{
+		case LEFT:
+		{
+			int tile = map[character[Y]][character[X] - 1];
+			if (WALL != tile)
+				character[X]--;
+		}
+		break;
+
+		case RIGHT:
+		{
+			int tile = map[character[Y]][character[X] + 1];
+			if (WALL != tile)
+				character[X]++;
+		}
+		break;
+		}
+
+		//LastObjectIndex = map[character[Y]][character[X]];
+		map[character[Y]][character[X]] = CHARACTER;
+
+		return 1;
 	}
-	break;
-	}
+
+	return 0;
 }
 
 void GameStart()
 {
+	int OldClock = 0;//왜 초기화 하는가?
+	OldClock = clock();
+	int draw = 1;
 	Init();
 	while (1)
 	{
-		if (Move())break;//항상 좌표가 먼저계산되고 
+		if(Move()) draw = 1;
+		if (clock() - OldClock >= SEC)//떨어지는 속도 조건
+		{
+			draw = 1;
+		//if (Move())break;//항상 좌표가 먼저계산되고 
+		Drop_Star();
+		Make_Star();
 
-		MapDraw();//맵을 그려야함
+		OldClock = clock();
+		}
+		if (draw)
+		{
+			draw = 0;
+			MapDraw();//맵을 그려야함
+		}
 	}
 }
 //메뉴화면
@@ -246,7 +320,7 @@ void Title()
 			GameStart();
 			break;
 		case 2:
-			LevelSetting();
+			//LevelSetting();
 			break;
 		case 3:
 			return;
