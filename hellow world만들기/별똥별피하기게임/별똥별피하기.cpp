@@ -45,7 +45,7 @@ int max = 8;
 int count = 0;
 
 
-//x좌표를 구하는 함수
+//x좌표를 구하는 함수 
 int RandRange(int min, int max)//max=8 min=1 
 {
 	return rand() % (max - min + 1) + min;
@@ -135,12 +135,23 @@ void Drop_Star()
 		}
 	}
 }
-//별을 생성하는 함수
+//별을 생성하는 함수 최소2번최대6번 중복없이 반복하도록 만들어야함
 void Make_Star()
 {
-	int x = RandRange(1, 8);//x좌표 1 ~ 8 사이 랜덤한 위치에 생성.
-	map[0][x] = 10;//맵에 랜덤으로 들어간 10의 값들이 저장됨
-
+	int k = 0;
+	for (int y=0; y<2; y++)
+	{
+		int x = RandRange(1, 8);//x좌표 1 ~ 8 사이 랜덤한 위치에 생성.
+		k = x;
+		if ();
+		{
+			int x = RandRange(1, 8);
+			map[0][x] = 10;
+		}
+		map[0][x] = 10;//맵에 랜덤으로 들어간 10의 값들이 저장됨
+		
+		
+	}
 	//for (int x = 0; x < WIDTH; x++)//0,x위치에 별을 랜덤으로 그릴려고함
 	//{
 	//	if (map[0][x] == 0)

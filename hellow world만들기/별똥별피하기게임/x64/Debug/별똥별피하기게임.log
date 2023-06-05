@@ -1,10 +1,11 @@
 ﻿  별똥별피하기.cpp
-\\A-00\a-00\프로그래밍 공유폴더\숙련반\2시반\김지운\c\hellow world만들기\별똥별피하기게임\별똥별피하기.cpp(118,2): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-\\A-00\a-00\프로그래밍 공유폴더\숙련반\2시반\김지운\c\hellow world만들기\별똥별피하기게임\별똥별피하기.cpp(105,6): warning C4101: 'select' :참조되지 않은 지역 변수입니다.
-\\A-00\a-00\프로그래밍 공유폴더\숙련반\2시반\김지운\c\hellow world만들기\별똥별피하기게임\별똥별피하기.cpp(160,2): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-\\A-00\a-00\프로그래밍 공유폴더\숙련반\2시반\김지운\c\hellow world만들기\별똥별피하기게임\별똥별피하기.cpp(244,8): warning C4996: 'getch': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _getch. See online help for details.
-\\A-00\a-00\프로그래밍 공유폴더\숙련반\2시반\김지운\c\hellow world만들기\별똥별피하기게임\별똥별피하기.cpp(246,9): warning C4996: 'getch': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _getch. See online help for details.
-\\A-00\a-00\프로그래밍 공유폴더\숙련반\2시반\김지운\c\hellow world만들기\별똥별피하기게임\별똥별피하기.cpp(315,3): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-\\A-00\a-00\프로그래밍 공유폴더\숙련반\2시반\김지운\c\hellow world만들기\별똥별피하기게임\별똥별피하기.cpp(332,1): warning C4326: 'main'의 반환 형식이 'int'이어야 하는데 'void'입니다.
-\\A-00\a-00\프로그래밍 공유폴더\숙련반\2시반\김지운\c\hellow world만들기\별똥별피하기게임\별똥별피하기.cpp(333,12): warning C4244: '인수': 'time_t'에서 'unsigned int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-  별똥별피하기게임.vcxproj -> \\A-00\a-00\프로그래밍 공유폴더\숙련반\2시반\김지운\c\hellow world만들기\별똥별피하기게임\x64\Debug\별똥별피하기게임.exe
+C:\Users\S2-09\Desktop\c\c\hellow world만들기\별똥별피하기게임\별똥별피하기.cpp(118,2): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\S2-09\Desktop\c\c\hellow world만들기\별똥별피하기게임\별똥별피하기.cpp(105,6): warning C4101: 'select' :참조되지 않은 지역 변수입니다.
+C:\Users\S2-09\Desktop\c\c\hellow world만들기\별똥별피하기게임\별똥별피하기.cpp(144,44): warning C4390: ';': 제어된 빈 문이 있습니다. 이 문이 필요합니까?
+C:\Users\S2-09\Desktop\c\c\hellow world만들기\별똥별피하기게임\별똥별피하기.cpp(169,2): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\S2-09\Desktop\c\c\hellow world만들기\별똥별피하기게임\별똥별피하기.cpp(253,8): warning C4996: 'getch': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _getch. See online help for details.
+C:\Users\S2-09\Desktop\c\c\hellow world만들기\별똥별피하기게임\별똥별피하기.cpp(255,9): warning C4996: 'getch': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _getch. See online help for details.
+C:\Users\S2-09\Desktop\c\c\hellow world만들기\별똥별피하기게임\별똥별피하기.cpp(324,3): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\S2-09\Desktop\c\c\hellow world만들기\별똥별피하기게임\별똥별피하기.cpp(341,1): warning C4326: 'main'의 반환 형식이 'int'이어야 하는데 'void'입니다.
+C:\Users\S2-09\Desktop\c\c\hellow world만들기\별똥별피하기게임\별똥별피하기.cpp(342,12): warning C4244: '인수': 'time_t'에서 'unsigned int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  별똥별피하기게임.vcxproj -> C:\Users\S2-09\Desktop\c\c\hellow world만들기\별똥별피하기게임\x64\Debug\별똥별피하기게임.exe
