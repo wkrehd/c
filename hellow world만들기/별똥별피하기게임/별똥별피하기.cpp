@@ -17,6 +17,7 @@
 #define STAR_MAX 18
 #define SEC 2000 //2초
 #define SIZE 3
+#define DIFFICULTY 2
 
 int map[HEIGHT][WIDTH] = {
 	{1,0,0,0,0,0,0,0,0,1},
@@ -138,20 +139,39 @@ void Drop_Star()
 //별을 생성하는 함수 최소2번최대6번 중복없이 반복하도록 만들어야함
 void Make_Star()
 {
-	int k = 0;
-	for (int y=0; y<2; y++)
+	int Arr[DIFFICULTY];
+	for (int i = 0; i < DIFFICULTY; i++)
 	{
-		int x = RandRange(1, 8);//x좌표 1 ~ 8 사이 랜덤한 위치에 생성.
-		k = x;
-		if ();
-		{
-			int x = RandRange(1, 8);
-			map[0][x] = 10;
-		}
-		map[0][x] = 10;//맵에 랜덤으로 들어간 10의 값들이 저장됨
-		
-		
+		Arr[i] = RandRange(1, 8);
+		map[0][Arr[i]] = 10;
+		if (Arr[i] == Arr[i - 1])
+			i--;
+		continue;
 	}
+	//int k = 2;
+	//int x1, x2 = 0;//배열로 만들어야함
+	//for (int i=0; i<k; i++)
+	//{
+	//	if (i == 0)
+	//	{
+	//		x1 = RandRange(1, 8);
+	//		continue;
+	//	}
+	//	else if (i == 1)
+	//	{
+	//		x2 = RandRange(1, 8);
+	//	}
+
+	//	if (x1 == x2)
+	//	{
+	//		i--;
+	//		continue;
+	//	}
+	//	map[0][x1] = 10;//맵에 랜덤으로 들어간 10의 값들이 저장됨
+	//	map[0][x2] = 10;
+		
+		
+	
 	//for (int x = 0; x < WIDTH; x++)//0,x위치에 별을 랜덤으로 그릴려고함
 	//{
 	//	if (map[0][x] == 0)
