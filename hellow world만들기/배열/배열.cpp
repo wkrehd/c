@@ -167,11 +167,11 @@ void main()
 	//	printf("\n");
 	//}
 
-	/*char buf[40];
+	char buf[40];
 	int age = 20;
 	char Name[10] = "최정호";
 	sprintf(buf, " % s님의 나이는 % d살 입니다.", Name, age);
-	printf("%s",buf);*/
+	printf("%s",buf);
 
 	/*printf("전화 거는중 ☏");
 	for (int i = 0; i < 3; i++)

@@ -1,1 +1,4 @@
-﻿  별똥별피하기게임.vcxproj -> \\A-00\a-00\프로그래밍 공유폴더\숙련반\2시반\김지운\c\hellow world만들기\별똥별피하기게임\x64\Debug\별똥별피하기게임.exe
+﻿  별똥별피하기.cpp
+C:\Users\S2-09\Desktop\c\c\hellow world만들기\별똥별피하기게임\별똥별피하기.cpp(122,9): warning C4477: 'scanf' : 서식 문자열 '%d'에 'int *' 형식의 인수가 필요하지만 variadic 인수 1의 형식이 'int'입니다.
+C:\Users\S2-09\Desktop\c\c\hellow world만들기\별똥별피하기게임\별똥별피하기.cpp(127,16): error C3863: 배열 형식 'char [10]'은(는) 할당할 수 없습니다.
+C:\Users\S2-09\Desktop\c\c\hellow world만들기\별똥별피하기게임\별똥별피하기.cpp(410,1): warning C4326: 'main'의 반환 형식이 'int'이어야 하는데 'void'입니다.

@@ -16,7 +16,6 @@
 #define STAR 10
 #define STAR_MAX 18
 #define SEC 2000 //2초
-#define SIZE 3
 #define DIFFICULTY 2
 
 int map[HEIGHT][WIDTH] = {
@@ -104,19 +103,32 @@ int ManyStar()
 void ScopeSetting()
 {
 	int select;
-	char Level[SIZE];
-	for (int i = 0; i < SIZE; i++)
-		Level[i];
-	system("cls");
-	printf("====%s====\n",Level);
-	printf("=======난이도 조절=======\n");
-	printf("1.Easy\n");
-	printf("2.Normal\n");
-	printf("3.Hard\n");
-	printf("4.Hell\n");
-	printf("5.Return\n");
-	printf("입력 : \n");
-	scanf("");
+	char level1[10] = "Easy";
+	char level2[10] = "Normal";
+	char level3[10] = "Hard";
+	char level4[10] = "Hell";
+	char changelevel[10] = "Easy";
+	while (1)
+	{
+		system("cls");
+		printf("====%s====\n", changelevel);
+		printf("=======난이도 조절=======\n");
+		printf("1.%s\n", level1);
+		printf("2.%s\n", level2);
+		printf("3.%s\n", level3);
+		printf("4.%s\n", level4);
+		printf("5.Return\n");
+		printf("입력 : ");
+		scanf("%d", select);
+		system("cls");
+		switch (select)
+		{
+		case 1:
+			strcpy(changelevel, level1);
+			// = "Easy";
+			break;
+		}
+	}
 }
 //별을 떨어뜨리는 함수
 void Drop_Star()
@@ -150,24 +162,24 @@ void Make_Star()
 
 
 	int Arr[8] = {0};
-	int check = 0;
+	/*int check = 0;*/
 	int x = 0;
 	while (1)//몇번을 반복할지 
 	{
-		check = 0;
-		x = RandRange(1, 8);
-		for (int i = 0; i < 8; i++)//나온값을 배열전체에서 확인해야함
+		/*check = 0;*/
+		for (int i = 0; i < DIFFICULTY; i++)//나온값을 배열전체에서 확인해야함
 		{
-			if (Arr[i] == x)//값이 중복이면 break
-			{
-				check = 1;
-				break;
-			}
+			x = RandRange(1, 8);
+			//if (Arr[i] == x)//값이 중복이면 break
+			//{
+			//	check = 1;
+			//	break;
+			//}
 			Arr[i] = x;
 			map[0][Arr[i]] = 10;
 		}
 
-		 if(check ==0)
+		 /*if(check ==0)*/
 			 break;
 	}
 
@@ -399,6 +411,5 @@ void main()
 {
 	/*srand(time(0));
 	Title();*/
-	//GameStart();
-	Make_Star();
+	ScopeSetting();
 }
