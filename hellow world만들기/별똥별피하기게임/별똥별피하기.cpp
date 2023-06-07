@@ -139,15 +139,51 @@ void Drop_Star()
 //별을 생성하는 함수 최소2번최대6번 중복없이 반복하도록 만들어야함
 void Make_Star()
 {
-	int Arr[DIFFICULTY];
-	for (int i = 0; i < DIFFICULTY; i++)
+	/*int arr[6]; 배열에 들어가있는 값들을 전체를 확인하는 루프
+	for (int i = 0; i < 5; i++)
 	{
-		Arr[i] = RandRange(1, 8);
-		map[0][Arr[i]] = 10;
-		if (Arr[i] == Arr[i - 1])
-			i--;
-		continue;
+		for (int j = i+1; j < 6; j++)
+		{
+
+		}
+	}*/
+
+
+	int Arr[8] = {0};
+	int check = 0;
+	int x = 0;
+	while (1)//몇번을 반복할지 
+	{
+		check = 0;
+		x = RandRange(1, 8);
+		for (int i = 0; i < 8; i++)//나온값을 배열전체에서 확인해야함
+		{
+			if (Arr[i] == x)//값이 중복이면 break
+			{
+				check = 1;
+				break;
+			}
+			Arr[i] = x;
+			map[0][Arr[i]] = 10;
+		}
+
+		 if(check ==0)
+			 break;
 	}
+
+
+	//for (int i = 0; i < 2; i++)
+	//{
+	//	Arr[i] = RandRange(1, 8);
+	//	if (Arr[i] == Arr[i - 1])//어떻게 배열전체값이 중복값 없이 담을까?
+	//	{
+	//		i--;
+	//		continue;
+	//	}
+
+	//	map[0][Arr[i]] = 10;
+
+	//}
 	//int k = 2;
 	//int x1, x2 = 0;//배열로 만들어야함
 	//for (int i=0; i<k; i++)
@@ -361,6 +397,8 @@ void Title()
 }
 void main()
 {
-	srand(time(0));
-	Title();
+	/*srand(time(0));
+	Title();*/
+	//GameStart();
+	Make_Star();
 }
