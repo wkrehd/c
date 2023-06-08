@@ -1,1 +1,7 @@
-﻿  별똥별피하기게임.vcxproj -> \\A-00\a-00\프로그래밍 공유폴더\숙련반\2시반\김지운\c\hellow world만들기\별똥별피하기게임\x64\Debug\별똥별피하기게임.exe
+﻿  별똥별피하기.cpp
+C:\Users\S2-09\Desktop\c\c\hellow world만들기\별똥별피하기게임\별똥별피하기.cpp(436,10): error C2059: 구문 오류: 'break'
+C:\Users\S2-09\Desktop\c\c\hellow world만들기\별똥별피하기게임\별똥별피하기.cpp(457,4): error C2664: 'int GameOver(int [])': 인수 1을(를) 'int'에서 'int []'(으)로 변환할 수 없습니다.
+C:\Users\S2-09\Desktop\c\c\hellow world만들기\별똥별피하기게임\별똥별피하기.cpp(457,24): message : 정수 계열 형식에서 포인터 형식으로 변환하려면 reinterpret_cast, C 스타일 캐스트 또는 괄호가 있는 함수 스타일 캐스트가 필요합니다.
+C:\Users\S2-09\Desktop\c\c\hellow world만들기\별똥별피하기게임\별똥별피하기.cpp(432,5): message : 'GameOver' 선언을 참조하십시오.
+C:\Users\S2-09\Desktop\c\c\hellow world만들기\별똥별피하기게임\별똥별피하기.cpp(457,4): message : 인수 목록 '(int)'을(를) 일치시키는 동안
+C:\Users\S2-09\Desktop\c\c\hellow world만들기\별똥별피하기게임\별똥별피하기.cpp(499,1): warning C4326: 'main'의 반환 형식이 'int'이어야 하는데 'void'입니다.

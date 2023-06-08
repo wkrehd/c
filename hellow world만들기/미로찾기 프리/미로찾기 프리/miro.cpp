@@ -259,7 +259,7 @@ void main()
 	while (1)
 	{
 		MapDraw();
-		if (Move())break;
+		if (Move())break;//move가 true가되면 break가된다
 	}
 	RED printf("Thank You");
 	ORIGINAL

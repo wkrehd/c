@@ -14,8 +14,8 @@
 #define HEIGHT 18
 #define CHARACTER 2
 #define STAR 10
-#define STAR_MAX 18
-#define SEC 2000 //2초
+//#define STAR_MAX 18
+//#define SEC 2000 2초
 
 int map[HEIGHT][WIDTH] = {
 	{1,0,0,0,0,0,0,0,0,1},
@@ -38,12 +38,27 @@ int map[HEIGHT][WIDTH] = {
 	{1,0,0,0,0,2,0,0,0,1} };
 int character[2];
 int LastObjectIndex = NULL;
-int star[STAR_MAX][8] = { 0 };
+//int star[STAR_MAX][8] = { 0 };
 int min = 1;
 int max = 8;
 int count = 0;
 int difficulty = 2;
 int _select = 1;
+int sec = 2000;//2초
+
+//y=helght-1 일때의 x값들이 10이면 갯수만큼 count++
+void Score()
+{
+	int y = HEIGHT - 1;
+	for (int x = 0; x < WIDTH-1; x++)
+	{
+		int c = map[y][x];
+		if (c == 10)
+		{
+			count++;
+		}
+	}
+}
 
 //x좌표를 구하는 함수 
 int RandRange(int min, int max)//max=8 min=1 
@@ -70,18 +85,19 @@ void MapDraw()
 		}
 		printf("\n");
 	}
+	printf("Score : %d", count);
 }
 
-int ManyStar()
-{
-	int num = 30;
-	int i = rand() % 100;
-	if (i >= 0 && i < num)// num% 확률로 별을 생성.
-	{
-		return 1;//RandRange(1, 7);
-	}
-	return 0; 
-}
+//int ManyStar()
+//{
+//	int num = 30;
+//	int i = rand() % 100;
+//	if (i >= 0 && i < num)// num% 확률로 별을 생성.
+//	{
+//		return 1;//RandRange(1, 7);
+//	}
+//	return 0; 
+//}
 
 //난이도화면, 난이도 조절 : 떨어지는 속도, 별의 개수가 많아지는 조건
 //void LevelSetting()
@@ -100,21 +116,25 @@ int ManyStar()
 //}
 
 //select를 매개로 난이도조절(별의 갯수추가) 하는 함수
-void ScopeSetting(int select)//select를 매개로 하게되면 Make_Star()에서 매개인자가 없다
+void ScopeSetting(int select)
 {
 	switch (select)
 	{
 	case 1:
 		difficulty = 2;
+		sec = 2000;
 		break;
 	case 2:
 		difficulty = 3;
+		sec = 2000;
 		break;
 	case 3:
 		difficulty = 4;
+		sec = 1500;
 		break;
 	case 4:
 		difficulty = 6;
+		sec = 2000;
 		break;
 	}
 }
@@ -154,15 +174,19 @@ void ScopeSetting_Title()
 		{
 		case 1:
 			difficulty = 2;
+			sec = 2000;
 			break;
 		case 2:
 			difficulty = 3;
+			sec = 2000;
 			break;
 		case 3:
 			difficulty = 4;
+			sec = 1500;
 			break;
 		case 4:
 			difficulty = 6;
+			sec = 700;
 			break;
 		case 5:
 			return;
@@ -188,7 +212,7 @@ void Drop_Star()
 				map[y][x] = 0;
 				if (HEIGHT > y + 1)
 					map[y + 1][x] = k;
-				else count++;//Score();//Score는 별의개수만큼(x좌표의 수만큼) 증가시켜야됨
+				
 			}
 		}
 	}
@@ -210,7 +234,7 @@ void Make_Star()
 	/*int check = 0;*/
 	int x = 0;
 
-	while (1)//몇번을 반복할지 
+	while (1)
 	{
 		/*check = 0;*/
 		for (int i = 0; i < difficulty; i++)//나온값을 배열전체에서 확인해야함
@@ -358,6 +382,10 @@ void Init()
 int MoveCheck()
 {
 	int index = map[character[Y]][character[X]];
+	/*if (index == STAR)
+	{
+		return 1;
+	}*/
 	return 0;
 }
 //캐릭터가 좌우로 움직이고 벽이면 못움직이도록 만들기
@@ -396,8 +424,16 @@ int Move()
 
 		return 1;
 	}
-
+	/*int gameover = MoveCheck();
+	return gameover;*/
 	return 0;
+}
+
+int GameOver(int character[2])
+{
+	int y = map[character[Y + 1]][character[X]];
+	if (character[2] == y)
+		return break;
 }
 
 void GameStart()
@@ -409,12 +445,16 @@ void GameStart()
 	while (1)
 	{
 
-		if(Move()) draw = 1;
-		if (clock() - OldClock >= SEC)//떨어지는 속도 조건
+		if (Move())
+		{
+			draw = 1;
+		}
+		if (clock() - OldClock >= sec)//떨어지는 속도 조건
 		{
 			draw = 1;
 		//if (Move())break;//항상 좌표가 먼저계산되고 
-
+			Score();
+			GameOver(character[2]);
 		Drop_Star();
 		Make_Star();
 
@@ -457,7 +497,8 @@ void Title()
 }
 void main()
 {
-	srand(time(0));
-	Title();
+	/*srand(time(0));
+	Title();*/
 	//Make_Star();
+	GameStart();
 }
