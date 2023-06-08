@@ -16,7 +16,6 @@
 #define STAR 10
 #define STAR_MAX 18
 #define SEC 2000 //2초
-#define DIFFICULTY 2
 
 int map[HEIGHT][WIDTH] = {
 	{1,0,0,0,0,0,0,0,0,1},
@@ -43,7 +42,8 @@ int star[STAR_MAX][8] = { 0 };
 int min = 1;
 int max = 8;
 int count = 0;
-
+int difficulty = 2;
+int _select = 1;
 
 //x좌표를 구하는 함수 
 int RandRange(int min, int max)//max=8 min=1 
@@ -99,35 +99,80 @@ int ManyStar()
 //	}
 //}
 
-//범위 설정 타이틀
-void ScopeSetting()
+//select를 매개로 난이도조절(별의 갯수추가) 하는 함수
+void ScopeSetting(int select)//select를 매개로 하게되면 Make_Star()에서 매개인자가 없다
 {
-	int select;
-	char level1[10] = "Easy";
+	switch (select)
+	{
+	case 1:
+		difficulty = 2;
+		break;
+	case 2:
+		difficulty = 3;
+		break;
+	case 3:
+		difficulty = 4;
+		break;
+	case 4:
+		difficulty = 6;
+		break;
+	}
+}
+
+//범위 설정 타이틀
+void ScopeSetting_Title()
+{
+	int select = 1;
+	char levels[4][10] =
+	{
+		"Easy",
+		"Normal",
+		"Hard",
+		"Hell"
+	};
+
+	/*char level1[10] = "Easy";
 	char level2[10] = "Normal";
 	char level3[10] = "Hard";
-	char level4[10] = "Hell";
-	char changelevel[10] = "Easy";
+	char level4[10] = "Hell";*/
+	/*char changelevel[10] = "Easy";*/
+	int prevselect= select;
 	while (1)
 	{
 		system("cls");
-		printf("====%s====\n", changelevel);
+		printf("====%s====\n", levels[select - 1]);
 		printf("=======난이도 조절=======\n");
-		printf("1.%s\n", level1);
-		printf("2.%s\n", level2);
-		printf("3.%s\n", level3);
-		printf("4.%s\n", level4);
+		printf("1.%s\n", levels[0]);
+		printf("2.%s\n", levels[1]);
+		printf("3.%s\n", levels[2]);
+		printf("4.%s\n", levels[3]);
 		printf("5.Return\n");
 		printf("입력 : ");
-		scanf("%d", select);
+		scanf("%d", &select);
 		system("cls");
 		switch (select)
 		{
 		case 1:
-			strcpy(changelevel, level1);
-			// = "Easy";
+			difficulty = 2;
 			break;
+		case 2:
+			difficulty = 3;
+			break;
+		case 3:
+			difficulty = 4;
+			break;
+		case 4:
+			difficulty = 6;
+			break;
+		case 5:
+			return;
+		default:
+			select = prevselect;
+
+			continue;
 		}
+
+		prevselect = select;
 	}
 }
 //별을 떨어뜨리는 함수
@@ -164,10 +209,11 @@ void Make_Star()
 	int Arr[8] = {0};
 	/*int check = 0;*/
 	int x = 0;
+
 	while (1)//몇번을 반복할지 
 	{
 		/*check = 0;*/
-		for (int i = 0; i < DIFFICULTY; i++)//나온값을 배열전체에서 확인해야함
+		for (int i = 0; i < difficulty; i++)//나온값을 배열전체에서 확인해야함
 		{
 			x = RandRange(1, 8);
 			//if (Arr[i] == x)//값이 중복이면 break
@@ -362,11 +408,13 @@ void GameStart()
 	Init();
 	while (1)
 	{
+
 		if(Move()) draw = 1;
 		if (clock() - OldClock >= SEC)//떨어지는 속도 조건
 		{
 			draw = 1;
 		//if (Move())break;//항상 좌표가 먼저계산되고 
+
 		Drop_Star();
 		Make_Star();
 
@@ -399,7 +447,7 @@ void Title()
 			GameStart();
 			break;
 		case 2:
-			//LevelSetting();
+			ScopeSetting_Title();
 			break;
 		case 3:
 			return;
@@ -409,7 +457,7 @@ void Title()
 }
 void main()
 {
-	/*srand(time(0));
-	Title();*/
-	ScopeSetting();
+	srand(time(0));
+	Title();
+	//Make_Star();
 }
