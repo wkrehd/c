@@ -378,14 +378,27 @@ void Init()
 //	//}
 //	//return count;
 //}
-//
+
+//별이 캐릭터 y+1,x 좌표를 가질때 
+int GameOver()
+{
+	int index = map[character[Y] - 1][character[X]];
+	if (index == 10)
+	{
+		printf(" 게임 종료\n");
+		system("pause");
+		return 1;
+	}
+	return 0;
+}
+
 int MoveCheck()
 {
 	int index = map[character[Y]][character[X]];
-	/*if (index == STAR)
+	if (index == STAR)
 	{
 		return 1;
-	}*/
+	}
 	return 0;
 }
 //캐릭터가 좌우로 움직이고 벽이면 못움직이도록 만들기
@@ -398,7 +411,6 @@ int Move()
 		if (ch == -32)
 			ch = getch();
 
-		system("cls");
 		map[character[Y]][character[X]] = 0;
 		switch (ch)
 		{
@@ -419,6 +431,7 @@ int Move()
 		break;
 		}
 
+		//int gameover = GameOver();
 		//LastObjectIndex = map[character[Y]][character[X]];
 		map[character[Y]][character[X]] = CHARACTER;
 
@@ -427,13 +440,6 @@ int Move()
 	/*int gameover = MoveCheck();
 	return gameover;*/
 	return 0;
-}
-
-int GameOver(int character[2])
-{
-	int y = map[character[Y + 1]][character[X]];
-	if (character[2] == y)
-		return break;
 }
 
 void GameStart()
@@ -449,17 +455,19 @@ void GameStart()
 		{
 			draw = 1;
 		}
+
 		if (clock() - OldClock >= sec)//떨어지는 속도 조건
 		{
 			draw = 1;
 		//if (Move())break;//항상 좌표가 먼저계산되고 
 			Score();
-			GameOver(character[2]);
+			if(GameOver())break;
 		Drop_Star();
 		Make_Star();
 
 		OldClock = clock();
 		}
+
 		if (draw)
 		{
 			draw = 0;
@@ -499,6 +507,6 @@ void main()
 {
 	/*srand(time(0));
 	Title();*/
-	//Make_Star();
+	/*Make_Star();*/
 	GameStart();
 }
