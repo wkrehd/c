@@ -46,6 +46,38 @@ int difficulty = 2;
 int _select = 1;
 int sec = 2000;//2초
 
+//맵을 초기화 하는 함수
+void Reset()
+{
+	int secondmap[HEIGHT][WIDTH] = {
+	{1,0,0,0,0,0,0,0,0,1},
+	{1,0,0,0,0,0,0,0,0,1},
+	{1,0,0,0,0,0,0,0,0,1},
+	{1,0,0,0,0,0,0,0,0,1},
+	{1,0,0,0,0,0,0,0,0,1},
+	{1,0,0,0,0,0,0,0,0,1},
+	{1,0,0,0,0,0,0,0,0,1},
+	{1,0,0,0,0,0,0,0,0,1},
+	{1,0,0,0,0,0,0,0,0,1},
+	{1,0,0,0,0,0,0,0,0,1},
+	{1,0,0,0,0,0,0,0,0,1},
+	{1,0,0,0,0,0,0,0,0,1},
+	{1,0,0,0,0,0,0,0,0,1},
+	{1,0,0,0,0,0,0,0,0,1},
+	{1,0,0,0,0,0,0,0,0,1},
+	{1,0,0,0,0,0,0,0,0,1},
+	{1,0,0,0,0,0,0,0,0,1},
+	{1,0,0,0,0,2,0,0,0,1} };
+	for (int y = 0; y < HEIGHT; y++)
+	{
+		for (int x = 0; x < WIDTH; x++)
+		{
+			map[y][x] = secondmap[y][x];
+		}
+	}
+	count = 0;
+}
+
 //y=helght-1 일때의 x값들이 10이면 갯수만큼 count++
 void Score()
 {
@@ -116,28 +148,28 @@ void MapDraw()
 //}
 
 //select를 매개로 난이도조절(별의 갯수추가) 하는 함수
-void ScopeSetting(int select)
-{
-	switch (select)
-	{
-	case 1:
-		difficulty = 2;
-		sec = 2000;
-		break;
-	case 2:
-		difficulty = 3;
-		sec = 2000;
-		break;
-	case 3:
-		difficulty = 4;
-		sec = 1500;
-		break;
-	case 4:
-		difficulty = 6;
-		sec = 2000;
-		break;
-	}
-}
+//void ScopeSetting(int select)
+//{
+//	switch (select)
+//	{
+//	case 1:
+//		difficulty = 2;
+//		sec = 2000;
+//		break;
+//	case 2:
+//		difficulty = 3;
+//		sec = 2000;
+//		break;
+//	case 3:
+//		difficulty = 4;
+//		sec = 1500;
+//		break;
+//	case 4:
+//		difficulty = 6;
+//		sec = 2000;
+//		break;
+//	}
+//}
 
 //범위 설정 타이틀
 void ScopeSetting_Title()
@@ -387,6 +419,7 @@ int GameOver()
 	{
 		printf(" 게임 종료\n");
 		system("pause");
+		Reset();
 		return 1;
 	}
 	return 0;
@@ -450,7 +483,7 @@ void GameStart()
 	Init();
 	while (1)
 	{
-
+		
 		if (Move())
 		{
 			draw = 1;
@@ -461,7 +494,10 @@ void GameStart()
 			draw = 1;
 		//if (Move())break;//항상 좌표가 먼저계산되고 
 			Score();
-			if(GameOver())break;
+			if (GameOver())
+			{
+				break;
+			}
 		Drop_Star();
 		Make_Star();
 
@@ -505,8 +541,8 @@ void Title()
 }
 void main()
 {
-	/*srand(time(0));
-	Title();*/
+	srand(time(0));
+	Title();
 	/*Make_Star();*/
-	GameStart();
+	/*GameStart();*/
 }
