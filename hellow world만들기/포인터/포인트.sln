@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.2.32519.379
+VisualStudioVersion = 17.5.33530.505
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "포인트", "\A-00\a-00\프로그래밍 공유폴더\숙련반\2시반\김지운\c\hellow world만들기\포인트\포인트.vcxproj", "{A9CA016E-25DF-41E5-A8BD-57C70B305A2E}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "포인트", "포인트.vcxproj", "{A9CA016E-25DF-41E5-A8BD-57C70B305A2E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -26,6 +26,6 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {213E820E-ABC5-4E33-BC67-9A247DF8A686}
+		SolutionGuid = {2C3AE5B3-F83C-4211-9ECE-C44EB224840E}
 	EndGlobalSection
 EndGlobal
