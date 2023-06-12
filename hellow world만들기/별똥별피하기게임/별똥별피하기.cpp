@@ -17,7 +17,7 @@
 //#define STAR_MAX 18
 //#define SEC 2000 2초
 
-int map[HEIGHT][WIDTH] = {
+int map[HEIGHT][WIDTH]/* = {
 	{1,0,0,0,0,0,0,0,0,1},
 	{1,0,0,0,0,0,0,0,0,1},
 	{1,0,0,0,0,0,0,0,0,1},
@@ -35,7 +35,7 @@ int map[HEIGHT][WIDTH] = {
 	{1,0,0,0,0,0,0,0,0,1},
 	{1,0,0,0,0,0,0,0,0,1},
 	{1,0,0,0,0,0,0,0,0,1},
-	{1,0,0,0,0,2,0,0,0,1} };
+	{1,0,0,0,0,2,0,0,0,1} }*/;
 int character[2];
 int LastObjectIndex = NULL;
 //int star[STAR_MAX][8] = { 0 };
@@ -50,31 +50,32 @@ int sec = 2000;//2초
 void Reset()
 {
 	int secondmap[HEIGHT][WIDTH] = {
-	{1,0,0,0,0,0,0,0,0,1},
-	{1,0,0,0,0,0,0,0,0,1},
-	{1,0,0,0,0,0,0,0,0,1},
-	{1,0,0,0,0,0,0,0,0,1},
-	{1,0,0,0,0,0,0,0,0,1},
-	{1,0,0,0,0,0,0,0,0,1},
-	{1,0,0,0,0,0,0,0,0,1},
-	{1,0,0,0,0,0,0,0,0,1},
-	{1,0,0,0,0,0,0,0,0,1},
-	{1,0,0,0,0,0,0,0,0,1},
-	{1,0,0,0,0,0,0,0,0,1},
-	{1,0,0,0,0,0,0,0,0,1},
-	{1,0,0,0,0,0,0,0,0,1},
-	{1,0,0,0,0,0,0,0,0,1},
-	{1,0,0,0,0,0,0,0,0,1},
-	{1,0,0,0,0,0,0,0,0,1},
-	{1,0,0,0,0,0,0,0,0,1},
-	{1,0,0,0,0,2,0,0,0,1} };
-	for (int y = 0; y < HEIGHT; y++)
+	{WALL,0,0,0,0,0,0,0,0,WALL},
+	{WALL,0,0,0,0,0,0,0,0,WALL},
+	{WALL,0,0,0,0,0,0,0,0,WALL},
+	{WALL,0,0,0,0,0,0,0,0,WALL},
+	{WALL,0,0,0,0,0,0,0,0,WALL},
+	{WALL,0,0,0,0,0,0,0,0,WALL},
+	{WALL,0,0,0,0,0,0,0,0,WALL},
+	{WALL,0,0,0,0,0,0,0,0,WALL},
+	{WALL,0,0,0,0,0,0,0,0,WALL},
+	{WALL,0,0,0,0,0,0,0,0,WALL},
+	{WALL,0,0,0,0,0,0,0,0,WALL},
+	{WALL,0,0,0,0,0,0,0,0,WALL},
+	{WALL,0,0,0,0,0,0,0,0,WALL},
+	{WALL,0,0,0,0,0,0,0,0,WALL},
+	{WALL,0,0,0,0,0,0,0,0,WALL},
+	{WALL,0,0,0,0,0,0,0,0,WALL},
+	{WALL,0,0,0,0,0,0,0,0,WALL},
+	{WALL,0,0,0,0,CHARACTER,0,0,0,WALL} };
+	memcpy(map, secondmap, sizeof(int) * HEIGHT * WIDTH);
+	/*for (int y = 0; y < HEIGHT; y++)
 	{
 		for (int x = 0; x < WIDTH; x++)
 		{
 			map[y][x] = secondmap[y][x];
 		}
-	}
+	}*/
 	count = 0;
 }
 
@@ -84,8 +85,7 @@ void Score()
 	int y = HEIGHT - 1;
 	for (int x = 0; x < WIDTH-1; x++)
 	{
-		int c = map[y][x];
-		if (c == 10)
+		if (map[y][x] == STAR)
 		{
 			count++;
 		}
@@ -93,7 +93,7 @@ void Score()
 }
 
 //x좌표를 구하는 함수 
-int RandRange(int min, int max)//max=8 min=1 
+int RandRange(int min, int max)//ex)max=8 min=1
 {
 	return rand() % (max - min + 1) + min;
 }
@@ -108,9 +108,9 @@ void MapDraw()
 		{
 			if (map[y][x] == WALL)
 				printf("|");
-			else if (map[y][x] == 2)
+			else if (map[y][x] == CHARACTER)
 				printf("읏");
-			else if (map[y][x] == 10)
+			else if (map[y][x] == STAR)
 				printf("☆");
 			else if (map[y][x] == NULL)
 				printf("  ");
@@ -239,7 +239,7 @@ void Drop_Star()
 		for (int x = 1; x < WIDTH - 1; x++)
 		{
 			int k = map[y][x];
-			if (k == 10)
+			if (k == STAR)
 			{
 				map[y][x] = 0;
 				if (HEIGHT > y + 1)
@@ -278,7 +278,7 @@ void Make_Star()
 			//	break;
 			//}
 			Arr[i] = x;
-			map[0][Arr[i]] = 10;
+			map[0][Arr[i]] = STAR;
 		}
 
 		 /*if(check ==0)*/
@@ -340,6 +340,8 @@ void Init()
 	char buf[256];
 	sprintf(buf, "mode con: lines=%d cols=%d", Height, Width);
 	system(buf);
+
+	Reset();
 	
 	//캐릭터의 위치 생성 캐릭터의 y값은 항상 HEIGHT에있으니깐
 	for (int x = 0; x < WIDTH; x++)
@@ -415,7 +417,7 @@ void Init()
 int GameOver()
 {
 	int index = map[character[Y] - 1][character[X]];
-	if (index == 10)
+	if (index == STAR)
 	{
 		printf(" 게임 종료\n");
 		system("pause");
