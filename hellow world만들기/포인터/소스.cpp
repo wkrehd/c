@@ -1,10 +1,29 @@
 #include<stdio.h>
 
+//최댓값 최솟값을 구하는 함수
+void MaxMin()
+{
+
+}
+
+//더 큰수를 int *max에 대입하는 함수
+void MoreNum(int num1,int num2, int *max)//num1,num2주소를 인자로 받아서 사용함
+{
+	//주소를 이용하여 값을 알아내고 그것을 비교한다?
+	//int* num = 0;
+	if (num1 > num2)
+		*max = num1;
+	else
+		*max = num2;
+}
 //소문자를 대문자로 바꿔주는 함수
 void ConverToUppercase(char *str)
 {
-	if ((*str) >= 'a' && (*str) <= 'z')
-		(*str) -= 32;
+	for (int i = 0; i < 10; i++)
+	{
+		if ((*(str+i)) >= 'a' && (*(str+i)) <= 'z')
+			(*(str+i)) -= 32;
+	}
 }
 //num1과num2의 값을 바꾸는 함수
 void Swap(int *num1, int *num2)
@@ -91,8 +110,21 @@ void main()
 	//printf("함수 호출후 num1 = %d num2 = %d\n\n", num1,num2); 
 
 	//?
-	char string[] = "string";
+	/*char string[] = "string";
 	printf("함수 호출 전 = %s\n", string);
 	ConverToUppercase(string);
-	printf("함수 호출 후 = %s\n", string);
+	printf("함수 호출 후 = %s\n", string);*/
+
+	//char string[] = "string";//배열과 포인터는 구조적으로 같다
+	//printf("함수 호출 전 = %s\n", string);
+	//ConverToUppercase(string);
+	//printf("함수 호출 후 = %s\n", string);
+
+	int num1, num2, max;
+	printf("두 수를 입력 하시오 : ");
+	scanf_s("%d%d", &num1,&num2);//주소를 받음
+	MoreNum(num1, num2, &max);//이 함수의 매개변수는 num1,num2의 주소가 들어간것인가?
+	printf("%d", max);
+
+
 }
