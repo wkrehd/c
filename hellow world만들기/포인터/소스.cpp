@@ -1,9 +1,39 @@
 #include<stdio.h>
 
-//최댓값 최솟값을 구하는 함수
-void MaxMin()
+//배열에 대입된 값들을 오름차순으로 정렬 하여 출력 하는 함수
+void Risenum(int* risenum)
 {
+	for (int i = 0; i < 8; i++)//i가 주체로서 비교를 함
+	{
+		for (int j = i + 1; j < 9; j++)//j가 대상으로서 비교를함
+		{
 
+		}
+	}
+}
+
+//숫자를 입력 받아 1부터 받은수 까지의 합을 구하는 함수
+void Sum(int num3, int* sum)
+{
+	*sum = 0;//초기화 하지 않으면 쓰레기 값에서 시작이 됨 왜?
+	for (int i = 1; i < num3 + 1; i++)
+	{
+		*sum += i;
+	}
+}
+//최댓값 최솟값을 구하는 함수
+void MaxMin(int num1,int num2,int *max,int *min)
+{
+	if (num1 > num2)
+	{
+		*max = num1;//*max값을 초기화 하지않아도 대입이 됨 
+		*min = num2;
+	}
+	else
+	{
+		*max = num2;
+		*min = num1;
+	}
 }
 
 //더 큰수를 int *max에 대입하는 함수
@@ -120,11 +150,30 @@ void main()
 	//ConverToUppercase(string);
 	//printf("함수 호출 후 = %s\n", string);
 
-	int num1, num2, max;
+	//int num1, num2, max;
+	//printf("두 수를 입력 하시오 : ");
+	//scanf_s("%d%d", &num1,&num2);//주소를 받음
+	//MoreNum(num1, num2, &max);//이 함수의 매개변수는 num1,num2의 주소가 들어간것인가?
+	//printf("%d", max);
+
+	/*int num1, num2, max, min;
 	printf("두 수를 입력 하시오 : ");
-	scanf_s("%d%d", &num1,&num2);//주소를 받음
-	MoreNum(num1, num2, &max);//이 함수의 매개변수는 num1,num2의 주소가 들어간것인가?
-	printf("%d", max);
+	scanf_s("%d%d", &num1,&num2);
+	MaxMin(num1, num2, &max, &min);
+	printf("최댓값 : %d\n최솟값 : %d\n", max,min);*/
+
+	int num3, sum;
+	printf("한 수를 입력 하시오 : ");
+	scanf_s("%d", &num3);
+	Sum(num3, &sum);
+	printf("%d", sum);
 
 
+	int risenum[9];
+	for (int i = 0; i < 8; i++)
+	{
+		scanf_s("%d" ,&risenum[i]);
+		Risenum(&risenum[i]);
+	}
+		
 }
