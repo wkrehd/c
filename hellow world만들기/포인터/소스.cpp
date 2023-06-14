@@ -1,13 +1,16 @@
 #include<stdio.h>
-
+void Swap(int* num1, int* num2);
 //배열에 대입된 값들을 오름차순으로 정렬 하여 출력 하는 함수
 void Risenum(int* risenum)
 {
-	for (int i = 0; i < 8; i++)//i가 주체로서 비교를 함
+	for (int i = 0; i < 7; i++)//i가 주체로서 비교를 함
 	{
-		for (int j = i + 1; j < 9; j++)//j가 대상으로서 비교를함
+		for (int j = i + 1; j < 8; j++)//j가 대상으로서 비교를함
 		{
-
+			if (risenum[i]>risenum[j])
+			{
+				Swap(&risenum[i], &risenum[j]);
+			}
 		}
 	}
 }
@@ -58,11 +61,11 @@ void ConverToUppercase(char *str)
 //num1과num2의 값을 바꾸는 함수
 void Swap(int *num1, int *num2)
 {
-	printf("변경전 num1 = %d num2 = %d\n", *num1,*num2);
+	//printf("변경전 num1 = %d num2 = %d\n", *num1,*num2);
 	int tmp = *num1;//tmp변수에 *num1 값을 대입한다
 	*num1 = *num2;//*num2값을 *num1에 대입한다
 	*num2 = tmp;//tmp (*num1의값이 대입이된) 값을 *num2에 대입한다
-	printf("변경후 num1 = %d num2 = %d\n\n", *num1,*num2);//*num1은 *num2값이 대입되었고 *num2는 tmp 즉 *num1값이 대입됨
+	//printf("변경후 num1 = %d num2 = %d\n\n", *num1,*num2);//*num1은 *num2값이 대입되었고 *num2는 tmp 즉 *num1값이 대입됨
 }
 //num1,num2값에 5를 더하는 함수
 void Sum(int num1, int num2)
@@ -160,20 +163,29 @@ void main()
 	printf("두 수를 입력 하시오 : ");
 	scanf_s("%d%d", &num1,&num2);
 	MaxMin(num1, num2, &max, &min);
-	printf("최댓값 : %d\n최솟값 : %d\n", max,min);*/
+	printf("최댓값 : %d\n최솟값 : %d\n", max,min);
 
 	int num3, sum;
 	printf("한 수를 입력 하시오 : ");
 	scanf_s("%d", &num3);
 	Sum(num3, &sum);
-	printf("%d", sum);
+	printf("%d", sum);*/
 
 
-	int risenum[9];
+	int risenum[8];
 	for (int i = 0; i < 8; i++)
 	{
-		scanf_s("%d" ,&risenum[i]);
-		Risenum(&risenum[i]);
+		scanf_s("%d" ,&risenum[i]);		
 	}
-		
+	Risenum(risenum);
+	for (int i = 0; i < 8; i++)
+	{
+		printf("%d,", risenum[i]);
+	}
+
+	// ---------------------------
+	char name[10];
+	int age;
+	// ----------------------------
+
 }
