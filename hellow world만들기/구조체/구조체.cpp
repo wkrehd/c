@@ -34,10 +34,34 @@ typedef struct people// 구조체 선언 , struct , 태그
 //People P_List[0]에 들어갈 이름
 void Name()
 {
-	char name[5][10] = { "김경찬","김지운","신정훈","박지환","김재우"};
-	
+	int num = 0;
+	num = RandRange();
+	int randnum[5];
+	char name[5][10] = 
+	{ 
+		"김경찬",
+		"김지운",
+		"신정훈",
+		"박지환",
+		"김재우"
+	};
+	for (int i = 0; i < 5; i++)
+	{
+		name[num][10];
+		randnum[i] = num;
+		if (randnum[i] = num)
+		{
+			i--;
+			continue;
+		}
+	}
 
 
+}
+
+void ShowPeople(People P)
+{
+	printf("이름 : %s\n", P.name);
 }
 
 //People 구조체의 변수에 랜덤값을 생성하는 함수 이름,나이,키의 최소 최대값을 설정한뒤 랜덤으로 리턴받기
@@ -85,5 +109,10 @@ void main()
 	}
 	for (int i = 0; i < 3; i++)
 		ShowPeople(P_List[i]);*/
-	People P_List[4];
+	People P_List[5];
+	for (int i = 0; i < 5; i++)
+	{
+		ShowPeople(P_List[i]);
+	}
+
 }
