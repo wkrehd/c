@@ -46,10 +46,10 @@ void Name(People* P)
 		"김재우"
 	};
 	
-	strcpy_s(P->name, 10, name[y]);
+	strcpy_s(P->name, 10, name[y]);//P-> 이것의 기능은?
 
-	int age = 0;
-	age = 20 + y;
+	P->age = 20 + y;
+	
 	//for (int i = 0; i < 5; i++)
 	//{
 	//	randnum[i] = y;
@@ -115,6 +115,7 @@ void main()
 	}
 	for (int i = 0; i < 3; i++)
 		ShowPeople(P_List[i]);*/
+
 	People P_List[5];
 	for (int i = 0; i < 5; i++)
 	{
