@@ -15,7 +15,9 @@
 //	printf("이름 = %s\n나이 = %d\n키 = %.2f\n", P2.name,P2.age,P2.height);
 //}
  
-//0~4사이의 숫자를 중복없이 랜덤으로 구하는 함수
+
+
+//0~4사이의 범위를 지정하는 함수
 int RandRange()//나이는 일의자리를 더하는것에 쓰일수 있다 그렇게 하면 나이를 배열로 안만들어도됨
 {
 	int min = 1;
@@ -24,6 +26,7 @@ int RandRange()//나이는 일의자리를 더하는것에 쓰일수 있다 그렇게 하면 나이를 배�
 
 
 }
+
 typedef struct people// 구조체 선언 , struct , 태그 
 {
 	char name[10];//People라는 구조체의 이름에서 name자료형의 배열5개를 지정하여 배열값을 이름으로 고정함
@@ -31,8 +34,17 @@ typedef struct people// 구조체 선언 , struct , 태그
 	float height;
 }People;//구조체의 이름
 
-//P_List[i]의 이름에 값을 넣은 함수
-void Name(People* P)
+//구조체 값을 바꿔주는 함수
+void Swap(People*p1, People* p2)//첫번째 p값 두번째 p값을 매개로 해야함
+{
+	People p3;
+	p3 = *p1;
+	*p1 = *p2;
+	*p2 = p3;
+}
+
+//P_List[i]의 이름,나이,키 값을 넣은 함수
+void SetPeople(People* p)
 {
 	int y = 0;
 	y = RandRange();
@@ -46,9 +58,11 @@ void Name(People* P)
 		"김재우"
 	};
 	
-	strcpy_s(P->name, 10, name[y]);//P-> 이것의 기능은?
-
-	P->age = 20 + y;
+	strcpy_s(p->name, 10, name[y]);//P-> 이것의 기능은?
+	y = RandRange();
+	p->age = 20 + y;
+	
+	p->height = 150+ (rand()%(30-1)+1) + (float)rand() / RAND_MAX;//0~1사이의 소수값 150+(29범위)+소수값
 	
 	//for (int i = 0; i < 5; i++)
 	//{
@@ -65,9 +79,32 @@ void Name(People* P)
 
 }
 
-void ShowPeople(People P)
+void ShowPeople(People p)
 {
-	printf("이름 : %s 나이 : %d\n", P.name,P.age);
+	printf("이름 : %s 나이 : %d\t키 : %.2f\n", p.name,p.age,p.height);
+}
+
+//나이 키를 내림차순으로 정렬하는 함수
+void DescendingOrder(People* p)
+{
+	for (int i = 0; i < 5; i++)
+	{
+		for (int j = i + 1; j < 6; j++)
+		{
+			if (p[i].age == p[j].age)
+				{
+					if (p[i].height<p[j].height)
+					{
+						Swap(&p[i], &p[j]);
+					}
+				}
+			else if (p[i].age < p[j].age)
+			{
+				Swap(&p[i], &p[j]);
+			}
+			
+		}
+	}
 }
 
 //People 구조체의 변수에 랜덤값을 생성하는 함수 이름,나이,키의 최소 최대값을 설정한뒤 랜덤으로 리턴받기
@@ -115,12 +152,26 @@ void main()
 	}
 	for (int i = 0; i < 3; i++)
 		ShowPeople(P_List[i]);*/
-
-	People P_List[5];
-	for (int i = 0; i < 5; i++)
+	while (1)
 	{
-		Name(&P_List[i]);
-		ShowPeople(P_List[i]);
+		People p_List[5];
+		printf("정렬 전 정보\n");
+		for (int i = 0; i < 5; i++)
+		{
+			SetPeople(&p_List[i]);
+			ShowPeople(p_List[i]);
+		}
+		printf("========================\n\n");
+		system("pause");
+
+		for (int i = 0; i < 5; i++)
+		{
+			DescendingOrder(&p_List[i]);
+			ShowPeople(p_List[i]);
+		}
+		system("pause");
+		system("cls");
 	}
+	
 
 }
