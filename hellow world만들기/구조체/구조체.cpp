@@ -158,15 +158,22 @@ void main()
 		printf("정렬 전 정보\n");
 		for (int i = 0; i < 5; i++)
 		{
-			SetPeople(&p_List[i]);
-			ShowPeople(p_List[i]);
+			SetPeople(&p_List[i]);//주소접근
+			// &p_List[i] : 0x00001
+			//void SetPeople(People* p = 0x00001)
+			// p->name : p_List[i].name
+			// p->name = "asd";
+			// p_List[i].name = "asd";
+
+
+			ShowPeople(p_List[i]);//주소접근?
 		}
 		printf("========================\n\n");
 		system("pause");
 
+		DescendingOrder(p_List);
 		for (int i = 0; i < 5; i++)
 		{
-			DescendingOrder(&p_List[i]);
 			ShowPeople(p_List[i]);
 		}
 		system("pause");

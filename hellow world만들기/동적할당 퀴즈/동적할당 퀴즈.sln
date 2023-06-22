@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.2.32519.379
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "동적할당 퀴즈", "\A-00\a-00\프로그래밍 공유폴더\숙련반\2시반\김지운\c\hellow world만들기\동적할당 퀴즈\동적할당 퀴즈.vcxproj", "{05BEA76C-4BB8-45B4-84D8-398E1BF65CF9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{05BEA76C-4BB8-45B4-84D8-398E1BF65CF9}.Debug|x64.ActiveCfg = Debug|x64
+		{05BEA76C-4BB8-45B4-84D8-398E1BF65CF9}.Debug|x64.Build.0 = Debug|x64
+		{05BEA76C-4BB8-45B4-84D8-398E1BF65CF9}.Debug|x86.ActiveCfg = Debug|Win32
+		{05BEA76C-4BB8-45B4-84D8-398E1BF65CF9}.Debug|x86.Build.0 = Debug|Win32
+		{05BEA76C-4BB8-45B4-84D8-398E1BF65CF9}.Release|x64.ActiveCfg = Release|x64
+		{05BEA76C-4BB8-45B4-84D8-398E1BF65CF9}.Release|x64.Build.0 = Release|x64
+		{05BEA76C-4BB8-45B4-84D8-398E1BF65CF9}.Release|x86.ActiveCfg = Release|Win32
+		{05BEA76C-4BB8-45B4-84D8-398E1BF65CF9}.Release|x86.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1C9384F7-0DBB-44AC-902F-723086378445}
+	EndGlobalSection
+EndGlobal

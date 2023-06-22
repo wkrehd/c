@@ -1,0 +1,6 @@
+﻿  소스.cpp
+\\A-00\a-00\프로그래밍 공유폴더\숙련반\2시반\김지운\c\hellow world만들기\동적할당 퀴즈\소스.cpp(19,9): warning C4477: 'printf' : 서식 문자열 '%s'에 'char *' 형식의 인수가 필요하지만 variadic 인수 2의 형식이 'int'입니다.
+\\A-00\a-00\프로그래밍 공유폴더\숙련반\2시반\김지운\c\hellow world만들기\동적할당 퀴즈\소스.cpp(19,9): warning C4313: 'printf': 서식 문자열의 '%s'이(가) int' 형식의 인수 2과(와) 충돌합니다.
+\\A-00\a-00\프로그래밍 공유폴더\숙련반\2시반\김지운\c\hellow world만들기\동적할당 퀴즈\소스.cpp(63,1): warning C4326: 'main'의 반환 형식이 'int'이어야 하는데 'void'입니다.
+\\A-00\a-00\프로그래밍 공유폴더\숙련반\2시반\김지운\c\hellow world만들기\동적할당 퀴즈\소스.cpp(64,10): warning C4101: 'student_List' :참조되지 않은 지역 변수입니다.
+  동적할당 퀴즈.vcxproj -> \\A-00\a-00\프로그래밍 공유폴더\숙련반\2시반\김지운\c\hellow world만들기\동적할당 퀴즈\x64\Debug\동적할당 퀴즈.exe

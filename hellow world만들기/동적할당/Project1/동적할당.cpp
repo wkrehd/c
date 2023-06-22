@@ -65,7 +65,7 @@ int SetStudent(Student* St, int StudentCount)
 	return StudentCount;
 }
 
-void main()
+int main()
 {
 	/*Student* Student_List[MAX];
 	int Select;
@@ -105,11 +105,12 @@ void main()
 		}
 		system("pause");
 	}*/
-
+	sizeof(Student);
 	char Name1[10] = "ABC";
 	char Name2[10] = "BCA";
 	char Name3[10] = "ABC";
 	printf("Name1 == Name2 : %d\n", strcmp(Name1, Name2));//다르면 -1?
 	printf("Name1 == Name3 : %d\n", strcmp(Name1, Name3));//같으면 0
-
+	
+	return 0;
 }
