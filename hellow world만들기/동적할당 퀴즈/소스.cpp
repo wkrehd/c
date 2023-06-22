@@ -1,5 +1,6 @@
 #include<stdio.h>
 #include<stdlib.h>
+#include<string.h>
 #define MAX 20
 
 //학생이라는 구조체 
@@ -12,19 +13,30 @@ typedef struct student
 	int number;
 }Student;
 
+
+
 //학생의 번호, 나이, 성별, 학년을 보여주는 함수
-void ShowStudent(Student *st)
+void ShowStudent(Student* st)
 {
-	printf("======%s학생(%d번)======\n", st->name,st->number);
-	printf("나이 : %d, 성별 : %s, 학년 : %d\n", st->age,st->grade,st->grade);
-	printf("=====================\n");
+	printf("   ======%s학생(%d번)======\n", st->name,st->number);
+	printf("   나이 : %d, 성별 : %s, 학년 : %d\n", st->age,st->sex,st->grade);
+	printf("   =====================\n");
 
 }
 
-int SetStudent(Student* st, int studentcount)
+int SetStudent(Student* st, int studentcount)//st포인터에 값을 입력
 {
 	st->number = ++studentcount;
-	printf("");
+	printf("======%d번 학생======\n", st->number);
+	printf("이름 입력 : ");
+	scanf("%s", st->name);
+	printf("나이 입력 : ");
+	scanf("%d", &st->age);
+	printf("성별 입력 : ");
+	scanf("%s", st->sex);
+	printf("학년 입력(1~3) : ");
+	scanf("%d", &st->grade);
+	return studentcount;
 }
 
 //void Title()
@@ -67,6 +79,32 @@ int SetStudent(Student* st, int studentcount)
 //	}
 //}
 
+//등록된 학생들을 학년별로 나누는 함수
+void GradeStudent(Student st,int studentcount)//변수st 값에서 grade가 1,2,3인지 확인
+{
+	for (int i = 0; i < studentcount; i++)
+	{
+		if (st.grade == 1)
+		{
+			printf("┏━━━━━━━━1 학년━━━━━━━━┓");
+			ShowStudent(&st);//주소만 필요 st+i? 오류
+			printf("┗━━━━━━━━━━━━━━━━━━━┛");
+		}
+		else if (st.grade == 2)
+		{
+			printf("┏━━━━━━━━2 학년━━━━━━━━┓");
+			ShowStudent(&st);
+			printf("┗━━━━━━━━━━━━━━━━━━━┛");
+		}
+		else
+		{
+			printf("┏━━━━━━━━3 학년━━━━━━━━┓");
+			ShowStudent(&st);
+			printf("┗━━━━━━━━━━━━━━━━━━━┛");
+		}
+	}
+	system("pause");
+}
 
 void main()
 {
@@ -76,6 +114,7 @@ void main()
 	int slect;
 	while (1)
 	{
+		system("cls");
 		printf("=====학생관리프로그램=====(총 인원 : %d)\n", studentcount);
 		printf("   1.학생 등록\n");
 		printf("   2.학생 목록(번호순)\n");
@@ -87,15 +126,49 @@ void main()
 		printf("   8.종료\n");
 		printf("   입력 : ");
 		scanf("%d", &slect);
+		system("cls");
 		switch (slect)
 		{
 		case 1:
+			if (studentcount + 1 >= MAX)
+			{
+				printf("학생정원(20명)이 모두 찼습니다.\n");
+				break;
+			}
 			student_List[studentcount] = (Student*)malloc(sizeof(Student));//학생을 등록할때 동적할당으로 생성한후 
 			studentcount = SetStudent(student_List[studentcount], studentcount);//SetStudent으로 들어간다
 				break;
 		case 2:
+			for (int i = 0; i < studentcount; i++)
+			{
+				ShowStudent(student_List[i]);
+			}
+			system("pause");
 			break;
 		case 3:
+			GradeStudent(*student_List[0], studentcount);// or st값이 필요했다 접근해야된다? 
+			/*for (int i = 0; i < studentcount; i++)
+			{
+				if (student_List[i]->grade == 1)
+				{
+					printf("┏━━━━━━━━1 학년━━━━━━━━┓\n");
+					ShowStudent(student_List[i]);
+					printf("┗━━━━━━━━━━━━━━━━━━━┛\n");
+				}
+				else if (student_List[i]->grade == 2)
+				{
+					printf("┏━━━━━━━━2 학년━━━━━━━━┓\n");
+					ShowStudent(student_List[i]);
+					printf("┗━━━━━━━━━━━━━━━━━━━┛\n");
+				}
+				else
+				{
+					printf("┏━━━━━━━━3 학년━━━━━━━━┓\n");
+					ShowStudent(student_List[i]);
+					printf("┗━━━━━━━━━━━━━━━━━━━┛\n");
+				}
+			}
+			system("pause");*/
 			break;
 		case 4:
 			break;
