@@ -34,8 +34,18 @@ int SetStudent(Student* st, int studentcount)//st포인터에 값을 입력
 	scanf("%d", &st->age);
 	printf("성별 입력 : ");
 	scanf("%s", st->sex);
-	printf("학년 입력(1~3) : ");
-	scanf("%d", &st->grade);
+	while (1)
+	{
+		printf("학년 입력(1~3) : ");
+		scanf("%d", &st->grade);
+		if (st->grade > 3 || st->grade < 0)
+		{
+			printf("학년 잘못 입력(범위 1~3학년)\n");
+			system("pause");
+			continue;
+		}
+		break;
+	}
 	return studentcount;
 }
 
@@ -80,27 +90,27 @@ int SetStudent(Student* st, int studentcount)//st포인터에 값을 입력
 //}
 
 //등록된 학생들을 학년별로 나누는 함수
-void GradeStudent(Student st,int studentcount)//변수st 값에서 grade가 1,2,3인지 확인
+void GradeStudent(Student* studentList,int studentcount)//변수st 값에서 grade가 1,2,3인지 확인
 {
 	for (int i = 0; i < studentcount; i++)
 	{
-		if (st.grade == 1)
+		if (studentList[i].grade == 1)
 		{
-			printf("┏━━━━━━━━1 학년━━━━━━━━┓");
-			ShowStudent(&st);//주소만 필요 st+i? 오류
-			printf("┗━━━━━━━━━━━━━━━━━━━┛");
+			printf("┏━━━━━━━━1 학년━━━━━━━━┓\n");
+			ShowStudent(&studentList[i]);//주소만 필요 st+i? 오류
+			printf("┗━━━━━━━━━━━━━━━━━━━┛\n");
 		}
-		else if (st.grade == 2)
+		else if (studentList[i].grade == 2)
 		{
-			printf("┏━━━━━━━━2 학년━━━━━━━━┓");
-			ShowStudent(&st);
-			printf("┗━━━━━━━━━━━━━━━━━━━┛");
+			printf("┏━━━━━━━━2 학년━━━━━━━━┓\n");
+			ShowStudent(&studentList[i]);
+			printf("┗━━━━━━━━━━━━━━━━━━━┛\n");
 		}
 		else
 		{
-			printf("┏━━━━━━━━3 학년━━━━━━━━┓");
-			ShowStudent(&st);
-			printf("┗━━━━━━━━━━━━━━━━━━━┛");
+			printf("┏━━━━━━━━3 학년━━━━━━━━┓\n");
+			ShowStudent(&studentList[i]);
+			printf("┗━━━━━━━━━━━━━━━━━━━┛\n");
 		}
 	}
 	system("pause");
@@ -146,7 +156,7 @@ void main()
 			system("pause");
 			break;
 		case 3:
-			GradeStudent(*student_List[0], studentcount);// or st값이 필요했다 접근해야된다? 
+			GradeStudent(student_List[studentcount], studentcount);// or st값이 필요했다  
 			/*for (int i = 0; i < studentcount; i++)
 			{
 				if (student_List[i]->grade == 1)
