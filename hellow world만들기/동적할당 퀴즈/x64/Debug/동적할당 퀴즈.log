@@ -1,3 +1,4 @@
 ﻿  소스.cpp
-C:\Users\김지운\Desktop\프로그래밍.1\hellow world만들기\동적할당 퀴즈\소스.cpp(120,1): warning C4326: 'main'의 반환 형식이 'int'이어야 하는데 'void'입니다.
-  동적할당 퀴즈.vcxproj -> C:\Users\김지운\Desktop\프로그래밍.1\hellow world만들기\동적할당 퀴즈\x64\Debug\동적할당 퀴즈.exe
+\\A-00\a-00\프로그래밍 공유폴더\숙련반\2시반\김지운\c\hellow world만들기\동적할당 퀴즈\소스.cpp(120,1): warning C4326: 'main'의 반환 형식이 'int'이어야 하는데 'void'입니다.
+  LINK : \\A-00\a-00\프로그래밍 공유폴더\숙련반\2시반\김지운\c\hellow world만들기\동적할당 퀴즈\x64\Debug\동적할당 퀴즈.exe을(를) 찾을 수 없거나 마지막 증분 링크에 의해 빌드되지 않았습니다. 전체 링크를 수행하고 있습니다.
+  동적할당 퀴즈.vcxproj -> \\A-00\a-00\프로그래밍 공유폴더\숙련반\2시반\김지운\c\hellow world만들기\동적할당 퀴즈\x64\Debug\동적할당 퀴즈.exe

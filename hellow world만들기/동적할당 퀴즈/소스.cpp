@@ -16,10 +16,10 @@ typedef struct student
 
 
 //학생의 번호, 나이, 성별, 학년을 보여주는 함수
-void ShowStudent(Student* st)
+void ShowStudent(Student* st)//매개변수 student_List[i]을 받았는대 *st로 받을수 있는 이유는 *st의 시작주소와 student_List[i]의 시작주소가 같기 때문이다 배열의 이름은 시작주소를 가지므로
 {
-	printf("   ======%s학생(%d번)======\n", st->name,st->number);
-	printf("   나이 : %d, 성별 : %s, 학년 : %d\n", st->age,st->sex,st->grade);
+	printf("   ======%s학생(%d번)======\n", st->name,st->number);//student 구조체의 st변수에서 name , number값으로 접근 하는것
+	printf("   나이 : %d, 성별 : %s, 학년 : %d\n", st->age,st->sex,st->grade);///student 구조체의 st변수에서 age , grade값으로 접근 하는것
 	printf("   =====================\n");
 
 }
@@ -89,36 +89,70 @@ int SetStudent(Student* st, int studentcount)//st포인터에 값을 입력
 //	}
 //}
 
-//등록된 학생들을 학년별로 나누는 함수
-void GradeStudent(Student* studentList,int studentcount)//변수st 값에서 grade가 1,2,3인지 확인
+//등록된 학생들을 학년별로 나누는 함수 //등록된 학생들을 정렬을 하고 출력하도록 만들기 
+void GradeStudent(Student* studentList[], int studentcount)//배열로 받았으나
 {
+	//printf("┏━━━━━━━━1 학년━━━━━━━━┓\n");
+	//for (int i = 0; i < studentcount; i++)
+	//{
+	//	if(1 == studentList[i]->grade)
+	//	ShowStudent(studentList[i]);//주소만 필요 st+i? 오류
+	//}
+	//printf("┗━━━━━━━━━━━━━━━━━━━┛\n");
+
+	//printf("┏━━━━━━━━2 학년━━━━━━━━┓\n");
+	//for (int i = 0; i < studentcount; i++)
+	//{
+	//	if (2 == studentList[i]->grade)
+	//		ShowStudent(studentList[i]);//주소만 필요 st+i? 오류
+	//}
+	//printf("┗━━━━━━━━━━━━━━━━━━━┛\n");
+
+	//printf("┏━━━━━━━━3 학년━━━━━━━━┓\n");
+	//for (int i = 0; i < studentcount; i++)
+	//{
+	//	if (3 == studentList[i]->grade)
+	//		ShowStudent(studentList[i]);//주소만 필요 st+i? 오류
+	//}
+	//printf("┗━━━━━━━━━━━━━━━━━━━┛\n");
+
 	for (int i = 0; i < studentcount; i++)
 	{
-		if (studentList[i].grade == 1)
+		switch (studentList[i]->grade)//swhitch (num) num자리의 숫자로 바로가게됨 없으면 switch를 빠져나옴 break가 없으면 접근한곳부터 break가 있는 코드까지 실행이됨
 		{
+		case 1:
 			printf("┏━━━━━━━━1 학년━━━━━━━━┓\n");
-			ShowStudent(&studentList[i]);//주소만 필요 st+i? 오류
+			ShowStudent(studentList[i]);
 			printf("┗━━━━━━━━━━━━━━━━━━━┛\n");
-		}
-		else if (studentList[i].grade == 2)
-		{
+			break;
+		case 2 :
 			printf("┏━━━━━━━━2 학년━━━━━━━━┓\n");
-			ShowStudent(&studentList[i]);
+			ShowStudent(studentList[i]);
 			printf("┗━━━━━━━━━━━━━━━━━━━┛\n");
+			break;
+		default :
+			printf("┏━━━━━━━━3 학년━━━━━━━━┓\n");
+			ShowStudent(studentList[i]);
+			printf("┗━━━━━━━━━━━━━━━━━━━┛\n");
+			break;
+		}
+		/*if (studentList[i]->grade == 1)
+		{
+		}
+		else if (studentList[i]->grade == 2)
+		{
 		}
 		else
 		{
-			printf("┏━━━━━━━━3 학년━━━━━━━━┓\n");
-			ShowStudent(&studentList[i]);
-			printf("┗━━━━━━━━━━━━━━━━━━━┛\n");
-		}
+		}*/
 	}
 	system("pause");
 }
 
 void main()
 {
-	Student *student_List[MAX];
+	Student *student_List[MAX];//구조체를 배열로 만든 이유는 student_List[MAX]변수 하나로 정보를 관리하기위해
+	//배열을 포인터로 만든 이유는? 동적할당된 메모리의 주소는 시작주소만 알게 되는대 그것을 보관해야 되므로 포인터로 만들게 된것
 	/*Title();*/
 	int studentcount = 0;
 	int slect;
@@ -151,34 +185,13 @@ void main()
 		case 2:
 			for (int i = 0; i < studentcount; i++)
 			{
-				ShowStudent(student_List[i]);
+				ShowStudent(student_List[i]);//학생의 인적사항을 보여주기위해 배열의 값을 매개변수로 만든다
 			}
 			system("pause");
 			break;
 		case 3:
-			GradeStudent(student_List[studentcount], studentcount);// or st값이 필요했다  
-			/*for (int i = 0; i < studentcount; i++)
-			{
-				if (student_List[i]->grade == 1)
-				{
-					printf("┏━━━━━━━━1 학년━━━━━━━━┓\n");
-					ShowStudent(student_List[i]);
-					printf("┗━━━━━━━━━━━━━━━━━━━┛\n");
-				}
-				else if (student_List[i]->grade == 2)
-				{
-					printf("┏━━━━━━━━2 학년━━━━━━━━┓\n");
-					ShowStudent(student_List[i]);
-					printf("┗━━━━━━━━━━━━━━━━━━━┛\n");
-				}
-				else
-				{
-					printf("┏━━━━━━━━3 학년━━━━━━━━┓\n");
-					ShowStudent(student_List[i]);
-					printf("┗━━━━━━━━━━━━━━━━━━━┛\n");
-				}
-			}
-			system("pause");*/
+			GradeStudent(student_List, studentcount);//배열에 있는 값이 필요하기 때문에 배열을 매개변수로 사용함
+			//왜 배열이 필요하나면 변수를 *student_List[MAX]형태 즉 변수를 배열로 만들었기때문에 
 			break;
 		case 4:
 			break;
