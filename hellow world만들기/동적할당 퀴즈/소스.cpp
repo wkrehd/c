@@ -34,11 +34,7 @@ void NumberOrder(Student* studentList[], int studentcount)
 		}
 	}
 }
-//학생이름으로 학생 인적사항을 출력하는 함수
-void NameSearch()
-{
 
-}
 
 //학생의 번호, 나이, 성별, 학년을 보여주는 함수
 void ShowStudent(Student* st)//매개변수 student_List[i]을 받았는대 *st로 받을수 있는 이유는 *st의 시작주소와 student_List[i]의 시작주소가 같기 때문이다 배열의 이름은 시작주소를 가지므로
@@ -73,6 +69,29 @@ int SetStudent(Student* st, int studentcount)//st포인터에 값을 입력
 	}
 	return studentcount;
 }
+
+//학생이름으로 학생 인적사항을 출력하는 함수
+void NameSearch(Student* studentList[], int studentcount)
+{
+	char name[20];
+	for (int i = 0; i < studentcount; i++)
+	{
+		printf("검색할 이름 입력 : ");
+		scanf("%s", &name);
+		if (strcmp(name, studentList[i]->name) == 0)//name 과 studentList[i]->name이 같다면 strcmp()함수 결과로 0이 나온다
+		{
+			ShowStudent(studentList[i]);
+			system("pause");
+			break;
+		}
+		else
+		{
+			system("pause");
+			break;
+		}
+	}
+}
+
 //학년검색 하기위한 함수
 void GradeSearch(Student* studentList[],int studentcount)
 {
@@ -124,45 +143,14 @@ void GradeSearch(Student* studentList[],int studentcount)
 	}
 	system("pause");
 }
-//void Title()
-//{
-//	int studentcount = 0;
-//	int slect;
-//	while (1)
-//	{
-//		printf("=====학생관리프로그램=====(총 인원 : %d)\n", studentcount);
-//		printf("   1.학생 등록\n");
-//		printf("   2.학생 목록(번호순)\n");
-//		printf("   3.학생 목록(학년순)\n");
-//		printf("   4.학생 검색\n");
-//		printf("   5.학생 검색\n");
-//		printf("   6.마지막 학생 삭제\n");
-//		printf("   7.학생 전체 삭제\n");
-//		printf("   8.종료\n");
-//		printf("   입력 : ");
-//		scanf("%d", &slect);
-//		switch (slect)
-//		{
-//		case 1:
-//			student_List[MAX]
-//			break;
-//		case 2:
-//			break;
-//		case 3:
-//			break;
-//		case 4:
-//			break;
-//		case 5:
-//			break;
-//		case 6:
-//			break;
-//		case 7:
-//			break;
-//		case 8:
-//			break;
-//		}
-//	}
-//}
+
+//마지막 배열에 등록된 학생을 삭제하기
+int LastStudentDelete(Student* studentList[], int studentcount)//
+{
+	free(studentList[studentcount]);
+	return studentcount--;
+}
+
 
 //등록된 학생들을 학년별로 오름차순으로 정렬 하고 출력 
 void GradeStudent(Student* studentList[], int studentcount)//배열로 받았으나
@@ -294,8 +282,10 @@ void main()
 			GradeSearch(student_List, studentcount);
 			break;
 		case 5:
+			NameSearch(student_List, studentcount);
 			break;
 		case 6:
+			LastStudentDelete(student_List, studentcount);
 			break;
 		case 7:
 			break;
