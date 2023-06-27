@@ -20,6 +20,25 @@ void Swap(Student *st1, Student* st2)
 	*st1 = *st2;
 	*st2 = st3;
 }
+//번호순으로 바꾸는 함수
+void NumberOrder(Student* studentList[], int studentcount)
+{
+	for (int i = 0; i < studentcount - 1; i++)//배열크기의 -1의 값이 들어가야함
+	{
+		for (int j = i + 1; j < studentcount; j++)//배열크기 값이 들어가야함
+		{
+			if (studentList[i]->number > studentList[j]->number)//오름차순
+			{
+				Swap(studentList[i], studentList[j]);
+			}
+		}
+	}
+}
+//학생이름으로 학생 인적사항을 출력하는 함수
+void NameSearch()
+{
+
+}
 
 //학생의 번호, 나이, 성별, 학년을 보여주는 함수
 void ShowStudent(Student* st)//매개변수 student_List[i]을 받았는대 *st로 받을수 있는 이유는 *st의 시작주소와 student_List[i]의 시작주소가 같기 때문이다 배열의 이름은 시작주소를 가지므로
@@ -29,7 +48,7 @@ void ShowStudent(Student* st)//매개변수 student_List[i]을 받았는대 *st로 받을수 
 	printf("   =====================\n");
 
 }
-
+//학생 인적사항 등록하는 함수
 int SetStudent(Student* st, int studentcount)//st포인터에 값을 입력
 {
 	st->number = ++studentcount;
@@ -54,7 +73,57 @@ int SetStudent(Student* st, int studentcount)//st포인터에 값을 입력
 	}
 	return studentcount;
 }
-
+//학년검색 하기위한 함수
+void GradeSearch(Student* studentList[],int studentcount)
+{
+	int grade =0;//studentList[i]->grade 값을 대입하여 switch에 사용하기 위해
+	//몇 학년인지 입력을 하는 곳
+	for (int i = 0; i < studentcount; i++)//&studentList[i]에서 i를 쓰기 위해서 for을 사용함 
+	{
+		printf("검색할 학년 입력(1~3) : ");
+		scanf("%d", &studentList[i]->grade);
+		if (0 > studentList[i]->grade || 3 < studentList[i]->grade)// studentList[i]->grade 1~3까지가 아닌 범위를 만들기 위함
+		{
+			printf("학년 잘못 입력(범위 1~3학년)\n");
+			system("pause");
+			i--;
+			continue;
+		}
+		grade = studentList[i]->grade;
+	}
+	//입력받은 학년을 출력 하는 곳
+	switch (grade)//grade ==(1~3)
+	{
+	case 1:
+		printf("┏━━━━━━━━ 1 학년 ━━━━━━━━┓\n");
+		for (int i = 0; i < studentcount; i++)
+		{
+			if (1 == studentList[i]->grade)
+				ShowStudent(studentList[i]);
+		}
+		printf("┗━━━━━━━━━━━━━━━━━━━┛\n");
+		break;
+	case 2:
+		printf("┏━━━━━━━━ 2 학년 ━━━━━━━━┓\n");
+		for (int i = 0; i < studentcount; i++)
+		{
+			if (2 == studentList[i]->grade)
+				ShowStudent(studentList[i]);
+		}
+		printf("┗━━━━━━━━━━━━━━━━━━━┛\n");
+		break;
+	case 3:
+		printf("┏━━━━━━━━ 3 학년 ━━━━━━━━┓\n");
+		for (int i = 0; i < studentcount; i++)
+		{
+			if (3 == studentList[i]->grade)
+				ShowStudent(studentList[i]);
+		}
+		printf("┗━━━━━━━━━━━━━━━━━━━┛\n");
+		break;
+	}
+	system("pause");
+}
 //void Title()
 //{
 //	int studentcount = 0;
@@ -95,7 +164,7 @@ int SetStudent(Student* st, int studentcount)//st포인터에 값을 입력
 //	}
 //}
 
-//등록된 학생들을 학년별로 나누는 함수 //등록된 학생들을 정렬을 하고 출력하도록 만들기 
+//등록된 학생들을 학년별로 오름차순으로 정렬 하고 출력 
 void GradeStudent(Student* studentList[], int studentcount)//배열로 받았으나
 {
 	for (int i = 0; i < studentcount; i++)
@@ -132,11 +201,11 @@ void GradeStudent(Student* studentList[], int studentcount)//배열로 받았으나
 	//}
 	//printf("┗━━━━━━━━━━━━━━━━━━━┛\n");
 
-	for (int i = 0; i < studentcount; i++)
-	{
-		switch (studentList[i]->grade)//swhitch (num) num자리의 숫자로 바로가게됨 없으면 switch를 빠져나옴 break가 없으면 접근한곳부터 break가 있는 코드까지 실행이됨
-		{
-		case 1:
+	/*for (int i = 0; i < studentcount; i++)
+	{*/
+		//switch (studentList[i]->grade)//swhitch (num) num자리의 숫자로 바로가게됨 없으면 switch를 빠져나옴 break가 없으면 접근한곳부터 break가 있는 코드까지 실행이됨
+		//{
+		//case 1:
 			printf("┏━━━━━━━━ 1 학년 ━━━━━━━━┓\n");
 			for (int i = 0; i < studentcount; i++)
 				{
@@ -144,8 +213,8 @@ void GradeStudent(Student* studentList[], int studentcount)//배열로 받았으나
 						ShowStudent(studentList[i]);
 				}
 			printf("┗━━━━━━━━━━━━━━━━━━━┛\n");
-			break;
-		case 2 :
+			/*break;
+		case 2 :*/
 			printf("┏━━━━━━━━ 2 학년 ━━━━━━━━┓\n");
 			for (int i = 0; i < studentcount; i++)
 			{
@@ -153,8 +222,8 @@ void GradeStudent(Student* studentList[], int studentcount)//배열로 받았으나
 				ShowStudent(studentList[i]);
 			}
 			printf("┗━━━━━━━━━━━━━━━━━━━┛\n");
-			break;
-		case 3 :
+			/*break;
+		case 3 :*/
 			printf("┏━━━━━━━━ 3 학년 ━━━━━━━━┓\n");
 			for (int i = 0; i < studentcount; i++)
 			{
@@ -162,8 +231,8 @@ void GradeStudent(Student* studentList[], int studentcount)//배열로 받았으나
 				ShowStudent(studentList[i]);
 			}
 			printf("┗━━━━━━━━━━━━━━━━━━━┛\n");
-			break;
-		}
+			/*break;*/
+	/*}*/
 		/*if (studentList[i]->grade == 1)
 		{
 		}
@@ -173,7 +242,6 @@ void GradeStudent(Student* studentList[], int studentcount)//배열로 받았으나
 		else
 		{
 		}*/
-	}
 	system("pause");
 }
 
@@ -191,7 +259,7 @@ void main()
 		printf("   1.학생 등록\n");
 		printf("   2.학생 목록(번호순)\n");
 		printf("   3.학생 목록(학년순)\n");
-		printf("   4.학생 검색\n");
+		printf("   4.학년 검색\n");
 		printf("   5.학생 검색\n");
 		printf("   6.마지막 학생 삭제\n");
 		printf("   7.학생 전체 삭제\n");
@@ -213,6 +281,7 @@ void main()
 		case 2:
 			for (int i = 0; i < studentcount; i++)
 			{
+				NumberOrder(student_List, studentcount);
 				ShowStudent(student_List[i]);//학생의 인적사항을 보여주기위해 배열의 값을 매개변수로 만든다
 			}
 			system("pause");
@@ -222,6 +291,7 @@ void main()
 			//왜 배열이 필요하나면 변수를 *student_List[MAX]형태  변수를 배열로 만들었기때문에 
 			break;
 		case 4:
+			GradeSearch(student_List, studentcount);
 			break;
 		case 5:
 			break;
