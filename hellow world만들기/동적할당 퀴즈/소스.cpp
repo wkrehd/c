@@ -1,6 +1,6 @@
 #include<stdio.h>
-#include<stdlib.h>
-#include<string.h>
+#include<stdlib.h>//(void*)malloc(size_t size), free함수 사용하기위해
+#include<string.h>//strcmp 함수를 사용할려고
 #define MAX 20
 
 //학생이라는 구조체 
@@ -81,15 +81,11 @@ void NameSearch(Student* studentList[], int studentcount)
 		if (strcmp(name, studentList[i]->name) == 0)//name 과 studentList[i]->name이 같다면 strcmp()함수 결과로 0이 나온다
 		{
 			ShowStudent(studentList[i]);
-			system("pause");
-			break;
-		}
-		else
-		{
-			system("pause");
+			//system("pause");
 			break;
 		}
 	}
+			system("pause");
 }
 
 //학년검색 하기위한 함수
@@ -147,8 +143,12 @@ void GradeSearch(Student* studentList[],int studentcount)
 //마지막 배열에 등록된 학생을 삭제하기
 int LastStudentDelete(Student* studentList[], int studentcount)//
 {
-	free(studentList[studentcount]);
-	return studentcount--;
+	if (0< studentcount/* && NULL != studentList[studentcount - 1]*/)
+	{
+		free(studentList[--studentcount]);
+		studentList[studentcount] = NULL;
+	}
+	return studentcount;
 }
 
 
@@ -285,12 +285,24 @@ void main()
 			NameSearch(student_List, studentcount);
 			break;
 		case 6:
-			LastStudentDelete(student_List, studentcount);
+			studentcount = LastStudentDelete(student_List, studentcount);
 			break;
 		case 7:
+			while (studentcount)
+			{
+				studentcount = LastStudentDelete(student_List, studentcount);
+			}
+			/*for (int i = 0; i < studentcount +1 ; i++)
+			{
+				studentcount =LastStudentDelete(student_List, studentcount);
+			}*/
 			break;
 		case 8:
-			break;
+			while (studentcount)
+			{
+				studentcount = LastStudentDelete(student_List, studentcount);
+			}
+			return;
 		}
 	}
 	
