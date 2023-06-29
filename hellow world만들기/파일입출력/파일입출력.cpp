@@ -80,7 +80,7 @@ void main()
 	//	}
 	//	fclose(f);
 	//}
-	People p1 = {"A",20,"010-1234-5678"};
+	/*People p1 = {"A",20,"010-1234-5678"};
 	FILE* f = fopen("People.txt", "w");
 	fprintf(f,"%s %d %s", p1.name,p1.age,p1.phonnumber);
 	fclose(f);
@@ -95,5 +95,34 @@ void main()
 		printf("이름 : %s \n나이 : %d\n", p1.name, p1.age);
 		printf("휴대폰번호 : %s\n", p1.phonnumber);
 		fclose(f);
+	}*/
+	People p1 = { "A",20,"010-1234-5678" };
+	FILE* f = fopen("People.txt","w");
+	char buf[256];
+	fprintf(f,"이름 : %s나이 : %d\n", p1.name,p1.age);
+	fprintf(f,"휴대폰 번호 : %s", p1.phonnumber);
+	fclose(f);
+	f = fopen("People.txt", "r");
+	/*if (f == NULL)
+	{
+		printf("해당 이름의 파일이 없습니다.");
 	}
+	else
+	{
+		while (!feof(f))
+		{
+			fgets(buf, sizeof(buf), f);
+			printf("%s\n",buf);
+		}
+		fclose(f);
+	}*/
+
+	if (f == NULL)
+		printf("해당 이름의 파일이 없습니다.");
+	else
+	{
+		fread(buf, sizeof(buf), 1, f);
+		printf("%s\n",buf);
+	}
+	fclose(f);
 }
