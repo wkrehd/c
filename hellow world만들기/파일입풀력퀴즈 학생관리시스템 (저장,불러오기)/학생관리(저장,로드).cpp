@@ -309,18 +309,26 @@ void main()
 			break;
 		}
 		case 9://txt파일에 저장된 내용을 student_List에 대입한다
-			FILE*f = fopen("학생정보 리스트.txt", "r");
+		{
+			FILE* f = fopen("학생정보 리스트.txt", "r");
 			if (f == NULL)
 				printf("해당 이름의 파일이 없습니다.");
 			else//텍스트에 적힌 처음 숫자만큼 배열을 늘려야함 그리고 기존에 생긴 배열 다음 주소에 값들을 넣어야함
 			{
-				fscanf(f, "%d", num);//위studentcount값을  아래 studentcount에 더해야함
-				student_List[studentcount+num] = (Student*)malloc(sizeof(Student));//
-				studentcount = SetStudent(student_List[studentcount+num], studentcount);//까지 맞는가 물어보기
-				fscanf(f, "%s", student_List[studentcount].name);
-				
-			}
+				fscanf(f, "%d", num);//위num값을  아래 studentcount에 더해야함
+				for (int i = 0; num > i; i++)
+				{
+					//if(20 < studentcount + i)
+					student_List[studentcount + i] = (Student*)malloc(sizeof(Student));//
+					studentcount = SetStudent(student_List[studentcount + i], studentcount);//까지 맞는가 물어보기
+					fscanf(f, "%s", student_List[studentcount + i]->name);//student_List이게왜 오류가 나오는가
+				}
 
+
+
+			}
+			break;
+		}
 		case 10:
 			while (studentcount)
 			{
