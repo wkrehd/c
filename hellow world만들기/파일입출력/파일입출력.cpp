@@ -80,7 +80,7 @@ void main()
 	//	}
 	//	fclose(f);
 	//}
-	People p1 = {"A",20,"010-1234-5678"};
+	/*People p1 = {"A",20,"010-1234-5678"};
 	FILE* f = fopen("People.txt", "w");
 	fprintf(f,"%s %d %s", p1.name,p1.age,p1.phonnumber);
 	fclose(f);
@@ -95,7 +95,7 @@ void main()
 		printf("이름 : %s \n나이 : %d\n", p1.name, p1.age);
 		printf("휴대폰번호 : %s\n", p1.phonnumber);
 		fclose(f);
-	}
+	}*/
 	//People p1 = { "A",20,"010-1234-5678" };
 	//FILE* f = fopen("People.txt","w");
 	//char buf[256];
@@ -125,4 +125,39 @@ void main()
 	//	printf("%s\n",buf);
 	//}
 	//fclose(f);
+
+	//FILE* f = fopen("Text1.txt", "w");//덮어쓰기 상태
+	//int num;
+	//fprintf(f,"1 2 3 4");
+	//fclose(f);
+	//f = fopen("Text1.txt", "r");//읽기 상태
+	//if (f == NULL)
+	//	printf("해당 이름의 파일이 없습니다.");
+	//else
+	//{
+	//	while (!feof(f))
+	//	{
+	//		fscanf(f, "%d", &num);
+	//		printf("%d", num);
+	//	}
+	//	fclose(f);
+	//}
+
+People p1[3] = {"A",20,"010-1234-5678"};
+FILE* f = fopen("People20.txt", "w");
+fprintf(f, "%s %d %s", p1[0].name, p1[0].age, p1[0].phonnumber);
+fclose(f);
+f = fopen("People20.txt", "r");
+if (f == NULL)
+printf("해당 이름의 파일이 없습니다.");
+else
+{
+	fscanf(f, "%s", p1[0].name);
+	fscanf(f, "%d", &p1[0].age);
+	fscanf(f, "%s", p1[0].phonnumber);
+	printf("이름 : %s \n나이 :%d\n", p1[0].name, p1[0].age);
+	printf("휴대폰번호 : %s\n", p1[0].phonnumber);
+	fclose(f);
+}
+
 }

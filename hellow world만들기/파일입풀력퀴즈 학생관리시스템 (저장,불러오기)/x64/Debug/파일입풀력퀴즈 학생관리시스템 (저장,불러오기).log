@@ -1,3 +1,11 @@
 ﻿  학생관리(저장,로드).cpp
-C:\Users\S2-09\Desktop\c\c\hellow world만들기\파일입풀력퀴즈 학생관리시스템 (저장,불러오기)\학생관리(저장,로드).cpp(222,1): warning C4326: 'main'의 반환 형식이 'int'이어야 하는데 'void'입니다.
-  파일입풀력퀴즈 학생관리시스템 (저장,불러오기).vcxproj -> C:\Users\S2-09\Desktop\c\c\hellow world만들기\파일입풀력퀴즈 학생관리시스템 (저장,불러오기)\x64\Debug\파일입풀력퀴즈 학생관리시스템 (저장,불러오기).exe
+C:\Users\S2-01\Desktop\c\c\hellow world만들기\파일입풀력퀴즈 학생관리시스템 (저장,불러오기)\학생관리(저장,로드).cpp(222,1): warning C4326: 'main'의 반환 형식이 'int'이어야 하는데 'void'입니다.
+C:\Users\S2-01\Desktop\c\c\hellow world만들기\파일입풀력퀴즈 학생관리시스템 (저장,불러오기)\학생관리(저장,로드).cpp(317,15): warning C4477: 'fscanf' : 서식 문자열 '%d'에 'int *' 형식의 인수가 필요하지만 variadic 인수 1의 형식이 'int'입니다.
+C:\Users\S2-01\Desktop\c\c\hellow world만들기\파일입풀력퀴즈 학생관리시스템 (저장,불러오기)\학생관리(저장,로드).cpp(319,48): error C2228: '.name' 왼쪽에는 클래스/구조체/공용 구조체가 있어야 합니다.
+C:\Users\S2-01\Desktop\c\c\hellow world만들기\파일입풀력퀴즈 학생관리시스템 (저장,불러오기)\학생관리(저장,로드).cpp(319,48): message : 'Student *' 형식입니다.
+C:\Users\S2-01\Desktop\c\c\hellow world만들기\파일입풀력퀴즈 학생관리시스템 (저장,불러오기)\학생관리(저장,로드).cpp(319,48): message : 대신 '->'을(를) 사용하려고 했습니까?
+C:\Users\S2-01\Desktop\c\c\hellow world만들기\파일입풀력퀴즈 학생관리시스템 (저장,불러오기)\학생관리(저장,로드).cpp(319,15): warning C4473: 'fscanf': 서식 문자열에 대한 인수가 충분하게 전달되지 않았습니다.
+C:\Users\S2-01\Desktop\c\c\hellow world만들기\파일입풀력퀴즈 학생관리시스템 (저장,불러오기)\학생관리(저장,로드).cpp(319,15): message : 자리 표시자 및 해당 매개 변수에는 variadic 인수가 1개 필요하지만 0개가 제공되었습니다.
+C:\Users\S2-01\Desktop\c\c\hellow world만들기\파일입풀력퀴즈 학생관리시스템 (저장,불러오기)\학생관리(저장,로드).cpp(319,15): message : 누락된 variadic 인수 1이(가) 서식 문자열 '%s'에 필요합니다.
+C:\Users\S2-01\Desktop\c\c\hellow world만들기\파일입풀력퀴즈 학생관리시스템 (저장,불러오기)\학생관리(저장,로드).cpp(323,3): error C2360: 'f' 초기화가 'case' 레이블에 의해 생략되었습니다.
+C:\Users\S2-01\Desktop\c\c\hellow world만들기\파일입풀력퀴즈 학생관리시스템 (저장,불러오기)\학생관리(저장,로드).cpp(312,9): message : 'f' 선언을 참조하십시오.
