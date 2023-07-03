@@ -33,10 +33,10 @@ typedef struct people
 
 void main()
 {
-	/*FILE* f = fopen("글쓰기.txt", "w");
+	FILE* f = fopen("글쓰기1.txt", "w");
 	int num = 123;
 	fprintf(f, "덮어 쓰기 모드1 %d ", num);
-	fclose(f);*/
+	fclose(f);
 	/*FILE* f = fopen("Test.txt","a");
 	int num = 123;
 	fprintf(f,"추가 모드 %d",num);
@@ -96,33 +96,33 @@ void main()
 		printf("휴대폰번호 : %s\n", p1.phonnumber);
 		fclose(f);
 	}*/
-	People p1 = { "A",20,"010-1234-5678" };
-	FILE* f = fopen("People.txt","w");
-	char buf[256];
-	fprintf(f,"이름 : %s나이 : %d\n", p1.name,p1.age);
-	fprintf(f,"휴대폰 번호 : %s", p1.phonnumber);
-	fclose(f);
-	f = fopen("People.txt", "r");
-	/*if (f == NULL)
-	{
-		printf("해당 이름의 파일이 없습니다.");
-	}
-	else
-	{
-		while (!feof(f))
-		{
-			fgets(buf, sizeof(buf), f);
-			printf("%s\n",buf);
-		}
-		fclose(f);
-	}*/
+	//People p1 = { "A",20,"010-1234-5678" };
+	//FILE* f = fopen("People.txt","w");
+	//char buf[256];
+	//fprintf(f,"이름 : %s나이 : %d\n", p1.name,p1.age);
+	//fprintf(f,"휴대폰 번호 : %s", p1.phonnumber);
+	//fclose(f);
+	//f = fopen("People.txt", "r");
+	///*if (f == NULL)
+	//{
+	//	printf("해당 이름의 파일이 없습니다.");
+	//}
+	//else
+	//{
+	//	while (!feof(f))
+	//	{
+	//		fgets(buf, sizeof(buf), f);
+	//		printf("%s\n",buf);
+	//	}
+	//	fclose(f);
+	//}*/
 
-	if (f == NULL)
-		printf("해당 이름의 파일이 없습니다.");
-	else
-	{
-		fread(buf, sizeof(buf), 1, f);
-		printf("%s\n",buf);
-	}
-	fclose(f);
+	//if (f == NULL)
+	//	printf("해당 이름의 파일이 없습니다.");
+	//else
+	//{
+	//	fread(buf, sizeof(buf), 1, f);
+	//	printf("%s\n",buf);
+	//}
+	//fclose(f);
 }

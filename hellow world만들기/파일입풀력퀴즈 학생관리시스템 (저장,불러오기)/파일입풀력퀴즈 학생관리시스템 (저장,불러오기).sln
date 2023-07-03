@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.2.32519.379
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "파일입풀력퀴즈 학생관리시스템 (저장,불러오기)", "\A-00\a-00\프로그래밍 공유폴더\숙련반\2시반\김지운\c\hellow world만들기\파일입풀력퀴즈 학생관리시스템 (저장,불러오기)\파일입풀력퀴즈 학생관리시스템 (저장,불러오기).vcxproj", "{84A2D286-8F75-41E3-A16F-DB3D2A3CB14F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{84A2D286-8F75-41E3-A16F-DB3D2A3CB14F}.Debug|x64.ActiveCfg = Debug|x64
+		{84A2D286-8F75-41E3-A16F-DB3D2A3CB14F}.Debug|x64.Build.0 = Debug|x64
+		{84A2D286-8F75-41E3-A16F-DB3D2A3CB14F}.Debug|x86.ActiveCfg = Debug|Win32
+		{84A2D286-8F75-41E3-A16F-DB3D2A3CB14F}.Debug|x86.Build.0 = Debug|Win32
+		{84A2D286-8F75-41E3-A16F-DB3D2A3CB14F}.Release|x64.ActiveCfg = Release|x64
+		{84A2D286-8F75-41E3-A16F-DB3D2A3CB14F}.Release|x64.Build.0 = Release|x64
+		{84A2D286-8F75-41E3-A16F-DB3D2A3CB14F}.Release|x86.ActiveCfg = Release|Win32
+		{84A2D286-8F75-41E3-A16F-DB3D2A3CB14F}.Release|x86.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8CEA4556-7F95-471E-AF80-A070181214CD}
+	EndGlobalSection
+EndGlobal

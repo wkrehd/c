@@ -1,0 +1,4 @@
+3
+qwe 12 2 qwf
+qwf 12 3 qwf
+sav 12 1 vavw
