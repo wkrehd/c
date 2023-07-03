@@ -33,10 +33,10 @@ typedef struct people
 
 void main()
 {
-	FILE* f = fopen("글쓰기1.txt", "w");
+	/*FILE* f = fopen("글쓰기1.txt", "w");
 	int num = 123;
 	fprintf(f, "덮어 쓰기 모드1 %d ", num);
-	fclose(f);
+	fclose(f);*/
 	/*FILE* f = fopen("Test.txt","a");
 	int num = 123;
 	fprintf(f,"추가 모드 %d",num);
@@ -80,7 +80,7 @@ void main()
 	//	}
 	//	fclose(f);
 	//}
-	/*People p1 = {"A",20,"010-1234-5678"};
+	People p1 = {"A",20,"010-1234-5678"};
 	FILE* f = fopen("People.txt", "w");
 	fprintf(f,"%s %d %s", p1.name,p1.age,p1.phonnumber);
 	fclose(f);
@@ -95,7 +95,7 @@ void main()
 		printf("이름 : %s \n나이 : %d\n", p1.name, p1.age);
 		printf("휴대폰번호 : %s\n", p1.phonnumber);
 		fclose(f);
-	}*/
+	}
 	//People p1 = { "A",20,"010-1234-5678" };
 	//FILE* f = fopen("People.txt","w");
 	//char buf[256];

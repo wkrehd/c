@@ -151,6 +151,17 @@ int LastStudentDelete(Student* studentList[], int studentcount)//
 	return studentcount;
 }
 
+//첫번째 배열에 등록된 학생을 삭제하기
+int FirstStudentDelete(Student* studentList[], int studentcount)
+{
+	int num = 0;
+	if (0 < studentcount)
+	{
+		free(studentList[num]);
+		studentList[num] = NULL;
+	}
+	return studentcount - (++num);
+}
 
 //등록된 학생들을 학년별로 오름차순으로 정렬 하고 출력 
 void GradeStudent(Student* studentList[], int studentcount)//배열로 받았으나
@@ -193,6 +204,20 @@ void GradeStudent(Student* studentList[], int studentcount)//배열로 받았으나
 	system("pause");
 }
 
+//학생정보를 저장하는 함수
+void StudentSave(Student* student_List[], int studentcount)
+{
+	FILE* f = fopen("학생정보 리스트.txt", "w");//학생정보txt w모드 덮어쓰기 모드로 만들기
+	fprintf(f, "%d\n", studentcount);
+	for (int i = 0; i < studentcount; i++)
+	{
+		fprintf(f, "%s %d %d %s\n", student_List[i]->name, student_List[i]->age, student_List[i]->grade, student_List[i]->sex);//배열의 값에 접근을 해야됨
+	}
+	fclose(f);
+	printf("저장 완료!!\n");
+	system("pause");
+}
+
 void main()
 {
 	Student* student_List[MAX];//구조체를 배열로 만든 이유는 student_List[MAX]변수 하나로 정보를 관리하기위해
@@ -212,10 +237,12 @@ void main()
 		printf("   5.학생 검색\n");
 		printf("   6.마지막 학생 삭제\n");
 		printf("   7.학생 전체 삭제\n");
-		printf("   8.종료\n");
+		printf("   8.학생정보 저장\n");
+		printf("   9.학생정보 불러오기\n");
+		printf("   10.종료\n");
 		printf("   입력 : ");
 		scanf("%d", &slect);
-		if (slect != 7)//
+		if (slect != 7 && slect !=8)//slect 7 과 8이 아니면 
 		{
 			system("cls");
 		}
@@ -261,15 +288,28 @@ void main()
 			{
 				ShowStudent(student_List[studentcount - studentcount+num]);//0부터 studentcount까지
 				num++;
-				printf("삭제 완료");//여기까지 출력하고 난뒤 LastStudentDelete반복해야됨
-				studentcount = LastStudentDelete(student_List, studentcount);//3가지 1. 다 출력하고 지우기(사실상 2번과 다르지 않음) 2. 첫번째 배열부터 지우는 함수만들기(최우선) 3. ShowStudent와LastStudentDelete반복을 두번하기
+				printf("삭제 완료\n");//여기까지 출력하고 난뒤 LastStudentDelete반복해야됨
+				studentcount = FirstStudentDelete(student_List, studentcount);//3가지 1. 다 출력하고 지우기(사실상 2번과 다르지 않음) 2. 첫번째 배열부터 지우는 함수만들기(최우선) 3. ShowStudent와LastStudentDelete반복을 두번하기
 				
 			}
 			system("pause");
 			break;
-		//case 8://배열의 값을 fprintf해야됨
-		//	FILE * f = fopen("학생정보.txt", "w");
-		//	fprintf(f.);//배열의 값에 접근을 해야됨
+		case 8://배열의 값을 fprintf해야됨
+		{
+			//FILE* f = fopen("학생정보 리스트.txt", "w");
+			//fprintf(f, "%d\n", studentcount);
+			//for (int i = 0; i < studentcount; i++)
+			//{
+			//	fprintf(f, "%s %d %d %s\n", student_List[i]->name, student_List[i]->age, student_List[i]->grade, student_List[i]->sex);//배열의 값에 접근을 해야됨
+			//}
+			//fclose(f);
+			//printf("저장 완료!!\n");
+			//system("pause");
+			StudentSave(student_List, studentcount);
+			break;
+		}
+		case 9://txt파일에 저장된 내용을 student_List에 대입한다
+
 		case 10:
 			while (studentcount)
 			{
