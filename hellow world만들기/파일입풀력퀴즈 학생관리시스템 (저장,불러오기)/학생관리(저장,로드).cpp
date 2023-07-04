@@ -218,6 +218,42 @@ void StudentSave(Student* student_List[], int studentcount)
 	system("pause");
 }
 
+//학생정보를 불러오는 함수
+int StudentLoad(Student* student_List[], int studentcount)
+{
+	int num;
+	FILE* f = fopen("학생정보 리스트.txt", "r");
+	if (f == NULL)
+	{
+		printf("해당 이름의 파일이 없습니다.");
+	}
+	else//텍스트에 적힌 처음 숫자만큼 배열을 늘려야함 그리고 기존에 생긴 배열 다음 주소에 값들을 넣어야함
+	{
+		fscanf(f, "%d", &num);//위num값을  아래 studentcount에 더해야함
+		num += studentcount;
+		if (num > MAX)
+		{
+			printf("더 이상 학생을 불러올 수 없습니다.");
+			system("pause");
+			return studentcount;
+		}
+
+		for (int i = studentcount; num > i; i++)
+		{
+			//if(20 < studentcount + i)
+			student_List[i] = (Student*)malloc(sizeof(Student));
+			//studentcount = SetStudent(student_List[studentcount + i], studentcount);
+			fscanf(f, "%s", student_List[i]->name);//
+			fscanf(f, "%d", &student_List[i]->age);
+			fscanf(f, "%d", &student_List[i]->grade);
+			fscanf(f, "%s", student_List[i]->sex);//
+			student_List[i]->number = ++studentcount;
+		}
+		fclose(f);
+	}
+	return studentcount;
+}
+
 void main()
 {
 	Student* student_List[MAX];//구조체를 배열로 만든 이유는 student_List[MAX]변수 하나로 정보를 관리하기위해
@@ -242,7 +278,7 @@ void main()
 		printf("   10.종료\n");
 		printf("   입력 : ");
 		scanf("%d", &slect);
-		if (slect != 7 && slect !=8)//slect 7 과 8이 아니면 
+		if (slect != 7 && slect !=8 && slect !=9)//slect 7 과 8이 아니면 
 		{
 			system("cls");
 		}
@@ -289,7 +325,7 @@ void main()
 				ShowStudent(student_List[studentcount - studentcount+num]);//0부터 studentcount까지
 				num++;
 				printf("삭제 완료\n");//여기까지 출력하고 난뒤 LastStudentDelete반복해야됨
-				studentcount = FirstStudentDelete(student_List, studentcount);//3가지 1. 다 출력하고 지우기(사실상 2번과 다르지 않음) 2. 첫번째 배열부터 지우는 함수만들기(최우선) 3. ShowStudent와LastStudentDelete반복을 두번하기
+				studentcount = FirstStudentDelete(student_List, studentcount);
 				
 			}
 			system("pause");
@@ -310,23 +346,34 @@ void main()
 		}
 		case 9://txt파일에 저장된 내용을 student_List에 대입한다
 		{
-			FILE* f = fopen("학생정보 리스트.txt", "r");
-			if (f == NULL)
-				printf("해당 이름의 파일이 없습니다.");
-			else//텍스트에 적힌 처음 숫자만큼 배열을 늘려야함 그리고 기존에 생긴 배열 다음 주소에 값들을 넣어야함
-			{
-				fscanf(f, "%d", num);//위num값을  아래 studentcount에 더해야함
-				for (int i = 0; num > i; i++)
-				{
-					//if(20 < studentcount + i)
-					student_List[studentcount + i] = (Student*)malloc(sizeof(Student));//
-					studentcount = SetStudent(student_List[studentcount + i], studentcount);//까지 맞는가 물어보기
-					fscanf(f, "%s", student_List[studentcount + i]->name);//student_List이게왜 오류가 나오는가
-				}
-
-
-
-			}
+			//FILE* f = fopen("학생정보 리스트.txt", "r");
+			//if (f == NULL)
+			//	printf("해당 이름의 파일이 없습니다.");
+			//else//텍스트에 적힌 처음 숫자만큼 배열을 늘려야함 그리고 기존에 생긴 배열 다음 주소에 값들을 넣어야함
+			//{
+			//	fscanf(f, "%d", &num);//위num값을  아래 studentcount에 더해야함
+			//	num += studentcount;
+			//	if (num > MAX)
+			//	{
+			//		printf("더 이상 학생을 불러올 수 없습니다.");
+			//		system("pause");
+			//		break;
+			//	}
+			//	for (int i = studentcount; num > i; i++)
+			//	{
+			//		//if(20 < studentcount + i)
+			//		student_List[i] = (Student*)malloc(sizeof(Student));
+			//		//studentcount = SetStudent(student_List[studentcount + i], studentcount);
+			//		fscanf(f, "%s", student_List[i]->name);//
+			//		fscanf(f, "%d", &student_List[i]->age);
+			//		fscanf(f, "%d", &student_List[i]->grade);
+			//		fscanf(f, "%s", student_List[i]->sex);//
+			//		student_List[i]->number = ++studentcount;
+			//		
+			//	}
+			//	fclose(f);
+			//}
+			studentcount=StudentLoad(student_List, studentcount);
 			break;
 		}
 		case 10:
