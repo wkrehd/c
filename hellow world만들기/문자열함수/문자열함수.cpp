@@ -3,26 +3,39 @@
 #include<stdlib.h>
 
 //문자열 길이 반환
-void Strlen(char str[])//받은배열의 값을 이용하여
+int Strlen(char str[])//받은배열의 값을 이용하여
 {
 	int num = 0;
-	for (int i = 0; i < 9; i++)
+	while (1)//값이 0이면 반복을 멈춘다
 	{
-		if (str[i] != 0)//값이 0이 아니면
+		if (str[num]==0)
 		{
-			num++;//num을 증가시킨다 
+			break;
 		}
+
+		num++;
 	}
-	printf("%d", num);
+	//for (int i = 0; i < 9; i++)
+	//{
+	//	if (str[i] != 0)//값이 0이 아니면
+	//	{
+	//		num++;//num을 증가시킨다 
+	//	}
+	//}
+	/*printf("%d", num);*/
+	return num;
 }
 
 //문자열을 복사하는 함수
 void Strcpy(char name[],char my_name[])
 {
-	for (int i = 0; i < 9; i++)
+	int num = 0;
+	while (1)
 	{
-		name[i] = my_name[i];
-		printf("%c", name[i]);
+		name[num] = my_name[num];
+		num++;
+		if (my_name[num] == 0)
+			break;
 	}
 }
 
@@ -41,11 +54,17 @@ void main()
 		}
 	}*/
 
+	//strlen 동적할당하는것
 	//int num=0;
 	//scanf("%d", &num);
-	//char str[num];//가변길이배열 VLA가 있어야 가능 안될경우 동적할당을 해줘야함
-	//char str[10]= "Hello";
+
+	//char *str=(char*)malloc(sizeof(char) * num);//캐릭터포인터 동적할당해야됨
+	//strcpy_s(str, num - 1,"Hello");
+	////char str[]= "Hello";
 	//Strlen(str);//str 배열의 있는 값이 필요하기때문에 배열을 매개변수로 사용
+	//printf("%d", Strlen(str));
+
+	//free(str);
 
 	/*char name[10];
 	char my_name[10] = "Kimjiun";
@@ -60,21 +79,27 @@ void main()
 		printf("%c", name[i]);
 	}*/
 
-	/*char name[10];
+	/*char name[10]={0};
 	char my_name[10] = "Kimjiun";
 
-	Strcpy(name,my_name);*/
+	Strcpy(name,my_name);
+	printf("%s", name);*/
 
-	char str[10] = "Hello";
-	printf("%s\n", str);
+
+	char str[10] = "Hello"; //str[5] = '^' str[6] = '^' str[7] = '\0';
+	int num1,num2;
+	char str1[10] = "^^";
+	/*printf("%s\n", str);
 	strcat(str, "^^");
-	printf("%s\n", str);
+	printf("%s\n", str);*/
 	
-	for (int i = 0; i < 9; i++)
+	num1 = Strlen(str);//5
+	/*num1= Strlen(str);*/
+	num2 = Strlen(str1);//2
+	/*num2= Strlen(str1);*/
+	for (int i = num1,int j=0; i < num1 + num2; i++,j++)
 	{
-		if (str[i] = 0)//추가되는 길이만큼 추가되어야함
-		{
-
-		}
+		str[i] = str1[j];//
 	}
+	printf("%s", str);
 }
