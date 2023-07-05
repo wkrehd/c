@@ -38,6 +38,18 @@ void Strcpy(char name[],char my_name[])
 			break;
 	}
 }
+//문자열을 추가하는 함수
+void Strcat(char str[], char str1[])
+{
+	int num1, num2;
+	num1 = Strlen(str);
+	num2 = Strlen(str1);
+
+	for (int i = num1, j = 0; i < num1 + num2 && j < num2; i++, j++)
+	{
+		str[i] = str1[j];//char 하나의값을 의미하며 그렇기 때문에 추가할 문자도 char형으로 넣어야함
+	}
+}
 
 void main()
 {
@@ -86,20 +98,32 @@ void main()
 	printf("%s", name);*/
 
 
-	char str[10] = "Hello"; //str[5] = '^' str[6] = '^' str[7] = '\0';
-	int num1,num2;
-	char str1[10] = "^^";
+	//char str[10] = "Hello"; //str[5] = '^' str[6] = '^' str[7] = '\0';
+	///*int num1,num2;*/
+	//char str1[10] = "^^^";
 	/*printf("%s\n", str);
 	strcat(str, "^^");
 	printf("%s\n", str);*/
 	
-	num1 = Strlen(str);//5
-	/*num1= Strlen(str);*/
-	num2 = Strlen(str1);//2
-	/*num2= Strlen(str1);*/
-	for (int i = num1,int j=0; i < num1 + num2; i++,j++)
-	{
-		str[i] = str1[j];//
-	}
-	printf("%s", str);
+	//num1 = Strlen(str);//5
+	///*num1= Strlen(str);*/
+	//num2 = Strlen(str1);//2
+	///*num2= Strlen(str1);*/
+	//for (int i = num1, j=0; i < num1 + num2 && j<num2; i++,j++)
+	//{
+	//	str[i] = str1[j];//
+	//}
+
+	//char str[10] = "Hello"; //str[5] = '^' str[6] = '^' str[7] = '\0';
+	///*int num1,num2;*/
+	//char str1[10] = "^^^";
+	//Strcat(str,str1);
+	//printf("%s\n", str);
+
+	char str2[10] = "string!!";
+	char str3[10] = "string";
+
+	printf("%s == %s : %d\n", str2,str3,strcmp(str2,str3));
+	printf("%s == %s : %d\n", "abc","abc",strcmp("abc","abc"));
+	printf("%s == %s : %d\n", "abc", "def", strcmp("abc","def"));
 }
