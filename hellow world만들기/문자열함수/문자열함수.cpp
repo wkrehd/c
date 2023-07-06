@@ -2,6 +2,15 @@
 #include<string.h>
 #include<stdlib.h>
 
+
+void Swap(char str[], char str1[])
+{
+	char str2;
+	str2 = *str;
+	*str = *str1;
+	*str1 = str2;
+}
+
 //문자열 길이 반환
 int Strlen(const char str[])//받은배열의 값을 이용하여
 {
@@ -51,34 +60,52 @@ void Strcat(char str[], const char str1[])
 	}
 }
 
-char*
-strcat(s, append)//append 추가
-register char* s;//register 등록하다
-register const char* append;
-{
-	char* save = s;
-
-	for (; *s; ++s);
-
-	while (*s++ = *append++);
-
-	return(save);
-}
+//char*
+//strcat(s, append)//append 추가
+//register char* s;//register 등록하다
+//register const char* append;
+//{
+//	char* save = s;//save = s의 초기시작 값을 가지고 있는다 *s는 배열의 시작부분과 같기 떄문에
+//
+//	// ㅁㄴㅇ
+//	// 0 1 2
+//	for (; *s; ++s);//*s는 값이다 ++s를 하다보면 s의 null값에 도달하므로 그때 루프가 break
+//	// 3
+//	// 
+//	while (*s++ = *append++);//append 첫번째 주소를 s 3 의주소에 대입한다
+//
+//	return(save);//초기값부터 읽도록 반환한다
+//}
 
 //문자열을 비교하는 함수
 int Strcmp(const char str2[], const char str3[])
 {
 	// 
 	// sasd sd
-	// 1.길이를 먼저 체크하고 2. 
-	int num;
-	for (int i = 0, j = 0; i < Strlen(str3); i++, j++)//1번 조건
+	// 1.길이를 먼저 체크하고 2. 길이가 긴str에서 짧은str의 시작부분이 같은부분을 찾기 3. 다음값도 같은지 확인하기
+	int num, max , min;
+	if (Strlen(str2) > Strlen(str3))
 	{
-		if (Strlen(str2) != Strlen(str3) && str2[i] == str3[j])//1번 조건
+		max = Strlen(str2);
+		min = Strlen(str3);
+
+	}
+	else
+	{
+		max = Strlen(str3);
+		min = Strlen(str2);
+		Swap(&str2, &str3);//배열길이가 큰것을 str2로 바꾸기 위해서
+	}
+	for (int i = 0; i < max-1; i++)
+	{
+		for (int j = i + 1; j < max; j++)
 		{
-			num = 1;
+			if (str2[i] == str3[j])//1번 조건
+			{
+				num = 1;
+			}
 		}
-		else if (Strlen(str2) == Strlen(str3) && str2[i] == str3[j])//2번 조건
+		if (min == max && str2[i] == str3[i])//2번 조건
 		{
 			num = 0;
 		}
@@ -86,6 +113,7 @@ int Strcmp(const char str2[], const char str3[])
 		{
 			num = -1;
 		}
+		
 	}
 	return num;
 }
