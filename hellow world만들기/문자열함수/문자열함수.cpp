@@ -3,7 +3,7 @@
 #include<stdlib.h>
 
 //문자열 길이 반환
-int Strlen(char str[])//받은배열의 값을 이용하여
+int Strlen(const char str[])//받은배열의 값을 이용하여
 {
 	int num = 0;
 	while (1)//값이 0이면 반복을 멈춘다
@@ -27,7 +27,7 @@ int Strlen(char str[])//받은배열의 값을 이용하여
 }
 
 //문자열을 복사하는 함수
-void Strcpy(char name[],char my_name[])
+void Strcpy(char name[], char my_name[])
 {
 	int num = 0;
 	while (1)
@@ -39,7 +39,7 @@ void Strcpy(char name[],char my_name[])
 	}
 }
 //문자열을 추가하는 함수
-void Strcat(char str[], char str1[])
+void Strcat(char str[], const char str1[])
 {
 	int num1, num2;
 	num1 = Strlen(str);
@@ -49,6 +49,45 @@ void Strcat(char str[], char str1[])
 	{
 		str[i] = str1[j];//char 하나의값을 의미하며 그렇기 때문에 추가할 문자도 char형으로 넣어야함
 	}
+}
+
+char*
+strcat(s, append)//append 추가
+register char* s;//register 등록하다
+register const char* append;
+{
+	char* save = s;
+
+	for (; *s; ++s);
+
+	while (*s++ = *append++);
+
+	return(save);
+}
+
+//문자열을 비교하는 함수
+int Strcmp(const char str2[], const char str3[])
+{
+	// 
+	// sasd sd
+	// 1.길이를 먼저 체크하고 2. 
+	int num;
+	for (int i = 0, j = 0; i < Strlen(str3); i++, j++)//1번 조건
+	{
+		if (Strlen(str2) != Strlen(str3) && str2[i] == str3[j])//1번 조건
+		{
+			num = 1;
+		}
+		else if (Strlen(str2) == Strlen(str3) && str2[i] == str3[j])//2번 조건
+		{
+			num = 0;
+		}
+		else//3번 조건
+		{
+			num = -1;
+		}
+	}
+	return num;
 }
 
 void main()
@@ -116,14 +155,41 @@ void main()
 
 	//char str[10] = "Hello"; //str[5] = '^' str[6] = '^' str[7] = '\0';
 	///*int num1,num2;*/
-	//char str1[10] = "^^^";
-	//Strcat(str,str1);
+	//char str1[10] = "^^";
+	//Strcat(str,"^^");
 	//printf("%s\n", str);
+
+	//printf("%s == %s : %d\n", str2,str3,strcmp(str2,str3));//앞에배열이 뒤의배열을 모두포함하면 1
+	//printf("%s == %s : %d\n", "abc","abc",strcmp("abc","abc"));//앞에배열이 뒤의배열과 같으면 0
+	//printf("%s == %s : %d\n", "abc", "def", strcmp("abc","def"));//앞에배열이 뒤의배열이 다르면 -1
+
+	//1번. 문자열의 길이가 다른 두배열에서 뒤의 배열의 마지막값까지 앞의 배열과 같으면 1
+	//2번. 문자열의 길이가 같고 뒷배열과 앞배열의 값이 같으면 0
+	//3번. 문자열이 같아도 값이 다르거나 , 문자열이 다르거나 일대 -1 
+
+	/*char str2[10] = "abc";
+	char str3[10] = "def";*/
+	//앞배열 i 뒷배열길이 j
+	//Strlen(str3);
+	//int num;
+	//for (int i = 0, j = 0; i < Strlen(str3); i++, j++)//1번 조건
+	//{
+	//	if (Strlen(str2) != Strlen(str3) && str2[i] == str3[j])//1번 조건
+	//	{
+	//		num = 1;
+	//	}
+	//	else if (Strlen(str2) == Strlen(str3) && str2[i] == str3[j])//2번 조건
+	//	{
+	//		num = 0;
+	//	}
+	//	else//3번 조건
+	//	{
+	//		num = -1;
+	//	}
+	//}
 
 	char str2[10] = "string!!";
 	char str3[10] = "string";
-
-	printf("%s == %s : %d\n", str2,str3,strcmp(str2,str3));
-	printf("%s == %s : %d\n", "abc","abc",strcmp("abc","abc"));
-	printf("%s == %s : %d\n", "abc", "def", strcmp("abc","def"));
+	Strcmp(str2, str3);
+	printf("%d", Strcmp(str2, str3));
 }
