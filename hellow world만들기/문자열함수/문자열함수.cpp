@@ -240,8 +240,10 @@ void main()
 	//	}
 	//}
 
-	char str2[10] = "sasd";
-	char str3[10] = "sasd";
+	char str2[10] = "sadads";
+	char str3[10] = "sads";
 	Strcmp(str2, str3);
+	printf("%d\n", Strcmp(str2, str3));
+	strcmp(str2, str3);
 	printf("%d", Strcmp(str2, str3));
 }
