@@ -78,43 +78,67 @@ void Strcat(char str[], const char str1[])
 //}
 
 //문자열을 비교하는 함수
-int Strcmp(const char str2[], const char str3[])
+int Strcmp(const char str2[], const char str3[])//변하지 않는 상수값
 {
-	// 
+	char cmp1[256];//const char로 파라메타를 설정했기 때문에 새로운 배열값을 담을 변수를 설정한다
+	char cmp2[256];
+	strcpy(cmp1, str2);//str2의 문자열을 cmp1에 복사한다
+	strcpy(cmp2, str3);//str3의 문자열을 cmp2에 복사한다
 	// sasd sd
 	// 1.길이를 먼저 체크하고 2. 길이가 긴str에서 짧은str의 시작부분이 같은부분을 찾기 3. 다음값도 같은지 확인하기
-	int num, max , min;
-	if (Strlen(str2) > Strlen(str3))
-	{
-		max = Strlen(str2);
-		min = Strlen(str3);
+	int num, max,min;
 
-	}
-	else
+	//if (Strlen(cmp1) > Strlen(cmp2))
+	//{
+	//	max = Strlen(cmp1);
+	//	min = Strlen(cmp2);
+
+	//}
+	//else
+	//{
+	//	Swap(cmp1, cmp2);
+	//	max = Strlen(cmp1);
+	//	min = Strlen(cmp2);
+	//	//Swap( str2,  str3);//배열길이가 큰것을 str2로 바꾸기 위해서 그래야만 밑의 반복함수에서 큰것을 기준으로 값들을 확인할수있음
+	//}
+	if (Strlen(cmp1) < Strlen(cmp2))
 	{
-		max = Strlen(str3);
-		min = Strlen(str2);
-		Swap(&str2, &str3);//배열길이가 큰것을 str2로 바꾸기 위해서
+			Swap(cmp1, cmp2);
 	}
-	for (int i = 0; i < max-1; i++)
+	max = Strlen(cmp1);
+	min = Strlen(cmp2);
+	for (int i = 0, j=i; i < max && j<min; i++)//i을 반복하다가 j값과 같아지면 j++후 i+1값과 같은지 확인
 	{
-		for (int j = i + 1; j < max; j++)
+		if (/*max !=min && */cmp1[i] == cmp2[j])//1번 조건 //같으면 i++값과 j++값이 min-1이 될때까지 일치하면 num-1
 		{
-			if (str2[i] == str3[j])//1번 조건
+			if (j == min-1)//str3[j]의 마지막값까지 계산하고 str[i]의 값과 str[j]이 같으면 num-1을 반환한다
 			{
 				num = 1;
 			}
+			j++;
+			continue;
 		}
-		if (min == max && str2[i] == str3[i])//2번 조건
-		{
-			num = 0;
-		}
+		//for (int j = i ; j < min-1; j++)
+		//{
+		//	if (str2[i] == str3[j])//1번 조건 //같으면 i++값과 j++값이 min-1이 될때까지 일치하면 num-1
+		//	{
+		//		num = 1;
+		//	}
+		//}
+		//else if (min == max && cmp1[i] == cmp2[j])//2번 조건
+		//{
+		//	j++;
+		//	num = 0;
+		//	continue;
+		//}
 		else//3번 조건
 		{
 			num = -1;
 		}
 		
 	}
+	if (num == 1 && min == max)
+		num = 0;
 	return num;
 }
 
@@ -193,7 +217,7 @@ void main()
 
 	//1번. 문자열의 길이가 다른 두배열에서 뒤의 배열의 마지막값까지 앞의 배열과 같으면 1
 	//2번. 문자열의 길이가 같고 뒷배열과 앞배열의 값이 같으면 0
-	//3번. 문자열이 같아도 값이 다르거나 , 문자열이 다르거나 일대 -1 
+	//3번. 문자열이 같아도 값이 다르거나 , 문자열이 다르거나 일때 -1 
 
 	/*char str2[10] = "abc";
 	char str3[10] = "def";*/
@@ -216,8 +240,8 @@ void main()
 	//	}
 	//}
 
-	char str2[10] = "string!!";
-	char str3[10] = "string";
+	char str2[10] = "sasd";
+	char str3[10] = "sasd";
 	Strcmp(str2, str3);
 	printf("%d", Strcmp(str2, str3));
 }
