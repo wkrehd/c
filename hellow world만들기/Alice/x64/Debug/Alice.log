@@ -1,3 +1,4 @@
 ﻿  alice.cpp
-C:\Users\S1-03\Desktop\c\hellow world만들기\Alice\alice.cpp(6,1): warning C4326: 'main'의 반환 형식이 'int'이어야 하는데 'void'입니다.
-  Alice.vcxproj -> C:\Users\S1-03\Desktop\c\hellow world만들기\Alice\x64\Debug\Alice.exe
+\\A-00\a-00\프로그래밍 공유폴더\숙련반\2시반\김지운\c\hellow world만들기\Alice\alice.cpp(6,1): warning C4326: 'main'의 반환 형식이 'int'이어야 하는데 'void'입니다.
+\\A-00\a-00\프로그래밍 공유폴더\숙련반\2시반\김지운\c\hellow world만들기\Alice\alice.cpp(8,7): warning C4101: 'findline' :참조되지 않은 지역 변수입니다.
+  Alice.vcxproj -> \\A-00\a-00\프로그래밍 공유폴더\숙련반\2시반\김지운\c\hellow world만들기\Alice\x64\Debug\Alice.exe
