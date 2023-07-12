@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.2.32519.379
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "재귀함수", "\A-00\a-00\프로그래밍 공유폴더\숙련반\2시반\김지운\c\hellow world만들기\재귀함수\재귀함수\재귀함수.vcxproj", "{E2CF1951-0508-4FC7-9EF8-62A189A03130}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E2CF1951-0508-4FC7-9EF8-62A189A03130}.Debug|x64.ActiveCfg = Debug|x64
+		{E2CF1951-0508-4FC7-9EF8-62A189A03130}.Debug|x64.Build.0 = Debug|x64
+		{E2CF1951-0508-4FC7-9EF8-62A189A03130}.Debug|x86.ActiveCfg = Debug|Win32
+		{E2CF1951-0508-4FC7-9EF8-62A189A03130}.Debug|x86.Build.0 = Debug|Win32
+		{E2CF1951-0508-4FC7-9EF8-62A189A03130}.Release|x64.ActiveCfg = Release|x64
+		{E2CF1951-0508-4FC7-9EF8-62A189A03130}.Release|x64.Build.0 = Release|x64
+		{E2CF1951-0508-4FC7-9EF8-62A189A03130}.Release|x86.ActiveCfg = Release|Win32
+		{E2CF1951-0508-4FC7-9EF8-62A189A03130}.Release|x86.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D865B96D-5ECA-49EF-B676-E05619781A4E}
+	EndGlobalSection
+EndGlobal
